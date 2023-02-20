@@ -1,0 +1,94 @@
+.etg-banner {
+    background: url('../../../assets/banner-asset-primary.jpg');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: url('../../../assets/banner-asset-isolated.png');
+        z-index: 2;
+        background-size: cover;
+    }
+    .section-content {
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        bottom: 0px;
+        animation: reveal-up 1s linear;
+        opacity: 1;
+        h1 {
+            font-weight: 900;
+            font-size: 200px;
+            line-height: 150px;
+            position: relative;
+            span {
+                
+                --bg-size: 400%;
+                --color-one: hsl(44 47% 74%);
+                --color-two: hsl(255 26% 66%);
+                --color-three: hsl(348 30% 57%);
+                background: linear-gradient(
+                                90deg,
+                                var(--color-one),
+                                var(--color-two),
+                                var(--color-three)
+                            ) 0 0 / var(--bg-size) 100%;
+                color: transparent;
+                -webkit-background-clip: text;
+                background-clip: text;
+                display: block;
+                animation: move-bg 20s infinite linear;
+                position: relative;
+                z-index: 3;
+            }
+            &.under {
+                z-index: 1;
+            }
+            &.above {
+                z-index: 3;
+            }
+        }
+
+        p {
+            font-size: 32px;
+            line-height: 47px;
+            letter-spacing: 2px;
+            width: calc(70% + 100px);
+            padding: 50px;
+        }
+    }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .boujee-text {
+      animation: move-bg 8s linear infinite;
+    }
+    @keyframes move-bg {
+      to {
+        background-position: var(--bg-size) 0;
+      }
+    }
+  }
+
+  @keyframes reveal-up {
+    0% {
+        bottom: -100px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+  }
+  
