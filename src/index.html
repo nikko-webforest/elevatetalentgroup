@@ -10,5 +10,12 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const path = document.getElementById('line').getTotalLength();
+      console.log('Path', path);
+    });
+</script>
 </body>
 </html>
