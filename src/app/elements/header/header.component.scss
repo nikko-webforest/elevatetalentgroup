@@ -1,0 +1,27 @@
+.etg-header {
+  position: relative;
+  padding: 25px;
+
+	.etg-container {
+		max-width: 1440px;
+		width: 100%;
+		margin: 0 auto;
+
+		.etg-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.etg-site-link {
+				.etg-site-logo {
+				width: auto;
+				height: 50px;
+				}
+			}
+
+			.etg-nav-menu-btn {
+				padding: 15px 25px;
+			}
+		}
+	}
+}

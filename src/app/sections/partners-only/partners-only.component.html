@@ -1,0 +1,17 @@
+<section class="etg-partners-only animation">
+  <div class="etg-container">
+    <h2>
+      PARTNERING ONLY WITH THE BEST
+    </h2>
+    <ul class="partners-list">
+      <li class="partners-item"
+        *ngFor="let item of partnersList; let i = index;"
+        [id]="i">
+        <img class="partners-logo"
+          [title]="item.title"
+          [alt]="item.title"
+          [src]="item.logo"/>
+      </li>
+    </ul>
+  </div>
+</section>

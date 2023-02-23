@@ -1,0 +1,205 @@
+.etg-key-to-success {
+  height: 100vh;
+  overflow: hidden;
+  padding: 170px 25px 25px;
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(200px)
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes zoom-in-out {
+    0% {
+      transform: scale(1.0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1.0);
+    }
+  }
+
+  .etg-container {
+    max-width: 1920px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    h2 {
+      color: #FFFFFF;
+      font-family: var(--primaryFont);
+      font-style: normal;
+      font-weight: 900;
+      font-size: 96px;
+      text-align: center;
+      line-height: 1em;
+      letter-spacing: 0.02em;
+      width: max-content;
+      margin: 0 auto 24px;
+      animation: fade-up 1000ms ease-in-out 0ms;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.7);
+      font-family: var(--secondaryFont);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      text-align: center;
+      line-height: 1em;
+      letter-spacing: 0.02em;
+      max-width: 725px;
+      margin: 0 auto 105px;
+      animation: fade-up 1000ms ease-in-out 200ms;
+    }
+
+    .etg-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+      margin: 0 auto;
+
+      .etg-col {
+        position: relative;
+        width: 375px;
+        height: 375px;
+        padding: 95px 35px 35px;
+        opacity: 0;
+        transform: translateY(300px);
+        transition:
+          opacity 0ms ease-in-out,
+          transform 0ms ease-in-out;
+
+        .bg-color {
+          position: absolute;
+          z-index: 1;
+          inset: 0;
+          display: block;
+          // background-color: #1E1E1E !important;
+          opacity: 0.7;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          transition: background-color 500ms linear;
+
+          .bg-image {
+            position: absolute;
+            z-index: 2;
+          }
+        }
+
+        .icon-wrap {
+          position: absolute;
+          z-index: 2;
+          top: -18px;
+          right: 37px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // background-color: #1E1E1E !important;
+          width: 95px;
+          height: 95px;
+          padding: 10px;
+          border-radius: 10px;
+          scale: 1;
+          transition: background-color 500ms linear;
+
+          .etg-svg {}
+        }
+
+        .title {
+          color: #FFFFFF;
+          font-family: var(--primaryFont);
+          font-style: normal;
+          font-weight: 900;
+          font-size: 29px;
+          line-height: 1em;
+          letter-spacing: 0.02em;
+          position: relative;
+          z-index: 3;
+          margin: 0 0 40px;
+        }
+
+        .description {
+          color: rgba(255, 255, 255, 0.7);
+          font-family: var(--secondaryFont);
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          text-align: left;
+          line-height: 1.45em;
+          letter-spacing: 0.04em;
+          position: relative;
+          z-index: 3;
+          margin: 0;
+        }
+
+        &:nth-child(1) {
+          .bg-color {
+            .bg-image {
+              top: 216px;
+              left: 211px;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          .bg-color {
+            .bg-image {
+              top: 208px;
+              left: 193px;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          .bg-color {
+            .bg-image {
+              top: -14px;
+              left: 142px;
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          .bg-color {
+            .bg-image {
+              top: 197px;
+              left: 194px;
+            }
+          }
+        }
+
+        &.fade-up {
+          opacity: 1;
+          transform: translateY(0px);
+          transition:
+            opacity 1000ms ease-in-out,
+            transform 1000ms ease-in-out;
+        }
+
+        &.default-color {
+          .bg-color {
+            background-color: #1E1E1E !important;
+          }
+  
+          .icon-wrap {
+            background-color: #1E1E1E !important;
+          }
+        }
+        
+        &.zoom-in-out {
+          animation: zoom-in-out 2s linear;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<section class="etg-process">
+  <div class="etg-container">
+    <div class="etg-row">
+      <div class="etg-col">
+        <div class="steps-wrap">
+          <div class="steps-item"
+            *ngFor="let item of processStepsList; let i = index;"
+            [class.active]="i == activeProcessIndex">
+            <span class="counter"
+              [innerText]="item.count">
+            </span>
+            <svg class="etg-svg" width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="2.5" cy="2.5" r="2.5" fill="white" fill-opacity="0.8"></circle>
+            </svg>
+            <span class="label"
+              [innerText]="item.name">
+            </span>
+          </div>
+        </div>
+        <div class="steps-description">
+          We are a full service ad agency with 1 to 1 relationships with our creators. That means we understand your broader communications strategy and have talent ready to go that is perfectly integrated into your messaging and audience targets.
+        </div>
+        <div class="steps-img-list">
+          <div class="steps-img-wrap"
+            *ngFor="let item of processStepsList.reverse(); let i = index;"
+            [class.prev]="i == prevProcessIndex"
+            [class.active]="i == activeProcessIndex"
+            [class.next]="i == nextProcessIndex"
+            [id]="i">
+            <img class="step-img"
+              [src]="item.image"
+              />
+          </div>
+        </div>
+      </div>
+      <div class="etg-col">
+        <h2>
+          PROCESS
+        </h2>
+        <h4>
+          HOW WE OPERATE
+        </h4>
+        <div class="process-status-wrap">
+          <div class="process-status-item"
+            *ngFor="let item of processStepsList; let i = index;"
+            [class.active]="i == activeProcessIndex"
+            [id]="i"
+            (click)="selectedProcess(i);">
+            <div class="process-status-label"
+              [innerText]="item.name">
+            </div>
+            <div class="process-status-icon"
+              [ngStyle]="{ 'background' : 'url('+ item.image +') center/cover' }">
+            </div>
+          </div>
+          <svg class="etg-svg" width="2" height="503" viewBox="0 0 2 503" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0V503" stroke="url(#paint0_linear_196_171)" stroke-opacity="0.5"/>
+            <defs>
+              <linearGradient id="paint0_linear_196_171" x1="1.5" y1="0" x2="1.5" y2="503" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFFFFF" stop-opacity="0"></stop>
+                <stop offset="0.5" stop-color="#FFFFFF"></stop>
+                <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

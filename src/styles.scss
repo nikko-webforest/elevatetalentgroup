@@ -5,7 +5,12 @@
     src: local("gentium-basic"), url(./assets/fonts/gentium-basic.ttf) format("truetype");
 }
 
-*, *:before, *:after{
+:root {
+    --primaryFont: 'Prompt', sans-serif;
+    --secondaryFont: "Gentium Basic";
+}
+
+*, *:before, *:after {
     box-sizing: border-box;
 }
 
@@ -13,7 +18,7 @@ body {
     background-color: #000;
 }
 
-html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -34,15 +39,15 @@ p {
     color: rgba(255, 255, 255, 0.7);
 }
 
-footer, header, nav, section, main{
+footer, header, nav, section, main {
     display: block;
 }
 
-body{
+body {
     line-height: 1;
 }
 
-ol, ul{
+ol, ul {
     list-style: none;
 }
 
@@ -50,19 +55,38 @@ blockquote, q{
     quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after{
+blockquote:before, blockquote:after, q:before, q:after {
     content: '';
     content: none;
 }
 
-table{
+table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-input{
+input {
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border-radius: 0;
+}
+
+a, button {
+    display: block;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+svg,
+img {
+    display: block;
 }
 
 .section-content {

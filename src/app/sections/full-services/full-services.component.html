@@ -1,0 +1,22 @@
+<section class="etg-full-services">
+  <div class="etg-container">
+    <div class="etg-row">
+      <h2 [ngClass]="{ 'active' : servicesActive }"
+        (click)="selectList('services')">
+        OUR FULL-SERVICE CORE COMPETENCIES
+      </h2>
+      <hr>
+      <h3 [ngClass]="{ 'active' : capabilitiesActive }"
+        (click)="selectList('capabilities')">
+        OUR VERTICAL CAPABILITIES
+      </h3>
+    </div>
+    <ul class="list">
+      <li class="item"
+        *ngFor="let item of itemList"
+        [innerText]="item">
+      </li>
+    </ul>
+    <app-primary-btn text="LET'S TALK" url="/"></app-primary-btn>
+  </div>
+</section>

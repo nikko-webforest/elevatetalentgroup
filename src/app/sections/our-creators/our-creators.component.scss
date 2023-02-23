@@ -1,0 +1,124 @@
+@import "../../../../node_modules/flickity/css/flickity.css";
+
+.etg-our-creators {
+  height: 100vh;
+  padding: 130px 25px 125px;
+  overflow: hidden;
+
+  .etg-container {
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    h2 {
+      color: #FFFFFF;
+      font-family: var(--primaryFont);
+      font-style: normal;
+      font-weight: 900;
+      font-size: 128px;
+      line-height: 0.8em;
+      letter-spacing: 0.02em;
+      width: max-content;
+      margin: 0 0 15px;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.7);
+      font-family: var(--secondaryFont);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.1em;
+      letter-spacing: 0.02em;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 0 90px;
+    }
+
+    .flickity-main {
+      outline: none;
+
+      .flickity-viewport {
+        .flickity-slider {
+          .flickity-cell {
+            width: 495px;
+            height: 495px;
+            margin: 0 45px 0 0;
+            padding: 90px 60px 50px;
+            overflow: hidden;
+
+            .bg-image {
+              position: absolute;
+              z-index: 1;
+              top: 134px;
+              left: -174px;
+              transform: rotate(17.08deg);
+              display: block;
+              background-repeat: no-repeat;
+              width: 100%;
+              height: 100%;
+            }
+
+            .bg-icon {
+              position: absolute;
+              z-index: 2;
+              transform: rotate(-1.17deg);
+              display: block;
+              background-repeat: no-repeat;
+              width: 100%;
+              height: 100%;
+            }
+            
+            .title {
+              color: #FFFFFF;
+              font-family: var(--primaryFont);
+              font-style: normal;
+              font-weight: 900;
+              font-size: 55px;
+              line-height: 1em;
+              position: relative;
+              z-index: 3;
+              width: 80%;
+            }
+
+            &:nth-child(1) {
+              .bg-icon {
+                top: 171px;
+                left: 226px;
+              }
+            }
+
+            &:nth-child(2) {
+              .bg-icon {
+                top: 148px;
+                left: 187px;
+              }
+            }
+
+            &:nth-child(3) {
+              .bg-icon {
+                top: 79px;
+                left: 208px;
+              }
+            }
+
+            &:nth-child(4) {
+              .bg-icon {
+                top: 97px;
+                left: 160px;
+              }
+            }
+
+            &:nth-child(5) {
+              .bg-icon {
+                top: 195px;
+                left: 267px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
