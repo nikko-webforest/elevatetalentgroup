@@ -33,9 +33,9 @@ export class ProcessComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('prevProcessIndex = '+this.prevProcessIndex);
-    console.log('activeProcessIndex = '+this.activeProcessIndex);
-    console.log('nextProcessIndex = '+this.nextProcessIndex);
+    // console.log('prevProcessIndex = '+this.prevProcessIndex);
+    // console.log('activeProcessIndex = '+this.activeProcessIndex);
+    // console.log('nextProcessIndex = '+this.nextProcessIndex);
   }
 
   selectedProcess(index: any) {
@@ -52,9 +52,9 @@ export class ProcessComponent implements OnInit {
       this.prevProcessIndex = this.activeProcessIndex - 1;
       this.nextProcessIndex = this.activeProcessIndex + 1;
     }
-    console.log('prevProcessIndex = '+this.prevProcessIndex);
-    console.log('activeProcessIndex = '+this.activeProcessIndex);
-    console.log('nextProcessIndex = '+this.nextProcessIndex);
+    // console.log('prevProcessIndex = '+this.prevProcessIndex);
+    // console.log('activeProcessIndex = '+this.activeProcessIndex);
+    // console.log('nextProcessIndex = '+this.nextProcessIndex);
   }
 
 }
