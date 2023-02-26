@@ -10,48 +10,57 @@
     --secondaryFont: "Gentium Basic";
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #000;
+    line-height: 1;
+    background-color: #000000;
+    min-width: 380px;
+    width: 100%;
 }
 
 html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+    color: #FFFFFF;
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
+    font-size: 100%;
     vertical-align: baseline;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     text-size-adjust: none;
-    color: #fff;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Prompt', sans-serif;
-}
-
-p {
-    font-family: "Gentium Basic";
-    color: rgba(255, 255, 255, 0.7);
 }
 
 footer, header, nav, section, main {
     display: block;
 }
 
-body {
-    line-height: 1;
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF;
+    font-family: var(--primaryFont);
+}
+
+p {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--secondaryFont);
 }
 
 ol, ul {
     list-style: none;
 }
 
-blockquote, q{
+blockquote, q {
     quotes: none;
 }
 
@@ -93,3 +102,9 @@ img {
     width: 1280px;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 1080px) {}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 480px) {}
