@@ -15,7 +15,6 @@ export class OurCreatorsComponent implements OnInit {
     {
       'title': 'GAMING',
       'titleColor': '#FFFFFF',
-      'titleFontSize': '55px',
       'bgColor': '#21169A',
       'bgImage': '../../../assets/OurCreators_Gaming_bg-image.png',
       'bgIcon': '../../../assets/OurCreators_Gaming_bg-icon.png'
@@ -23,7 +22,6 @@ export class OurCreatorsComponent implements OnInit {
     {
       'title': 'ENTERTAINMENT MUSIC AND POP CULTURE',
       'titleColor': '#FFFFFF',
-      'titleFontSize': '40px',
       'bgColor': '#DB5352',
       'bgImage': '../../../assets/OurCreators_Entertainment_bg-image.png',
       'bgIcon': '../../../assets/OurCreators_Entertainment_bg-icon.png'
@@ -31,7 +29,6 @@ export class OurCreatorsComponent implements OnInit {
     {
       'title': 'FAMILY TWEEN & KIDS',
       'titleColor': '#FFFFFF',
-      'titleFontSize': '48px',
       'bgColor': '#4A104A',
       'bgImage': '../../../assets/OurCreators_Family_bg-image.png',
       'bgIcon': '../../../assets/OurCreators_Family_bg-icon.png'
@@ -39,7 +36,6 @@ export class OurCreatorsComponent implements OnInit {
     {
       'title': 'TRAVEL',
       'titleColor': '#FFFFFF',
-      'titleFontSize': '55px',
       'bgColor': '#71BB0D',
       'bgImage': '../../../assets/OurCreators_Travel_bg-image.png',
       'bgIcon': '../../../assets/OurCreators_Travel_bg-icon.png'
@@ -47,7 +43,6 @@ export class OurCreatorsComponent implements OnInit {
     {
       'title': 'SPORTS',
       'titleColor': '#030414',
-      'titleFontSize': '55px',
       'bgColor': '#F9F7FB',
       'bgImage': '../../../assets/OurCreators_Sports_bg-image.png',
       'bgIcon': '../../../assets/OurCreators_Sports_bg-icon.png'

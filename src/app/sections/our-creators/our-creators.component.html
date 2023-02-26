@@ -6,21 +6,20 @@
     <p>
       Our creators are professionals at the top of their game in relevant categories and topics that tightly align with your brands needs.
     </p>
-    <div class="flickity-main" #carousel>
-      <div class="flickity-cell"
-        *ngFor="let cell of carouselSlides"
-        [ngStyle]="{ 'background-color' : cell.bgColor }">
-        <div class="bg-image"
-          [ngStyle]="{ 'background-image' : 'url('+ cell.bgImage + ')' }">
-        </div>
-        <div class="bg-icon"
-          [ngStyle]="{ 'background-image' : 'url('+ cell.bgIcon + ')' }">
-        </div>
-        <div class="title"
-          [style.color]="cell.titleColor"
-          [style.fontSize]="cell.titleFontSize">
-          {{ cell.title }}
-        </div>
+  </div>
+  <div class="flickity-main" #carousel>
+    <div class="flickity-cell"
+      *ngFor="let cell of carouselSlides"
+      [ngStyle]="{ 'background-color' : cell.bgColor }">
+      <div class="bg-image"
+        [ngStyle]="{ 'background-image' : 'url('+ cell.bgImage + ')' }">
+      </div>
+      <div class="bg-icon"
+        [ngStyle]="{ 'background-image' : 'url('+ cell.bgIcon + ')' }">
+      </div>
+      <div class="title"
+        [style.color]="cell.titleColor">
+        {{ cell.title }}
       </div>
     </div>
   </div>
