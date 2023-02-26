@@ -1,12 +1,14 @@
-<section class="etg-full-services">
+<section class="etg-services-and-capabilities">
   <div class="etg-container">
     <div class="etg-row">
-      <h2 [ngClass]="{ 'active' : servicesActive }"
+      <h2 class="first-title"
+        [ngClass]="{ 'active' : servicesActive }"
         (click)="selectList('services')">
         OUR FULL-SERVICE CORE COMPETENCIES
       </h2>
       <hr>
-      <h3 [ngClass]="{ 'active' : capabilitiesActive }"
+      <h3 class="second-title"
+        [ngClass]="{ 'active' : capabilitiesActive }"
         (click)="selectList('capabilities')">
         OUR VERTICAL CAPABILITIES
       </h3>

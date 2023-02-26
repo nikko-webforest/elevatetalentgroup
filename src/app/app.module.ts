@@ -10,7 +10,7 @@ import { FooterComponent } from './elements/footer/footer.component';
 import { BannerComponent } from './sections/banner/banner.component';
 import { StatisticsComponent } from './sections/statistics/statistics.component';
 import { OurCreatorsComponent } from './sections/our-creators/our-creators.component';
-import { FullServicesComponent } from './sections/full-services/full-services.component';
+import { ServicesAndCapabilitiesComponent } from './sections/services-and-capabilities/services-and-capabilities.component';
 import { KeyToSuccessComponent } from './sections/key-to-success/key-to-success.component';
 import { PartnersOnlyComponent } from './sections/partners-only/partners-only.component';
 import { ProcessComponent } from './sections/process/process.component';
@@ -25,7 +25,7 @@ import { ProcessComponent } from './sections/process/process.component';
     BannerComponent,
     StatisticsComponent,
     OurCreatorsComponent,
-    FullServicesComponent,
+    ServicesAndCapabilitiesComponent,
     KeyToSuccessComponent,
     PartnersOnlyComponent,
     ProcessComponent,

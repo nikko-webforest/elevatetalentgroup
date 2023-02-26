@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-full-services',
-  templateUrl: './full-services.component.html',
-  styleUrls: ['./full-services.component.scss'],
+  selector: 'app-services-and-capabilities',
+  templateUrl: './services-and-capabilities.component.html',
+  styleUrls: ['./services-and-capabilities.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class FullServicesComponent implements OnInit {
+export class ServicesAndCapabilitiesComponent implements OnInit {
 
   servicesList: any = [
     'Strategy and Brand Development',

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FullServicesComponent } from './full-services.component';
+import { FullServicesComponent } from './services-and-capabilities.component';
 
 describe('FullServicesComponent', () => {
   let component: FullServicesComponent;
