@@ -1,10 +1,14 @@
-<!-- <app-header></app-header> -->
-<!-- <app-banner></app-banner> -->
-<!-- <app-our-creators></app-our-creators> -->
-<!-- <app-section-navigator></app-section-navigator> -->
-<!-- <app-statistics></app-statistics> -->
-<!-- <app-process></app-process> -->
-<!-- <app-services-and-capabilities></app-services-and-capabilities> -->
-<!-- <app-key-to-success></app-key-to-success> -->
-<!-- <app-partners-only></app-partners-only> -->
+<div #header>
+    <app-header [showHeaderBackground]="showHeaderBackground"></app-header>
+</div>
+<app-banner></app-banner>
+<div #creators>
+    <app-our-creators [animateCreatorsEl]="animateCreatorsEl"></app-our-creators>
+</div>
+<app-section-navigator></app-section-navigator>
+<app-statistics></app-statistics>
+<app-process></app-process>
+<app-services-and-capabilities></app-services-and-capabilities>
+<app-key-to-success></app-key-to-success>
+<app-partners-only></app-partners-only>
 <app-footer></app-footer>

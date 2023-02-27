@@ -1,13 +1,13 @@
-<section class="etg-our-creators">
+<section class="etg-our-creators" >
   <div class="etg-container">
-    <h2>
+    <h2 [class.animate]="animateCreatorsEl">
       OUR CREATORS
     </h2>
-    <p>
+    <p [class.animate]="animateCreatorsEl">
       Our creators are professionals at the top of their game in relevant categories and topics that tightly align with your brands needs.
     </p>
   </div>
-  <div class="flickity-main" #carousel>
+  <div class="flickity-main" #carousel [class.animate]="animateCreatorsEl">
     <div class="flickity-cell"
       *ngFor="let cell of carouselSlides"
       [ngStyle]="{ 'background-color' : cell.bgColor }">

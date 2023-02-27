@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit, Input } from '@angular/core';
 import * as Flickity from 'flickity';
 
 @Component({
@@ -9,6 +9,7 @@ import * as Flickity from 'flickity';
 })
 export class OurCreatorsComponent implements OnInit {
 
+  @Input() animateCreatorsEl: any;
   carousel: any | undefined;
   carouselMain: any | undefined;
   carouselSlides: any = [

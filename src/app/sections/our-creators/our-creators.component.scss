@@ -24,6 +24,13 @@
       letter-spacing: 0.02em;
       width: max-content;
       margin: 0 0 15px;
+      position: relative;
+      bottom: 0px;
+      opacity: 0;
+      &.animate {
+        animation: reveal-up 0.45s normal forwards ease-in-out;
+      }
+      
 
       @media only screen and (max-width: 1080px) {
         font-size: 63px;
@@ -52,6 +59,12 @@
       max-width: 800px;
       width: 100%;
       margin: 0 0 90px;
+      position: relative;
+      bottom: 0px;
+      opacity: 0;
+      &.animate {
+        animation: reveal-up 0.5s normal forwards ease-in-out;
+      }
 
       @media only screen and (max-width: 1080px) {
         font-size: 22px;
@@ -73,7 +86,11 @@
 
   .flickity-main {
     outline: none;
-
+    position: relative;
+    right: -100vw;
+    &.animate {
+      animation: reveal-left 1s normal forwards ease-in-out;
+    }
     .flickity-viewport {
       .flickity-slider {
         --slider-gap: 45px;
@@ -310,5 +327,28 @@
         }
       }
     }
+  }
+}
+
+
+@keyframes reveal-up {
+  0% {
+      bottom: -200px;
+      opacity: 0;
+  }
+  100% {
+      bottom: 0px;
+      opacity: 1;
+  }
+}
+
+@keyframes reveal-left {
+  0% {
+      right: -100vw;
+      opacity: 0;
+  }
+  100% {
+    right: 0px;
+      opacity: 1;
   }
 }

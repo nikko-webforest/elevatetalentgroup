@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +9,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
 
+  @Input() showHeaderBackground: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {

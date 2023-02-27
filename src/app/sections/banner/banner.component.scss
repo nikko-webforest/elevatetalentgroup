@@ -18,6 +18,11 @@
         z-index: 2;
         background-size: cover;
     }
+
+    app-primary-btn {
+        position: relative;
+        z-index: 3;
+    }
     
     .section-content {
         height: 100%;
