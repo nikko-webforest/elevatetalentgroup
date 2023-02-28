@@ -1,7 +1,12 @@
 .etg-collab {
   position: relative;
   height: 100vh;
-  padding: 165px 25px 25px;
+  padding: 165px 30px 50px;
+
+  @media only screen and (max-width: 1080px) {
+    height: unset;
+    padding: 80px 30px 50px;
+  }
 
   @keyframes fade-up {
     from {
@@ -29,7 +34,7 @@
 
   .etg-container {
     position: relative;
-    max-width: 1440px;
+    max-width: 1280px;
     width: 100%;
     margin: 0 auto;
 
@@ -40,6 +45,20 @@
       .etg-col {
         max-width: 815px;
         width: 100%;
+
+        @media only screen and (max-width: 1080px) {
+          max-width: 615px;
+        }
+
+        @media only screen and (max-width: 768px) {
+          font-size: 75px;
+          max-width: 100%;
+          width: 80%;
+        }
+
+        @media only screen and (max-width: 480px) {
+          font-size: 66px;
+        }
 
         h2 {
           color: #FFFFFF;
@@ -52,6 +71,19 @@
           margin: 0 0 45px;
           animation: fade-up 1s ease-in-out;
           animation-delay: 100ms;
+
+          @media only screen and (max-width: 1080px) {
+            font-size: 100px;
+            margin: 0 0 20px;
+          }
+
+          @media only screen and (max-width: 768px) {
+            font-size: 75px;
+          }
+
+          @media only screen and (max-width: 480px) {
+            font-size: 66px;
+          }
         }
 
         h4 {
@@ -67,6 +99,21 @@
           margin: 0 0 40px 125px;
           animation: fade-up 1s ease-in-out;
           animation-delay: 200ms;
+
+          @media only screen and (max-width: 1080px) {
+            font-size: 30px;
+            margin: 0 0 30px 80px;
+          }
+
+          @media only screen and (max-width: 768px) {
+            font-size: 20px;
+            margin: 0 0 20px 50px;
+          }
+
+          @media only screen and (max-width: 480px) {
+            font-size: 16px;
+            margin: 0 0 15px 30px;
+          }
         }
 
         p {
@@ -81,12 +128,44 @@
           margin: 0 0 70px 125px;
           animation: fade-up 1s ease-in-out;
           animation-delay: 300ms;
+
+          @media only screen and (max-width: 1080px) {
+            font-size: 20px;
+            margin: 0 0 30px 80px;
+          }
+
+          @media only screen and (max-width: 768px) {
+            font-size: 16px;
+            margin: 0 0 20px 50px;
+          }
         }
 
         .etg-btn-primary {
+          font-size: 20px;
+          max-width: unset;
+          min-width: unset;
+          width: max-content;
+          gap: 0 24px;
           margin: 0 150px 0 auto;
+          padding: 20px 48px;
           animation: fade-up 1s ease-in-out;
           animation-delay: 400ms;
+
+          @media only screen and (max-width: 1080px) {
+            font-size: 18px;
+            gap: 0 15px;
+            margin: 0 100px 0 auto;
+            padding: 15px 30px;
+          }
+  
+          @media only screen and (max-width: 768px) {
+            font-size: 16px;
+            margin: 0 0 0 50px;
+          }
+  
+          @media only screen and (max-width: 480px) {
+            font-size: 14px;
+          }
         }
       }
     }

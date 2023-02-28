@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-banner',
-  templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss'],
+  selector: 'app-contact-us',
+  templateUrl: './contact-us.component.html',
+  styleUrls: ['./contact-us.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class BannerComponent implements OnInit {
+export class ContactUsComponent implements OnInit {
 
   constructor() { }
 

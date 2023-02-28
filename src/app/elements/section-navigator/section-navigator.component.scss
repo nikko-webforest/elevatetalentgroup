@@ -1,11 +1,23 @@
 .etg-section-navigator {
   position: fixed;
   z-index: 9999;
-  left: 100px;
+  left: 10px;
   bottom: 100px;
   max-width: 60px;
   min-width: 60px;
   width: 100%;
+
+  @media only screen and (min-width: 1440px) {
+    left: calc( 50% - (1280px / 2) - 150px );
+  }
+
+  @media only screen and (max-width: 1080px) {
+    bottom: 50px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    bottom: 30px;
+  }
 
   .etg-wrap {
     display: flex;
@@ -13,6 +25,18 @@
     justify-content: center;
     align-items: center;
     gap: 35px;
+
+    @media only screen and (max-width: 1080px) {
+      width: 30px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      width: 25px;
+    }
+
+    @media only screen and (max-width: 480px) {
+      width: 20px;
+    }
 
     .title {
       color: rgba(255, 255, 255, 0.2);
@@ -24,6 +48,14 @@
       line-height: 1em;
       min-width: 300px;
       width: 100%;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 16px;
+      }
+
+      @media only screen and (max-width: 480px) {
+        font-size: 14px;
+      }
 
       &.animate {
         position: absolute;
@@ -64,15 +96,24 @@
       &.prev-btn,
       &.next-btn {
         .etg-svg {
+          width: 39px;
           cursor: pointer;
 
-          &.svg-icon-angle-up {
-
+          @media only screen and (max-width: 1440px) {
+            width: 35px;
           }
 
-          &.svg-icon-angle-down {
-
+          @media only screen and (max-width: 1080px) {
+            width: 25px;
           }
+
+          @media only screen and (max-width: 768px) {
+            width: 20px;
+          }
+
+          &.svg-icon-angle-up {}
+
+          &.svg-icon-angle-down {}
         }
 
         &:hover {
@@ -92,6 +133,22 @@
       width: 100%;
       height: var(--font-size);
 
+      @media only screen and (max-width: 1440px) {
+        --font-size: 18px;
+      }
+
+      @media only screen and (max-width: 1080px) {
+        --font-size: 16px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        --font-size: 14px;
+      }
+
+      @media only screen and (max-width: 480px) {
+        --font-size: 12px;
+      }
+
       .counter-item {
         color: rgba(255, 255, 255, 0.2);
         font-family: var(--primaryFont);
@@ -110,7 +167,7 @@
           font-family: inherit;
           font-style: normal;
           font-weight: 800;
-          font-size: 20px;
+          font-size: var(--font-size);
           line-height: 1em;
           letter-spacing: 0.1em;
           display: block;
@@ -139,6 +196,7 @@
         }
 
         &.curr {
+          font-size: calc(var(--font-size) + 2px);
           opacity: 1;
           transform: translateY(0px);
         }

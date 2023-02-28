@@ -13,7 +13,8 @@
             <div class="steps-wrap">
               <div class="steps-item"
                 *ngFor="let item of processStepsList; let i = index;"
-                [class.active]="i == activeProcessIndex">
+                [class.active]="i == activeProcessIndex"
+                [id]="i">
                 <span class="counter"
                   [innerText]="item.count">
                 </span>

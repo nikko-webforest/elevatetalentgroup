@@ -8,13 +8,14 @@ import { PrimaryBtnComponent } from './elements/primary-btn/primary-btn.componen
 import { SectionNavigatorComponent } from './elements/section-navigator/section-navigator.component';
 import { FooterComponent } from './elements/footer/footer.component';
 import { BannerComponent } from './sections/banner/banner.component';
+import { CollabComponent } from './sections/collab/collab.component';
 import { StatisticsComponent } from './sections/statistics/statistics.component';
 import { OurCreatorsComponent } from './sections/our-creators/our-creators.component';
 import { ServicesAndCapabilitiesComponent } from './sections/services-and-capabilities/services-and-capabilities.component';
 import { KeyToSuccessComponent } from './sections/key-to-success/key-to-success.component';
 import { PartnersOnlyComponent } from './sections/partners-only/partners-only.component';
 import { ProcessComponent } from './sections/process/process.component';
-import { CollabComponent } from './sections/collab/collab.component';
+import { ContactUsComponent } from './sections/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,14 @@ import { CollabComponent } from './sections/collab/collab.component';
     SectionNavigatorComponent,
     FooterComponent,
     BannerComponent,
-    StatisticsComponent,
+    CollabComponent,
     OurCreatorsComponent,
+    StatisticsComponent,
+    ProcessComponent,
     ServicesAndCapabilitiesComponent,
     KeyToSuccessComponent,
     PartnersOnlyComponent,
-    ProcessComponent,
-    CollabComponent
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,

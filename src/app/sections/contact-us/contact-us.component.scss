@@ -1,0 +1,70 @@
+.etg-contact-us {
+  position: relative;
+  padding: 130px 25px 25px;
+  height: 100vh;
+  overflow: hidden;
+
+  .etg-container {
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    h2 {
+      color: #FFFFFF;
+      font-family: var(--primaryFont);
+      font-style: normal;
+      font-weight: 900;
+      font-size: 115px;
+      line-height: 1em;
+      letter-spacing: 0.02em;
+      margin: 0 0 30px;
+    }
+    
+    h5 {
+      color: #FFFFFF;
+      font-family: var(--primaryFont);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      text-transform: uppercase;
+      line-height: 1.5em;
+      letter-spacing: 0.06em;
+      margin: 0 0 50px;
+    }
+
+    .etg-row {
+      .etg-col {
+        .etg-form-contact {
+          .etg-form-field-group {
+            display: flex;
+            justify-content: flex-start;
+            
+            p {
+              color: rgba(255, 255, 255, 0.7);
+              font-family: var(--secondaryFont);
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 1em;
+            }
+
+            .etg-form-field-input {
+              display: flex;
+              justify-content: flex-start;
+
+              &[type=radio] {
+                accent-color: #FFFFFF;
+                -webkit-appearance: auto;
+                -moz-appearance: auto;
+                appearance: auto;
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

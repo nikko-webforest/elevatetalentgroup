@@ -30,10 +30,11 @@ export class SectionNavigatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.totalSectionCount = this.sectionList.length;
+    this.updateSectionCount();
   }
 
   ngAfterViewInit(): void {
-    this.updateSectionCount();
+    
   }
 
   counter(i: number) {
@@ -55,7 +56,7 @@ export class SectionNavigatorComponent implements OnInit {
     }
   }
 
-  prevSection(title: string) {
+  prevSection() {
     if( this.currSectionCount == 1 ){
       this.currSectionCount = this.totalSectionCount;
     }
@@ -63,10 +64,10 @@ export class SectionNavigatorComponent implements OnInit {
       this.currSectionCount -= 1;
     }
     this.updateSectionCount();
-    console.log('Prev Btn is Clicked = '+title);
+    console.log('Prev Btn is Clicked');
   }
 
-  nextSection(title: string) {
+  nextSection() {
     if( this.currSectionCount == this.totalSectionCount ){
       this.currSectionCount = 1;
     }
@@ -74,7 +75,7 @@ export class SectionNavigatorComponent implements OnInit {
       this.currSectionCount += 1;
     }
     this.updateSectionCount();
-    console.log('Next Btn is Clicked = '+title);
+    console.log('Next Btn is Clicked');
   }
 
 }

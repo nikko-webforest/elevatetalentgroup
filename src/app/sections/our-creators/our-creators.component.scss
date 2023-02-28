@@ -2,15 +2,16 @@
 
 .etg-our-creators {
   height: 100vh;
-  padding: 130px 25px 0;
+  padding: 130px 30px 50px;
   overflow: hidden;
 
   @media only screen and (max-width: 1080px) {
-    padding: 80px 25px 0;
+    height: unset;
+    padding: 80px 30px 50px;
   }
 
   .etg-container {
-    max-width: 1440px;
+    max-width: 1280px;
     width: 100%;
     margin: 0 auto;
 
@@ -94,13 +95,16 @@
     .flickity-viewport {
       .flickity-slider {
         --slider-gap: 45px;
-        width: calc(100% + (1040px / 2));
-        margin: 0 0 0 calc(50% - (1440px / 2));
+        width: calc(100% + (1380px / 2));
+        margin: 0 0 0 calc(50% - (1280px / 2));
+
+        @media only screen and (max-width: 1440px) {
+          width: 100%;
+          margin: 0;
+        }
 
         @media only screen and (max-width: 1080px) {
           --slider-gap: 21px;
-          width: 100%;
-          margin: 0;
         }
 
         .flickity-cell {

@@ -1,12 +1,12 @@
 .etg-services-and-capabilities {
   position: relative;
   height: 100vh;
-  padding: 170px 25px 25px;
+  padding: 170px 30px 50px;
   overflow: hidden;
 
   @media only screen and (max-width: 1080px) {
     height: unset;
-    padding: 50px 25px 25px;
+    padding: 50px 30px 50px;
   }
 
   @keyframes zoom-out {
@@ -41,7 +41,7 @@
   .etg-container {
     position: relative;
     z-index: 2;
-    max-width: 1440px;
+    max-width: 1280px;
     width: 100%;
     height: 100%;
     margin: 0 auto;

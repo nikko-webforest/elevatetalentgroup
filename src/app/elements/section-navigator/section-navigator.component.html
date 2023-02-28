@@ -10,7 +10,7 @@
       [class.animate-now]="prevSectionCount == (count+1) || currSectionCount == (count+1) || nextSectionCount == (count+1)">
     </div>
     <button class="prev-btn"
-      (click)="prevSection('Test Title');">
+      (click)="prevSection();">
       <svg class="etg-svg svg-icon-angle-up" width="39" height="21" viewBox="0 0 39 21" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 20L19.5 2L37.5 20" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round"/>
       </svg>
@@ -33,7 +33,7 @@
       </div>
     </div>
     <button class="next-btn"
-      (click)="nextSection('Test Title');">
+      (click)="nextSection();">
       <svg class="etg-svg svg-icon-angle-down" width="39" height="21" viewBox="0 0 39 21" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 1.5L19.5 19.5L37.5 1.5" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round"/>
       </svg>

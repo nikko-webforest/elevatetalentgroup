@@ -1,102 +1,195 @@
 .etg-banner {
-    background: url('../../../assets/banner-asset-primary.jpg');
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	background: url('../../../assets/banner-asset-primary.jpg') center/cover;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	padding: 145px 30px 50px;
 
-    &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        background: url('../../../assets/banner-asset-isolated.png');
-        z-index: 2;
-        background-size: cover;
-    }
+	@media only screen and (max-width: 1080px) {
+		height: unset;
+		padding: 80px 30px 50px;
+	}
 
-    app-primary-btn {
-        position: relative;
-        z-index: 3;
-    }
-    
-    .section-content {
-        height: 100%;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        bottom: 0px;
-        animation: reveal-up 1s linear;
-        opacity: 1;
-        h1 {
-            font-weight: 900;
-            font-size: 200px;
-            line-height: 150px;
-            position: relative;
-            span {
-                
-                --bg-size: 400%;
-                --color-one: hsl(44 47% 74%);
-                --color-two: hsl(255 26% 66%);
-                --color-three: hsl(348 30% 57%);
-                background: linear-gradient(
-                                90deg,
-                                var(--color-one),
-                                var(--color-two),
-                                var(--color-three)
-                            ) 0 0 / var(--bg-size) 100%;
-                color: transparent;
-                -webkit-background-clip: text;
-                background-clip: text;
-                display: block;
-                animation: move-bg 20s infinite linear;
-                position: relative;
-                z-index: 3;
-            }
-            &.under {
-                z-index: 1;
-            }
-            &.above {
-                z-index: 3;
-            }
-        }
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		display: block;
+		background: url('../../../assets/banner-asset-isolated.png') center/cover;
+		width: 100%;
+		height: 100%;
+	}
 
-        p {
-            font-size: 32px;
-            line-height: 47px;
-            letter-spacing: 2px;
-            width: calc(70% + 100px);
-            padding: 50px;
-        }
-    }
+	app-primary-btn {
+		position: relative;
+		z-index: 3;
+	}
+	
+	.etg-container {
+		position: relative;
+		bottom: 0;
+		max-width: 1280px;
+		width: 100%;
+		margin: 0 auto;
+		animation: reveal-up 1s linear;
+		opacity: 1;
+
+		&:nth-child(1) {
+			margin: 0 auto 45px;
+
+			@media only screen and (max-width: 780px) {
+				margin: 0 auto 30px;
+			}
+
+			@media only screen and (max-width: 480px) {
+				margin: 0 auto 25px;
+			}
+
+			h1 {
+				font-weight: 900;
+				font-size: 200px;
+				line-height: 0.75em;
+				position: relative;
+				max-width: 1050px;
+				width: 100%;
+
+				@media only screen and (max-width: 1080px) {
+					font-size: 125px;
+					line-height: 0.8em;
+					max-width: 650px;
+				}
+
+				@media only screen and (max-width: 780px) {
+					font-size: 75px;
+					max-width: 410px;
+				}
+
+				@media only screen and (max-width: 480px) {
+					font-size: 66px;
+					max-width: 350px;
+				}
+
+				span {
+					--bg-size: 400%;
+					--color-one: hsl(44 47% 74%);
+					--color-two: hsl(255 26% 66%);
+					--color-three: hsl(348 30% 57%);
+					color: transparent;
+					display: block;
+					background:
+						linear-gradient(
+							90deg,
+							var(--color-one),
+							var(--color-two),
+							var(--color-three)
+						)
+						0 0 / var(--bg-size) 100%;
+					-webkit-background-clip: text;
+					background-clip: text;
+					position: relative;
+					z-index: 3;
+					animation: move-bg 20s infinite linear;
+				}
+
+				&.under {
+					z-index: 1;
+				}
+
+				&.above {
+					z-index: 3;
+				}
+			}
+		}
+
+		&:nth-child(2) {
+			z-index: 3;
+			padding: 0 0 0 50px;
+
+			@media only screen and (max-width: 768px) {
+				padding: 0 0 0 40px;
+			}
+
+			@media only screen and (max-width: 480px) {
+				padding: 0 0 0 20px;
+			}
+
+			p {
+				font-size: 32px;
+				line-height: 1.5em;
+				letter-spacing: 2px;
+				max-width: 855px;
+				width: 100%;
+				margin: 0 0 70px;
+
+				@media only screen and (max-width: 1080px) {
+					font-size: 24px;
+					max-width: 740px;
+					margin: 0 0 50px;
+				}
+
+				@media only screen and (max-width: 768px) {
+					font-size: 20px;
+					max-width: 740px;
+					margin: 0 0 35px;
+				}
+
+				@media only screen and (max-width: 480px) {
+					font-size: 16px;
+					max-width: 740px;
+					margin: 0 0 25px;
+				}
+			}
+
+			.etg-btn-primary {
+				font-size: 20px;
+				max-width: unset;
+				min-width: unset;
+				width: max-content;
+				gap: 0 24px;
+				padding: 20px 48px;
+
+				@media only screen and (max-width: 1080px) {
+					font-size: 18px;
+					gap: 0 15px;
+					padding: 15px 30px;
+				}
+
+				@media only screen and (max-width: 768px) {
+					font-size: 16px;
+				}
+
+				@media only screen and (max-width: 480px) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
 }
 
 
 @media (prefers-reduced-motion: no-preference) {
-    .boujee-text {
-      animation: move-bg 8s linear infinite;
-    }
-    @keyframes move-bg {
-      to {
-        background-position: var(--bg-size) 0;
-      }
-    }
-  }
+	.boujee-text {
+		animation: move-bg 8s linear infinite;
+	}
 
-  @keyframes reveal-up {
-    0% {
-        bottom: -100px;
-        opacity: 0;
-    }
-    100% {
-        bottom: 0px;
-        opacity: 1;
-    }
-  }
-  
+	@keyframes move-bg {
+		to {
+			background-position: var(--bg-size) 0;
+		}
+	}
+}
+
+@keyframes reveal-up {
+	0% {
+		bottom: -100px;
+		opacity: 0;
+	}
+
+	100% {
+		bottom: 0px;
+		opacity: 1;
+	}
+} 
