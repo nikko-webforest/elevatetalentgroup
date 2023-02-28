@@ -22,16 +22,16 @@ export class StatisticsComponent implements AfterViewInit {
       'svg': '24',
     },
     {
-      'title': '7 Creators with audiences over 5 Million',
-      'svg': '7',
+      'title': '9 Targeted Micro creators under 100k ',
+      'svg': '9',
     },
     {
-      'title': '60 Creators with audiences over  1 Million',
-      'svg': '60',
+      'title': '18-24 We have a collective audience of over 100 million',
+      'svg': '18',
     },
     {
-      'title': '24 Creators with audiences over 100K',
-      'svg': '24',
+      'title': '35-54 We have a collective audiences of 72 million in the 35-54 demo',
+      'svg': '35',
     }
   ];
   activeStat: any = 0;

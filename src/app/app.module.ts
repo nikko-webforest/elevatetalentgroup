@@ -14,6 +14,7 @@ import { ServicesAndCapabilitiesComponent } from './sections/services-and-capabi
 import { KeyToSuccessComponent } from './sections/key-to-success/key-to-success.component';
 import { PartnersOnlyComponent } from './sections/partners-only/partners-only.component';
 import { ProcessComponent } from './sections/process/process.component';
+import { CollabComponent } from './sections/collab/collab.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProcessComponent } from './sections/process/process.component';
     KeyToSuccessComponent,
     PartnersOnlyComponent,
     ProcessComponent,
+    CollabComponent
   ],
   imports: [
     BrowserModule,
