@@ -12,11 +12,15 @@ export class AppComponent {
   @ViewChild('creators') divCreators!: ElementRef;
   @ViewChild('collab') divCollab!: ElementRef;
   @ViewChild('statistics') divStats!: ElementRef;
-  
+  @ViewChild('latest') divLatest!: ElementRef;
+  @ViewChild('fullservice') divFullservice!: ElementRef;
+
   showHeaderBackground: boolean = false;
   animateCreatorsEl: any = null;
   animateCollab: any = null;
   animateStats: any = null;
+  animateLatest: any = null;
+  animateFullService: any = null;
 
   @HostListener('document:scroll', ['$event'])
   
@@ -34,6 +38,12 @@ export class AppComponent {
     const statistics = this.divStats.nativeElement.getBoundingClientRect();
     this.animateStats = ((window.innerHeight/2) >  statistics.top ) ? true : false;
 
+    const latest = this.divStats.nativeElement.getBoundingClientRect();
+    this.animateLatest = ((window.innerHeight/2) >  latest.top && latest.top > 0) ? true : false;
+
+    const fullService = this.divFullservice.nativeElement.getBoundingClientRect();
+    this.animateFullService = ((window.innerHeight/2) >  fullService.top && fullService.top > 0) ? true : false;
+    
   }
 
 }

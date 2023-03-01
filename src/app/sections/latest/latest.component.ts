@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 // @ts-ignore
 import Player from '@vimeo/player';
 
@@ -9,10 +9,19 @@ import Player from '@vimeo/player';
 })
 export class LatestComponent implements OnInit {
 
+  @Input() animateLatest: any = false;
   player: any;
   video: any;
   isReady: boolean = false;
   isPlaying: boolean = false;
+
+  @HostListener('document:scroll', ['$event'])
+  
+  public onViewportScroll() {
+    if(this.isPlaying && !this.animateLatest){
+      this.play();
+    }
+  }
 
   constructor() { }
 

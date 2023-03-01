@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, HostListener  } from '@angular/core';
 // @ts-ignore
 import Player from '@vimeo/player';
 @Component({
@@ -8,11 +8,19 @@ import Player from '@vimeo/player';
 })
 export class FullServiceComponent implements OnInit {
 
-  
+  @Input() animateFullService: any = false;
   player: any;
   video: any;
   isReady: boolean = false;
   isPlaying: boolean = false;
+
+  @HostListener('document:scroll', ['$event'])
+  
+  public onViewportScroll() {
+    if(this.isPlaying && !this.animateFullService){
+      this.play();
+    }
+  }
 
   constructor() { }
 
