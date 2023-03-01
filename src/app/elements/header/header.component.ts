@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-header',
@@ -11,9 +12,14 @@ export class HeaderComponent implements OnInit {
 
   @Input() showHeaderBackground: boolean = false;
   
-  constructor() { }
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
+
+  }
+
+  clickNavBtn() {
+    this.sharedService.sendClickEvent();
   }
 
 }

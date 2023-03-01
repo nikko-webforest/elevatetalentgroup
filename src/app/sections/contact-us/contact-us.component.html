@@ -1,29 +1,126 @@
 <section class="etg-contact-us"
   [class.toggle-show]="showContact">
   <div class="etg-container">
-    <h2>
+    <h2 class="animate-init"
+      data-animate="fade-in-right-in" data-animate-duration="1000" data-animate-delay="0">
       HI THERE,
     </h2>
-    <h5>
+    <h5 class="animate-init"
+      data-animate="fade-in-right-in" data-animate-duration="1000" data-animate-delay="100">
       WE'RE GLAD YOUR HERE. LET'S GET GOING
     </h5>
-    <button class="etg-close-btn"
+    <button class="etg-close-btn animate-init"
+      data-animate="fade-in" data-animate-duration="1000" data-animate-delay="200"
       (click)="closeContact()">
       <svg class="etg-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.4 24L0 21.6L9.6 12L0 2.4L2.4 0L12 9.6L21.6 0L24 2.4L14.4 12L24 21.6L21.6 24L12 14.4L2.4 24Z" fill="white"/>
+        <path d="M2.4 24L0 21.6L9.6 12L0 2.4L2.4 0L12 9.6L21.6 0L24 2.4L14.4 12L24 21.6L21.6 24L12 14.4L2.4 24Z" fill="#FFFFFF"/>
       </svg>        
     </button>
     <div class="etg-row">
       <div class="etg-col">
+        <form class="contact-form"
+          method="POST"
+          action="">
+          <div class="contact-form-group role animate-init"
+            data-animate="fade-in-right-in" data-animate-duration="1000" data-animate-delay="300">
+            <p>
+              Are you a creator or brand?
+            </p>
+            <label for="creator">
+              <input type="radio"
+                class="contact-form-input"
+                id="creator"
+                name="radio"
+                [(ngModel)]="contactRole"
+                value="creator"
+                required/>
+                Creator
+            </label>
+            <label for="advertiser">
+              <input type="radio"
+                class="contact-form-input"
+                id="advertiser"
+                name="radio"
+                [(ngModel)]="contactRole"
+                value="advertiser"
+                required/>
+                Advertiser
+            </label>
+          </div>
+          <div class="contact-form-group fname animate-init"
+            data-animate="fade-in-right-in" data-animate-duration="1000" data-animate-delay="400">
+            <div class="count">01</div>
+            <div class="">
+              <label>Your first name:</label>
+              <input type="text"
+                class="contact-form-input"
+                name="firstName"
+                [(ngModel)]="contactFname"
+                placeholder="Type your full name"
+                required/>
+            </div>
+          </div>
+          <div class="contact-form-group lname animate-init"
+            data-animate="fade-in-right-in" data-animate-duration="1000" data-animate-delay="500">
+            <div class="count">02</div>
+            <div class="">
+              <label>Your last name:</label>
+              <input type="text"
+                class="contact-form-input"
+                name="lastName"
+                [(ngModel)]="contactLname"
+                placeholder="Type your last name"
+                required/>
+            </div>
+          </div>
+          <div class="contact-form-group email animate-init"
+            data-animate="fade-in-right-in" data-animate-duration="1000" data-animate-delay="600">
+            <div class="count">03</div>
+            <div class="">
+              <label>Your email:</label>
+              <input type="email"
+                class="contact-form-input"
+                name="email"
+                [(ngModel)]="contactEmail"
+                placeholder="example@email.com"
+                required/>
+            </div>
+          </div>
+          <div class="contact-form-group submit animate-init"
+            data-animate="fade-in-right-in" data-animate-duration="1000" data-animate-delay="700">
+            <button type="submit"
+              class="contact-form-submit-btn etg-btn-primary">
+              <svg class="etg-btn-icon etg-svg" width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 3.07349L17.4544 19.5L31.0301 6.72382V15.1013H34.9088V0.5H19.3938V4.15034H28.2956L17.4544 14.353L2.73453 0.5L0 3.07349Z" fill="#EEB53B"></path>
+              </svg>
+              <div class="etg-btn-label">
+                SEND MESSAGE
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="etg-col animate-init"
+        data-animate="fade-in-top-in" data-animate-duration="1000" data-animate-delay="800">
         <h3>
           Contact Details
         </h3>
         <ul class="contact-list">
           <li class="contact-item">
-            E. <a class="contact-link" href="mailto:info@elevate-m.com" title="Contact Email">info@elevate-m.com</a>
+            E.
+            <a class="contact-link"
+              href="mailto:info@elevate-m.com"
+              title="Contact Email">
+              info@elevate-m.com
+            </a>
           </li>
           <li class="contact-item">
-            P. <a class="contact-link" href="tel:+12345678910" title="Contact Number">+1.234.567.8910</a>
+            P.
+            <a class="contact-link"
+              href="tel:+12345678910"
+              title="Contact Number">
+              +1.234.567.8910
+            </a>
           </li>
         </ul>
         <h3>

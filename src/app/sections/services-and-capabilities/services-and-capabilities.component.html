@@ -1,27 +1,40 @@
 <section class="etg-services-and-capabilities">
+  <div class="etg-background animate-init"
+    data-animate="fade-in-zoom-in" data-animate-duration="1000" data-animate-delay="0">
+  </div>
   <div class="etg-container">
     <div class="etg-row">
-      <h2 class="first-title"
-        [ngClass]="{ 'active' : servicesActive }"
-        (click)="selectList('services')">
-        OUR FULL-SERVICE CORE COMPETENCIES
-      </h2>
-      <hr>
-      <h3 class="second-title"
-        [ngClass]="{ 'active' : capabilitiesActive }"
-        (click)="selectList('capabilities')">
-        OUR VERTICAL CAPABILITIES
-      </h3>
+      <div class="animate-init"
+        data-animate="fade-in-top-in" data-animate-duration="1000" data-animate-delay="200">
+        <h2 class="first-title"
+          [ngClass]="{ 'active' : servicesActive }"
+          (click)="selectList('services')">
+          OUR FULL-SERVICE CORE COMPETENCIES
+        </h2>
+      </div>
+      <hr class="animate-init" data-animate="fade-in" data-animate-duration="1000" data-animate-delay="100">
+      <div class="animate-init"
+        data-animate="fade-in-top-in" data-animate-duration="1000" data-animate-delay="300">
+        <h3 class="second-title animate-init"
+          [ngClass]="{ 'active' : capabilitiesActive }"
+          (click)="selectList('capabilities')">
+          OUR VERTICAL CAPABILITIES
+        </h3>
+      </div>
     </div>
     <ul class="list">
-      <li class="item"
-        *ngFor="let item of itemList"
-        [innerText]="item">
+      <li class="item animate-init"
+        *ngFor="let item of itemList; let i = index;"
+        [innerText]="item"
+        data-animate="fade-in-left-in" data-animate-duration="1000" [attr.data-animate-delay]="(i * 100) + 400">
       </li>
     </ul>
-    <app-primary-btn
-      text="LET'S TALK"
-      url="toggle-contact">
-    </app-primary-btn>
+    <div class="etg-btn-animate animate-init"
+      data-animate="fade-in-top-in" data-animate-duration="1000" data-animate-delay="1000">
+      <app-primary-btn
+        text="LET'S TALK"
+        url="toggle-contact">
+      </app-primary-btn>
+    </div>
   </div>
 </section>

@@ -11,12 +11,12 @@ export class SharedService {
   constructor() { }
 
   sendClickEvent() {
+    // console.log('sendClickEvent = '+this.toggleContact);
     this.toggleContact.next(0);
-    console.log('sendClickEvent = '+this.toggleContact);
   }
 
   getClickEvent(): Observable<any> {
-    console.log('getClickEvent = '+this.toggleContact);
+    // console.log('getClickEvent = '+this.toggleContact);
     return this.toggleContact.asObservable();
   }
 }

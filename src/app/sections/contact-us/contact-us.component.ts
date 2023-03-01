@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { SharedService } from '../../shared.service';
 import { Subscription } from 'rxjs';
 
@@ -9,9 +10,17 @@ import { Subscription } from 'rxjs';
   encapsulation: ViewEncapsulation.None
 })
 export class ContactUsComponent implements OnInit {
+  
   clickEventSubscription:Subscription;
 
   public showContact: boolean = false;
+  // public showContact: boolean = true;
+  
+  contactRole: any = '';
+  contactFname: any = '';
+  contactLname: any = '';
+  contactEmail: any = '';
+
   socialMediaList: any = [
     {
       'platform': 'Instagram',
@@ -34,12 +43,32 @@ export class ContactUsComponent implements OnInit {
 
   closeContact() {
     this.showContact = false;
-    console.log('closeContact() = '+this.showContact);
+    // console.log('closeContact() = '+this.showContact);
+
+    this.animateEach();
   }
 
   toggleContact() {
     this.showContact = !this.showContact;
-    console.log('toggleContact() = '+this.showContact);
+    // console.log('toggleContact() = '+this.showContact);
+
+    this.animateEach();
+  }
+
+  animateEach() {
+    console.log('showContact = '+this.showContact);
+    if( this.showContact ) {
+      setTimeout(() => {
+        document.querySelectorAll('.etg-contact-us .animate-init').forEach((item:any, index:any) => {
+          item.classList.add('animate-now');
+        });
+      }, 1000);
+    }
+    else {
+      document.querySelectorAll('.etg-contact-us .animate-init').forEach((item:any, index:any) => {
+        item.classList.remove('animate-now');
+      });
+    }
   }
 
 }

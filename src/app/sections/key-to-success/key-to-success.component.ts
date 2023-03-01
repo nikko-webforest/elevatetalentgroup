@@ -42,27 +42,24 @@ export class KeyToSuccessComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.fadeUpEach();
     this.animateEach();
-  }
-  
-  fadeUpEach() {
-    setTimeout(() => {
-      document.querySelectorAll('.etg-row .etg-col').forEach((li: any, i:any) => {
-        setTimeout(() => {
-          li.classList.add('fade-up');
-        }, (200 * i));
-      });
-    }, 1500);
   }
 
   animateEach() {
     setTimeout(() => {
-      document.querySelectorAll('.etg-row .etg-col').forEach((li: any, i: any) => {
+      document.querySelectorAll('.etg-key-to-success .etg-container .etg-row .etg-col').forEach((item:any, index:any) => {
         setTimeout(() => {
-          li.classList.remove('default-color');
-          li.classList.add('zoom-in-out');
-        }, (1500 * i));
+          item.classList.add('fade-up');
+        }, (200 * index));
+      });
+    }, 1500);
+
+    setTimeout(() => {
+      document.querySelectorAll('.etg-key-to-success .etg-container .etg-row .etg-col').forEach((item:any, index:any) => {
+        setTimeout(() => {
+          item.classList.remove('default-color');
+          item.classList.add('zoom-in-out');
+        }, (1500 * index));
       });
     }, 3000);
   }

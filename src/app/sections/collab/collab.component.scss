@@ -8,17 +8,6 @@
     padding: 80px 30px 50px;
   }
 
-  @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   &::before {
     content: '';
     position: absolute;
@@ -69,8 +58,6 @@
           line-height: 1em;
           letter-spacing: 0.02em;
           margin: 0 0 45px;
-          animation: fade-up 1s ease-in-out;
-          animation-delay: 100ms;
 
           @media only screen and (max-width: 1080px) {
             font-size: 100px;
@@ -97,8 +84,6 @@
           letter-spacing: 0.02em;
           max-width: 580px;
           margin: 0 0 40px 125px;
-          animation: fade-up 1s ease-in-out;
-          animation-delay: 200ms;
 
           @media only screen and (max-width: 1080px) {
             font-size: 30px;
@@ -126,8 +111,6 @@
           letter-spacing: 0.02em;
           max-width: 580px;
           margin: 0 0 70px 125px;
-          animation: fade-up 1s ease-in-out;
-          animation-delay: 300ms;
 
           @media only screen and (max-width: 1080px) {
             font-size: 20px;
@@ -148,8 +131,6 @@
           gap: 0 24px;
           margin: 0 150px 0 auto;
           padding: 20px 48px;
-          animation: fade-up 1s ease-in-out;
-          animation-delay: 400ms;
 
           @media only screen and (max-width: 1080px) {
             font-size: 18px;

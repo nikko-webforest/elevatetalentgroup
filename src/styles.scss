@@ -140,6 +140,397 @@ img {
     margin: 0 auto;
 }
 
+.etg-btn-primary {
+	color: #FFFFFF;
+	font-family: var(--primaryFont);
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.5em;
+	letter-spacing: 0.06em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0 24px;
+	max-width: 270px;
+	min-width: 270px;
+	width: 100%;
+	padding: 20px;
+	border: 1px solid #D9D9D9;
+	border-radius: 100px;
+	transition:
+		background 300ms ease-in-out,
+		border-color 300ms ease-in-out;
+
+	.etg-btn-icon {
+		path {
+			&:nth-child(1) {
+				fill: #EEB53B;
+			}
+		}
+	}
+
+	.etg-btn-label {
+		width: max-content;
+	}
+
+	&:hover {
+		background: #D49715;
+		border-color: #D49715;
+
+		.etg-btn-icon {
+			path {
+				&:nth-child(1) {
+					fill: #FFFFFF;
+				}
+			}
+		}
+	}
+}
+
+/*===============*/
+/*   Animation   */
+/*===============*/
+.animate-init {
+    // default
+    transition-property: opacity, scale, rotate, transform;
+    transition-duration: 1000ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0ms;
+}
+
+[data-animate*="fade-in"] {
+    opacity: 0;
+
+    &.animate-now {
+        opacity: 1;
+    }
+}
+
+[data-animate*="fade-out"] {
+    opacity: 1;
+
+    &.animate-now {
+        opacity: 0;
+    }
+}
+
+[data-animate*="zoom-in"] {
+    scale: 0.8;
+
+    &.animate-now {
+        scale: 1;
+    }
+}
+
+[data-animate*="zoom-out"] {
+    scale: 1;
+
+    &.animate-now {
+        scale: 0.8;
+    }
+}
+
+[data-animate*="top-in"] {
+    transform: translateY(100px);
+
+    &.animate-now {
+        transform: translateY(0);
+    }
+}
+
+[data-animate*="top-out"] {
+    transform: translateY(0px);
+
+    &.animate-now {
+        transform: translateY(100px);
+    }
+}
+
+[data-animate*="right-in"] {
+    transform: translateX(-100px);
+
+    &.animate-now {
+        transform: translateX(0);
+    }
+}
+
+[data-animate*="right-out"] {
+    transform: translateX(0);
+
+    &.animate-now {
+        transform: translateX(-100px);
+    }
+}
+
+[data-animate*="bottom-in"] {
+    transform: translateY(-100px);
+
+    &.animate-now {
+        transform: translateY(0);
+    }
+}
+
+[data-animate*="bottom-out"] {
+    transform: translateY(0);
+
+    &.animate-now {
+        transform: translateY(-100px);
+    }
+}
+
+[data-animate*="left-in"] {
+    transform: translateX(100px);
+
+    &.animate-now {
+        transform: translateX(0);
+    }
+}
+
+[data-animate*="left-out"] {
+    transform: translateX(0);
+
+    &.animate-now {
+        transform: translateX(100px);
+    }
+}
+
+[data-animate*="rotate-0"] {
+    rotate: 0deg;
+
+    &.animate-now {
+        rotate: 0deg;
+    }
+}
+
+[data-animate*="rotate-45"] {
+    rotate: 0deg;
+
+    &.animate-now {
+        rotate: 45deg;
+    }
+}
+
+[data-animate*="rotate-90"] {
+    rotate: 0deg;
+
+    &.animate-now {
+        rotate: 90deg;
+    }
+}
+
+[data-animate*="rotate-135"] {
+    rotate: 0deg;
+
+    &.animate-now {
+        rotate: 135deg;
+    }
+}
+
+[data-animate*="rotate-180"] {
+    rotate: 0deg;
+
+    &.animate-now {
+        rotate: 180deg;
+    }
+}
+
+[data-animate*="rotate-225"] {
+    rotate: 0deg;
+
+    &.animate-now {
+        rotate: 225deg;
+    }
+}
+
+[data-animate*="rotate-270"] {
+    rotate: 0deg;
+
+    &.animate-now {
+        rotate: 270deg;
+    }
+}
+
+[data-animate*="rotate-315"] {
+    rotate: 0deg;
+
+    &.animate-now {
+        rotate: 315deg;
+    }
+}
+
+[data-animate*="rotate-360"] {
+    rotate: 0deg;
+
+    &.animate-now {
+        rotate: 360deg;
+    }
+}
+
+[data-animate-duration='100'] {
+    transition-duration: 100ms;
+}
+
+[data-animate-duration='200'] {
+    transition-duration: 200ms;
+}
+
+[data-animate-duration='300'] {
+    transition-duration: 300ms;
+}
+
+[data-animate-duration='400'] {
+    transition-duration: 400ms;
+}
+
+[data-animate-duration='500'] {
+    transition-duration: 500ms;
+}
+
+[data-animate-duration='600'] {
+    transition-duration: 600ms;
+}
+
+[data-animate-duration='700'] {
+    transition-duration: 700ms;
+}
+
+[data-animate-duration='800'] {
+    transition-duration: 800ms;
+}
+
+[data-animate-duration='900'] {
+    transition-duration: 900ms;
+}
+
+[data-animate-duration='1000'] {
+    transition-duration: 1000ms;
+}
+
+[data-animate-duration='1100'] {
+    transition-duration: 1100ms;
+}
+
+[data-animate-duration='1200'] {
+    transition-duration: 1200ms;
+}
+
+[data-animate-duration='1300'] {
+    transition-duration: 1300ms;
+}
+
+[data-animate-duration='1400'] {
+    transition-duration: 1400ms;
+}
+
+[data-animate-duration='1500'] {
+    transition-duration: 1500ms;
+}
+
+[data-animate-duration='1600'] {
+    transition-duration: 1600ms;
+}
+
+[data-animate-duration='1700'] {
+    transition-duration: 1700ms;
+}
+
+[data-animate-duration='1800'] {
+    transition-duration: 1800ms;
+}
+
+[data-animate-duration='1900'] {
+    transition-duration: 1900ms;
+}
+
+[data-animate-duration='2000'] {
+    transition-duration: 2000ms;
+}
+
+[data-animate-delay='0'] {
+    transition-delay: 0ms;
+}
+
+[data-animate-delay='100'] {
+    transition-delay: 100ms;
+}
+
+[data-animate-delay='200'] {
+    transition-delay: 200ms;
+}
+
+[data-animate-delay='300'] {
+    transition-delay: 300ms;
+}
+
+[data-animate-delay='400'] {
+    transition-delay: 400ms;
+}
+
+[data-animate-delay='500'] {
+    transition-delay: 500ms;
+}
+
+[data-animate-delay='600'] {
+    transition-delay: 600ms;
+}
+
+[data-animate-delay='700'] {
+    transition-delay: 700ms;
+}
+
+[data-animate-delay='800'] {
+    transition-delay: 800ms;
+}
+
+[data-animate-delay='900'] {
+    transition-delay: 900ms;
+}
+
+[data-animate-delay='1000'] {
+    transition-delay: 1000ms;
+}
+
+[data-animate-delay='1100'] {
+    transition-delay: 1100ms;
+}
+
+[data-animate-delay='1200'] {
+    transition-delay: 1200ms;
+}
+
+[data-animate-delay='1300'] {
+    transition-delay: 1300ms;
+}
+
+[data-animate-delay='1400'] {
+    transition-delay: 1400ms;
+}
+
+[data-animate-delay='1500'] {
+    transition-delay: 1500ms;
+}
+
+[data-animate-delay='1600'] {
+    transition-delay: 1600ms;
+}
+
+[data-animate-delay='1700'] {
+    transition-delay: 1700ms;
+}
+
+[data-animate-delay='1800'] {
+    transition-delay: 1800ms;
+}
+
+[data-animate-delay='1900'] {
+    transition-delay: 1900ms;
+}
+
+[data-animate-delay='2000'] {
+    transition-delay: 2000ms;
+}
+
 @media only screen and (max-width: 1440px) {}
 
 @media only screen and (max-width: 1080px) {}

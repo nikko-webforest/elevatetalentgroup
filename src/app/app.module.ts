@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HeaderComponent } from './elements/header/header.component';
 import { PrimaryBtnComponent } from './elements/primary-btn/primary-btn.component';
 import { SectionNavigatorComponent } from './elements/section-navigator/section-navigator.component';
 import { FooterComponent } from './elements/footer/footer.component';
+
 import { BannerComponent } from './sections/banner/banner.component';
 import { CollabComponent } from './sections/collab/collab.component';
 import { StatisticsComponent } from './sections/statistics/statistics.component';
@@ -16,6 +18,8 @@ import { KeyToSuccessComponent } from './sections/key-to-success/key-to-success.
 import { PartnersOnlyComponent } from './sections/partners-only/partners-only.component';
 import { ProcessComponent } from './sections/process/process.component';
 import { ContactUsComponent } from './sections/contact-us/contact-us.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,8 @@ import { ContactUsComponent } from './sections/contact-us/contact-us.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
