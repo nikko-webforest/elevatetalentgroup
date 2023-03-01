@@ -1,0 +1,143 @@
+#player2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 1;
+    }
+}
+
+.full-service {
+    position: relative;
+    .details {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        overflow: hidden;
+        transition: ease-in-out 1s;
+        &::before {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 200vh;
+            position: absolute;
+            background: black;
+            transform: rotate(-35deg);
+            left: -15%;
+            top: -58%;
+            transform-origin: center;
+            transition: ease-in-out 0.5s;
+        }
+        &::after {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 200vh;
+            position: absolute;
+            background: black;
+            transform: rotate(-35deg);
+            right: -44%;
+            bottom: -58%;
+            transform-origin: center;
+            transition: ease-in-out 0.5s;
+        }
+        &.hide-elements {
+            z-index: 1;
+            &::before {
+                left: -100%;
+            }
+            &::after {
+                right: -100%;
+            }
+            .textwrap {
+               opacity: 0;
+            }
+        }
+        .textwrap {
+            position: absolute;
+            z-index: 101;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: ease-in-out 0.5s;
+            .play {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                left: 65%;
+                transform: translate(-50%,-50%);
+                .border {
+                    transform: scale(0.2);
+                    transform-origin: center;
+                    transition: ease-in-out 0.5s;
+                }
+                &:hover {
+                    .border {
+                        transform: scale(1);
+                    }
+                }
+            }
+            h2 {
+                font-family: 'Prompt';
+                font-style: normal;
+                font-weight: 900;
+                font-size: 170px;
+                line-height: 148px;
+                letter-spacing: 0.02em;
+                color: #FFFFFF;
+                position: absolute;
+                top: 17vh;
+                left: 19vw;
+                
+            }
+            span {
+                font-family: 'Prompt';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 30px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                display: block;
+                margin-top: 30px;
+            }
+            p{
+                font-family: 'Gentium Basic';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 26px;
+
+                /* or 144% */
+                letter-spacing: 0.04em;
+
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            .video-description {
+                width: 25%;
+                position: absolute;
+                bottom: 22vh;
+                left: 19vw;
+            }
+        }
+    }
+}
+
+
+
+  

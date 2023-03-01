@@ -12,17 +12,20 @@ export class ProcessComponent implements OnInit {
     {
       'count': '01',
       'name': 'Experience Matters',
+      'details': 'We’ve been there since the beginning. Building and scaling MCN’s, developing creators, connecting brands, crafting global ad campaigns for Fortune 500, and producing films/shows/digital content for decades.',
       'image': '../../../assets/ProcessSection_ProcessImage_01.jpg'
     },
     {
       'count': '02',
       'name': 'Comments is in Action',
-      'image': '../../../assets/ProcessSection_ProcessImage_02.jpg'
+      'image': '../../../assets/ProcessSection_ProcessImage_02.jpg',
+      'details': 'When we partner, we commit to being all-in and we deliver. Every. Time. Our goal is to ensure frictionless success.'
     },
     {
       'count': '03',
-      'name': 'Experience Matters',
-      'image': '../../../assets/ProcessSection_ProcessImage_03.jpg'
+      'name': 'Transparency is Mandatory',
+      'image': '../../../assets/ProcessSection_ProcessImage_03.jpg',
+      'details': 'Let’s be honest, the creator industry is still in its infancy. Communication, pricing, negotiation are all still messy and unstructured. We recognize these realities and focus on total transparency to the process with all parties.'
     },
   ];
 

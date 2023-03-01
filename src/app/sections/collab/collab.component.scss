@@ -69,8 +69,11 @@
           line-height: 1em;
           letter-spacing: 0.02em;
           margin: 0 0 45px;
-          animation: fade-up 1s ease-in-out;
-          animation-delay: 100ms;
+          opacity: 0;
+          &.animate {
+            animation: fade-up 1s normal forwards ease-in-out;
+            animation-delay: 100ms;
+          }
 
           @media only screen and (max-width: 1080px) {
             font-size: 100px;
@@ -97,8 +100,11 @@
           letter-spacing: 0.02em;
           max-width: 580px;
           margin: 0 0 40px 125px;
-          animation: fade-up 1s ease-in-out;
-          animation-delay: 200ms;
+          opacity: 0;
+          &.animate {
+            animation: fade-up 1s normal forwards ease-in-out;
+            animation-delay: 200ms;
+          }
 
           @media only screen and (max-width: 1080px) {
             font-size: 30px;
@@ -126,8 +132,11 @@
           letter-spacing: 0.02em;
           max-width: 580px;
           margin: 0 0 70px 125px;
-          animation: fade-up 1s ease-in-out;
-          animation-delay: 300ms;
+          opacity: 0;
+          &.animate {
+            animation: fade-up 1s normal forwards ease-in-out;
+            animation-delay: 300ms;
+          }
 
           @media only screen and (max-width: 1080px) {
             font-size: 20px;
@@ -148,8 +157,11 @@
           gap: 0 24px;
           margin: 0 150px 0 auto;
           padding: 20px 48px;
-          animation: fade-up 1s ease-in-out;
-          animation-delay: 400ms;
+          &.animate {
+            opacity: 0;
+            animation: fade-up 1s normal forwards ease-in-out;
+            animation-delay: 400ms;
+          }
 
           @media only screen and (max-width: 1080px) {
             font-size: 18px;

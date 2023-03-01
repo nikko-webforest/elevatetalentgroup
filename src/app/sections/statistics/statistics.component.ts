@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-statistics',
@@ -7,6 +7,7 @@ import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angula
 })
 export class StatisticsComponent implements AfterViewInit {
 
+  @Input() animateStats: any;
   @ViewChild('statList') stat: ElementRef | any;
   stats: any = [
     {
@@ -38,20 +39,27 @@ export class StatisticsComponent implements AfterViewInit {
   statListHeight: number = 0;
   navPosition: number = 0;
   toExitNode: any = 0;
-  borderAnimActive: boolean = true;
+  borderAnimActive: any = true;
+  @HostListener('document:scroll', ['$event'])
+  
+  public onViewportScroll() {
+    this.activeStat = this.animateStats ? this.activeStat : 0;
+  }
+
   constructor() { }
 
   ngAfterViewInit(): void {
     this.statListHeight = this.stat.nativeElement.offsetHeight;
     console.log('Height: ', this.statListHeight );
+   
   }
 
   setActive(node: any, event: any) {
     this.toExitNode = (node == 0) ? this.stats[0].svg : this.stats[this.activeStat].svg;
-    this.borderAnimActive = false;
+    // this.borderAnimActive = false;
     setTimeout(() => {
       this.toExitNode = '';
-      this.borderAnimActive = true;
+      // this.borderAnimActive = true;
     }, 1000);
 
     this.activeStat = node;

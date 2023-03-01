@@ -1,13 +1,29 @@
 .etg-stats {
 	position: relative;
-	background: url('../../../assets/stats-backdrop.jpg');
-	background-size: cover;
-	background-position: center;
 	width: 100%;
 	height: 100vh;
 	overflow: hidden;
 	padding: 50px 30px;
-
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		position: absolute;
+		z-index: 1;
+		background: url('../../../assets/stats-backdrop.jpg');
+		background-size: cover;
+		background-position: bottom;
+		height:100%;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+	}
+	&.animate {
+		&::before {
+			animation: reveal-bg-up 1s forwards ease-in-out;	
+			animation-delay: 0.5ss;
+		}
+	}
 	@media only screen and (max-width: 1440px) {
 		height: unset;
 	}
@@ -62,7 +78,13 @@
 					line-height: 0.9em;
 					letter-spacing: 0.02em;
 					margin-bottom: 150px;
-
+					position: relative;
+					opacity: 0;
+					left: -50px;
+					&.animate {
+						animation: reveal-left 1s forwards ease-in-out;
+						animation-delay: 2s;
+					}
 					@media only screen and (max-width: 1440px) {
 						margin-bottom: 50px;
 					}
@@ -99,7 +121,13 @@
 					text-transform: uppercase;
 					line-height: 1.5em;
 					letter-spacing: 0.02em;
-					
+					opacity: 0;
+					position: relative;
+					left: -50px;
+					&.animate {
+						animation: reveal-left 1s forwards ease-in-out;
+						animation-delay: 2s;
+					}
 					@media only screen and (max-width: 1440px) {
 						max-width: 445px;
 						display: block;
@@ -119,7 +147,13 @@
 					font-size: 18px;
 					line-height: 1.5em;
 					letter-spacing: 0.04em;
-
+					opacity: 0;
+					position: relative;
+					left: -50px;
+					&.animate {
+						animation: reveal-left 1s forwards ease-in-out;
+						animation-delay: 2s;
+					}
 					@media only screen and (max-width: 1440px) {
 						font-size: 22px;
 						max-width: 780px;
@@ -152,11 +186,16 @@
 				}
 	
 				svg {
+
 					&.reveal {
 						transform: scale(0.8);
 						opacity: 0;
 						animation: 0.8s ease-in forwards grow;
-						animation-delay: 2.4s;
+						animation-delay: 0.8s;
+						&.intro {
+							animation-delay: 6.3s;
+
+						}
 					}
 	
 					&.hide-figure {
@@ -189,7 +228,14 @@
 						font-size: 30px;
 						line-height: 1em;
 						letter-spacing: 0.02em;
-	
+						opacity: 0;
+						position: relative;
+						right: -50px;
+						&.animate {
+							animation: reveal-right 1s forwards ease-in-out;
+							animation-delay: 2s;
+						}
+
 						@media only screen and (max-width: 1440px) {
 							flex-wrap: wrap;
 							gap: 80px 0;
@@ -207,7 +253,13 @@
 					overflow: hidden;
 					padding-left: 55px;
 					margin-top: 20px;
-	
+					position: relative;
+					opacity: 0;
+					right: -50px;
+					&.animate {
+						animation: reveal-right 1s forwards ease-in-out;
+						animation-delay: 2s;
+					}
 					@media only screen and (max-width: 1440px) {
 						padding-left: 0;
 					}
@@ -322,8 +374,10 @@
 					stroke-width: 3;
 					stroke-dasharray: 2337;
 					stroke-dashoffset: 2337;
-					animation: 1s ease-in forwards outline-circle;
-					animation-delay: 0.3s;
+					&.animate {
+						animation: 1s ease-in forwards outline-circle;
+						animation-delay: 4.3s;
+					}
 				}
 		
 				#line {
@@ -332,7 +386,11 @@
 					stroke-width: 3;
 					stroke-dasharray: 243;
 					stroke-dashoffset: 243;
-					animation: 0.5s ease-in forwards outline-line;
+					&.animate {
+						animation: 0.5s ease-in forwards outline-line;
+						animation-delay: 4s;
+					}
+					
 				}
 		
 				.path {
@@ -340,37 +398,36 @@
 					transform-origin: center center;
 					opacity: 0;
 					animation: 1s ease-in-out forwards fade;
-
 					&.animate { 
 						transform: scale(0.8);
 						transform-origin: center center;
 						opacity: 0;
 						animation: 0.8s ease-in forwards grow;
-						animation-delay: 2.4s;
+						animation-delay: 4.4s;
 					}
 				}
 		
 				#path1 {
-					animation-delay: 2.3s;
+					animation-delay: 6.1s;
 
 					&.animate { 
-						animation-delay: 2.3s;
+						animation-delay: 6.1s;
 					}
 				}
 
 				#path2 {
-					animation-delay: 2.4s;
+					animation-delay: 6.2s;
 
 					&.animate { 
-						animation-delay: 2.4s;
+						animation-delay: 6.2s;
 					}
 				}
 
 				#path3 {
-					animation-delay: 2.4s;
+					animation-delay: 6.3s;
 
 					&.animate { 
-						animation-delay: 2.5s;
+						animation-delay: 6.3s;
 					}
 				}
 			}
@@ -429,5 +486,39 @@
 
 	100% {
 		opacity: 0;
+	}
+}
+
+@keyframes reveal-bg-up {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes reveal-left {
+	0% {
+		opacity: 0;
+		left: -50px;
+	}
+
+	100% {
+		opacity: 1;
+		left: 0px;
+	}
+}
+
+@keyframes reveal-right {
+	0% {
+		opacity: 0;
+		right: -50px;
+	}
+
+	100% {
+		opacity: 1;
+		right: 0px;
 	}
 }

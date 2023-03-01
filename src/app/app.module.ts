@@ -16,6 +16,8 @@ import { KeyToSuccessComponent } from './sections/key-to-success/key-to-success.
 import { PartnersOnlyComponent } from './sections/partners-only/partners-only.component';
 import { ProcessComponent } from './sections/process/process.component';
 import { ContactUsComponent } from './sections/contact-us/contact-us.component';
+import { LatestComponent } from './sections/latest/latest.component';
+import { FullServiceComponent } from './sections/full-service/full-service.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +35,12 @@ import { ContactUsComponent } from './sections/contact-us/contact-us.component';
     KeyToSuccessComponent,
     PartnersOnlyComponent,
     ContactUsComponent,
+    LatestComponent,
+    FullServiceComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

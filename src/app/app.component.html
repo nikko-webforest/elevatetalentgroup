@@ -2,15 +2,22 @@
     <app-header [showHeaderBackground]="showHeaderBackground"></app-header>
 </div>
 <app-banner></app-banner>
-<app-collab></app-collab>
+<div #collab>
+    <app-collab [animateCollab]="animateCollab"></app-collab>
+</div>
 <div #creators>
     <app-our-creators [animateCreatorsEl]="animateCreatorsEl"></app-our-creators>
 </div>
+<div #statistics>
+    <app-statistics [animateStats]="animateStats"></app-statistics>
+</div>
+<app-latest></app-latest>
 <app-section-navigator></app-section-navigator>
-<app-statistics></app-statistics>
 <app-process></app-process>
+<app-full-service></app-full-service>
 <app-services-and-capabilities></app-services-and-capabilities>
 <app-key-to-success></app-key-to-success>
 <app-partners-only></app-partners-only>
 <app-footer></app-footer>
 <app-contact-us></app-contact-us>
+

@@ -91,6 +91,7 @@
     right: -100vw;
     &.animate {
       animation: reveal-left 1s normal forwards ease-in-out;
+      animation-delay: 0.5s;
     }
     .flickity-viewport {
       .flickity-slider {

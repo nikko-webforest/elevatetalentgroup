@@ -27,13 +27,15 @@
               </div>
             </div>
             <div class="steps-description">
-              We are a full service ad agency with 1 to 1 relationships with our creators. That means we understand your broader communications strategy and have talent ready to go that is perfectly integrated into your messaging and audience targets.
+              <p *ngFor="let item of processStepsList; let i = index;"
+              [class.active]="i == activeProcessIndex"
+              [id]="i" [innerText]="item.details"></p>
             </div>
           </div>
           <div class="etg-inner-col">
             <div class="steps-img-list">
               <div class="steps-img-wrap"
-                *ngFor="let item of processStepsList.reverse(); let i = index;"
+                *ngFor="let item of processStepsList; let i = index;"
                 [class.prev]="i == prevProcessIndex"
                 [class.active]="i == activeProcessIndex"
                 [class.next]="i == nextProcessIndex"
