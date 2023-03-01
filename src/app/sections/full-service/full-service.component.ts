@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, HostListener  } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ViewEncapsulation  } from '@angular/core';
 // @ts-ignore
 import Player from '@vimeo/player';
 @Component({
   selector: 'app-full-service',
   templateUrl: './full-service.component.html',
-  styleUrls: ['./full-service.component.scss']
+  styleUrls: ['./full-service.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FullServiceComponent implements OnInit {
 

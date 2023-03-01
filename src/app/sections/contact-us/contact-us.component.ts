@@ -24,7 +24,7 @@ export class ContactUsComponent implements OnInit {
   ];
 
   constructor(private sharedService:SharedService) {
-    this.clickEventSubscription = this.sharedService.getClickEvent().subscribe(() => {
+    this.clickEventSubscription = this.sharedService.getContactCompClickEvent().subscribe(() => {
       this.toggleContact();
     });
   }
@@ -32,14 +32,16 @@ export class ContactUsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openContact() {
+    this.showContact = true;
+  }
+
   closeContact() {
-    this.showContact = false;
-    console.log('closeContact() = '+this.showContact);
+    this.sharedService.toggleContactComponent();
   }
 
   toggleContact() {
     this.showContact = !this.showContact;
-    console.log('toggleContact() = '+this.showContact);
   }
 
 }

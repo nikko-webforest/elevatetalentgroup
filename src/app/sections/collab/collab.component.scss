@@ -70,6 +70,7 @@
           letter-spacing: 0.02em;
           margin: 0 0 45px;
           opacity: 0;
+          
           &.animate {
             animation: fade-up 1s normal forwards ease-in-out;
             animation-delay: 100ms;
@@ -101,6 +102,7 @@
           max-width: 580px;
           margin: 0 0 40px 125px;
           opacity: 0;
+
           &.animate {
             animation: fade-up 1s normal forwards ease-in-out;
             animation-delay: 200ms;
@@ -133,6 +135,7 @@
           max-width: 580px;
           margin: 0 0 70px 125px;
           opacity: 0;
+
           &.animate {
             animation: fade-up 1s normal forwards ease-in-out;
             animation-delay: 300ms;
@@ -157,6 +160,7 @@
           gap: 0 24px;
           margin: 0 150px 0 auto;
           padding: 20px 48px;
+
           &.animate {
             opacity: 0;
             animation: fade-up 1s normal forwards ease-in-out;

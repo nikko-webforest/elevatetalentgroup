@@ -1,14 +1,19 @@
 <section class="etg-services-and-capabilities">
+  <div class="etg-background"
+    [class.animate]="animateServicesAndCapabilities">
+  </div>
   <div class="etg-container">
     <div class="etg-row">
       <h2 class="first-title"
         [ngClass]="{ 'active' : servicesActive }"
+        [class.animate]="animateServicesAndCapabilities"
         (click)="selectList('services')">
         OUR FULL-SERVICE CORE COMPETENCIES
       </h2>
       <hr>
       <h3 class="second-title"
         [ngClass]="{ 'active' : capabilitiesActive }"
+        [class.animate]="animateServicesAndCapabilities"
         (click)="selectList('capabilities')">
         OUR VERTICAL CAPABILITIES
       </h3>
@@ -16,7 +21,8 @@
     <ul class="list">
       <li class="item"
         *ngFor="let item of itemList"
-        [innerText]="item">
+        [innerText]="item"
+        [class.animate]="animateServicesAndCapabilities">
       </li>
     </ul>
     <app-primary-btn

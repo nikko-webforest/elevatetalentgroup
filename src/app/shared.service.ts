@@ -7,16 +7,20 @@ import { Observable, Subject } from 'rxjs';
 export class SharedService {
 
   private toggleContact = new Subject<any>();
+  private toggleNavMenuBtn = new Subject<any>();
 
   constructor() { }
 
-  sendClickEvent() {
+  toggleContactComponent() {
     this.toggleContact.next(0);
-    console.log('sendClickEvent = '+this.toggleContact);
+    this.toggleNavMenuBtn.next(0);
   }
 
-  getClickEvent(): Observable<any> {
-    console.log('getClickEvent = '+this.toggleContact);
+  getContactCompClickEvent(): Observable<any> {
     return this.toggleContact.asObservable();
+  }
+
+  getContactNavMenuBtnClickEvent(): Observable<any> {
+    return this.toggleNavMenuBtn;
   }
 }

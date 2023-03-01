@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'app-services-and-capabilities',
@@ -7,6 +7,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class ServicesAndCapabilitiesComponent implements OnInit {
+
+  @Input() animateServicesAndCapabilities: any;
 
   servicesList: any = [
     'Strategy and Brand Development',

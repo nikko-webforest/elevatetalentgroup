@@ -6,6 +6,7 @@
     height: 100%;
     z-index: 1;
     overflow: hidden;
+
     iframe {
         width: 100%;
         height: 100%;
@@ -19,39 +20,59 @@
 
 .latest {
     position: relative;
+
     .details {
         position: relative;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         z-index: 100;
         overflow: hidden;
         transition: ease-in-out 1s;
+
         &::before {
             content: "";
-            display: block;
-            width: 50%;
-            height: 200vh;
             position: absolute;
-            background: black;
-            transform: rotate(35deg);
             left: -29%;
             top: -58%;
+            transform: rotate(35deg);
             transform-origin: center;
-            transition: ease-in-out 0.5s;
-        }
-        &::after {
-            content: "";
             display: block;
+            background: black;
             width: 50%;
             height: 200vh;
+            transition: ease-in-out 0.5s;
+
+            @media only screen and (max-width: 1440px) {
+                left: -40%;
+            }
+
+            @media only screen and (max-width: 768px) {
+                left: -55%;
+            }
+        }
+
+        &::after {
+            content: "";
             position: absolute;
-            background: black;
-            transform: rotate(35deg);
             right: -19%;
             bottom: -58%;
+            transform: rotate(35deg);
             transform-origin: center;
+            display: block;
+            background: black;
+            width: 50%;
+            height: 200vh;
             transition: ease-in-out 0.5s;
+
+            @media only screen and (max-width: 1440px) {
+                right: -40%;
+            }
+
+            @media only screen and (max-width: 768px) {
+                right: -55%;
+            }
         }
+
         &.hide-elements {
             z-index: 1;
             &::before {
@@ -64,6 +85,7 @@
                opacity: 0;
             }
         }
+
         .textwrap {
             position: absolute;
             z-index: 101;
@@ -73,6 +95,7 @@
             height: 100%;
             opacity: 1;
             transition: ease-in-out 0.5s;
+
             .play {
                 cursor: pointer;
                 position: absolute;
@@ -90,19 +113,36 @@
                     }
                 }
             }
+
             h2 {
-                font-family: 'Prompt';
+                color: #FFFFFF;
+                font-family: var(--primaryFont);
                 font-style: normal;
                 font-weight: 900;
                 font-size: 200px;
-                line-height: 200px;
+                line-height: 1em;
                 letter-spacing: 0.02em;
-                color: #FFFFFF;
                 position: absolute;
                 top: 17vh;
                 left: 19vw;
-                
+
+                @media only screen and (max-width: 1440px) {
+                    font-size: 150px;
+                    top: 25vh;
+                    left: 5vw;
+                }
+
+                @media only screen and (max-width: 1080px) {
+                    font-size: 100px;
+                    top: 30vh;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    font-size: 80px;
+                    top: 10vh;
+                }
             }
+            
             span {
                 font-family: 'Prompt';
                 font-style: normal;
@@ -115,7 +155,8 @@
                 display: block;
                 margin-top: 30px;
             }
-            p{
+
+            p {
                 font-family: 'Gentium Basic';
                 font-style: normal;
                 font-weight: 400;
@@ -129,17 +170,35 @@
             }
 
             .video-description {
-                width: 15%;
                 position: absolute;
                 bottom: 14vh;
                 right: 22vw;
+                max-width: 535px;
+                width: 100%;
+
+                @media only screen and (max-width: 1440px) {
+                    bottom: 25vh;
+                    right: 5vw;
+                }
+
+                @media only screen and (max-width: 1080px) {
+                    max-width: 440px;
+                    bottom: 30vh;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    max-width: 360px;
+                    bottom: 5vh;
+                }
             }
         }
+
         .vector-1 {
             position: absolute;
             left: 0;
             right: 0;
         }
+
         .vector-2 {
             position: absolute;
             right: 0;
@@ -147,7 +206,3 @@
         }
     }
 }
-
-
-
-  

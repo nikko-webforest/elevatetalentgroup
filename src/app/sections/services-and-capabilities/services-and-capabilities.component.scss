@@ -18,7 +18,7 @@
     }
   }
 
-  &::before {
+  .etg-background {
     content: '';
     position: absolute;
     z-index: 1;
@@ -27,7 +27,6 @@
     background: url('../../../assets/FullServices_bg-1915x1015.jpg') no-repeat center/cover;
     width: 100%;
     height: 100%;
-    animation: zoom-out 1.5s ease-in;
 
     @media only screen and (max-width: 768px) {
       background: url('../../../assets/FullServices_bg-1915x1015.jpg') no-repeat 100%/cover;
@@ -35,6 +34,10 @@
 
     @media only screen and (max-width: 480px) {
       background: url('../../../assets/FullServices_bg-1915x1015.jpg') no-repeat 75%/cover;
+    }
+
+    &.animate {
+      animation: zoom-out 1.5s ease-in;
     }
   }
 

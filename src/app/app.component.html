@@ -14,14 +14,15 @@
 <div #latest>
     <app-latest [animateLatest]="animateLatest"></app-latest>
 </div>
-<app-section-navigator></app-section-navigator>
 <app-process></app-process>
 <div #fullservices>
     <app-full-service [animateFullService]="animateFullService"></app-full-service>
 </div>
-<app-services-and-capabilities></app-services-and-capabilities>
+<div #servicesandcapabilities>
+    <app-services-and-capabilities [animateServicesAndCapabilities]="animateServicesAndCapabilities"></app-services-and-capabilities>
+</div>
 <app-key-to-success></app-key-to-success>
 <app-partners-only></app-partners-only>
 <app-footer></app-footer>
 <app-contact-us></app-contact-us>
-
+<app-section-navigator></app-section-navigator>

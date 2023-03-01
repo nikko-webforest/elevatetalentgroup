@@ -22,8 +22,7 @@ export class PrimaryBtnComponent implements OnInit {
 
   clickedBtn() {
     if( this.url == 'toggle-contact' ) {
-      console.log(this.url);
-      this.sharedService.sendClickEvent();
+      this.sharedService.toggleContactComponent();
     }
     else {
       this.redirect();

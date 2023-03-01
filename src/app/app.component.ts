@@ -14,6 +14,7 @@ export class AppComponent {
   @ViewChild('statistics') divStats!: ElementRef;
   @ViewChild('latest') divLatest!: ElementRef;
   @ViewChild('fullservice') divFullservice!: ElementRef;
+  @ViewChild('servicesandcapabilities') divServicesAndCapabilities!: ElementRef;
 
   showHeaderBackground: boolean = false;
   animateCreatorsEl: any = null;
@@ -21,6 +22,7 @@ export class AppComponent {
   animateStats: any = null;
   animateLatest: any = null;
   animateFullService: any = null;
+  animateServicesAndCapabilities: any = null;
 
   @HostListener('document:scroll', ['$event'])
   
@@ -43,7 +45,9 @@ export class AppComponent {
 
     const fullService = this.divFullservice.nativeElement.getBoundingClientRect();
     this.animateFullService = ((window.innerHeight/2) >  fullService.top && fullService.top > 0) ? true : false;
-    
+
+    const servicesAndCapabilities = this.divServicesAndCapabilities.nativeElement.getBoundingClientRect();
+    this.animateServicesAndCapabilities = ((window.innerHeight/2) > servicesAndCapabilities.top && servicesAndCapabilities.top > 0) ? true : false;
   }
 
 }
