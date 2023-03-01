@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-primary-btn',
@@ -13,10 +14,20 @@ export class PrimaryBtnComponent implements OnInit {
   @Input() text: any;
   @Input() icon: any;
 
-  constructor() { }
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
     
+  }
+
+  clickedBtn() {
+    if( this.url == 'toggle-contact' ) {
+      console.log(this.url);
+      this.sharedService.sendClickEvent();
+    }
+    else {
+      this.redirect();
+    }
   }
 
   redirect() {
