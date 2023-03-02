@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewEncapsulation, Input, HostListener, Output, EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-section-navigator',
@@ -8,23 +8,64 @@ import { Component, OnInit, AfterViewInit, ViewEncapsulation } from '@angular/co
 })
 export class SectionNavigatorComponent implements OnInit {
 
+  @Input()  node: any = 1;
+  @Output() activeNode = new EventEmitter<number>();
+
   sectionList: any = [
-    "Welcome to Elevate Talent Group",
-    "Out of Siloes and into Collabartion",
-    "Our Creators",
-    "275 Million and One",
-    "The Latest - Francesca's",
-    "How We Operate",
-    "Elevate Talent Group Full Service",
-    "Elevate Talent Group - Services",
-    "Key to Success",
-    "Our Brand Partners",
-    "Contact Us"
+    {
+      'title': "Welcome to Elevate Talent Group",
+      'id': 'banner'
+    },
+    {
+      'title': "Out of Siloes and into Collabartion",
+      'id': 'collab'
+    },
+    {
+      'title': "Our Creators",
+      'id': 'creators'
+    },
+    {
+      'title': "275 Million and One",
+      'id': 'statistics'
+    },
+    {
+      'title': "The Latest - Francesca's",
+      'id': 'latest'
+    },
+    {
+      'title': "How We Operate",
+      'id': 'process'
+    },
+    {
+      'title': "Elevate Talent Group Full Service",
+      'id': 'fullservice'
+    },
+    {
+      'title': "Elevate Talent Group - Services",
+      'id': 'servicesandcapabilities'
+    },
+    {
+      'title': "Key to Success",
+      'id': 'success'
+    },
+    {
+      'title': "Our Brand Partners",
+      'id': 'partners'
+    }
   ];
   totalSectionCount: number = 0;
   prevSectionCount: number = 0;
   currSectionCount: number = 1;
   nextSectionCount: number = 0;
+
+  @HostListener('document:scroll', ['$event'])
+  
+  public onViewportScroll() {
+    if(this.currSectionCount != this.node){
+      this.currSectionCount = this.node;
+      this.updateSectionCount();
+    }
+  }
 
   constructor() { }
 
@@ -42,6 +83,7 @@ export class SectionNavigatorComponent implements OnInit {
   }
 
   updateSectionCount() {
+    
     if( this.currSectionCount == 1 ){
       this.prevSectionCount = this.totalSectionCount;
       this.nextSectionCount = this.currSectionCount + 1;
@@ -63,8 +105,8 @@ export class SectionNavigatorComponent implements OnInit {
     else {
       this.currSectionCount -= 1;
     }
+    this.activeNode.emit(this.currSectionCount);
     this.updateSectionCount();
-    console.log('Prev Btn is Clicked');
   }
 
   nextSection() {
@@ -74,8 +116,8 @@ export class SectionNavigatorComponent implements OnInit {
     else {
       this.currSectionCount += 1;
     }
+    this.activeNode.emit(this.currSectionCount);
     this.updateSectionCount();
-    console.log('Next Btn is Clicked');
   }
 
 }

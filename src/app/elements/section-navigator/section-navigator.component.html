@@ -3,7 +3,7 @@
     <div class="title animate"
       *ngFor="let title of sectionList; let count = index;"
       [id]="(count+1)"
-      [innerText]="title"
+      [innerText]="title.title"
       [class.prev]="prevSectionCount == (count+1)"
       [class.curr]="currSectionCount == (count+1)"
       [class.next]="nextSectionCount == (count+1)"

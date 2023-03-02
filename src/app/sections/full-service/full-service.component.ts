@@ -34,7 +34,7 @@ export class FullServiceComponent implements OnInit {
     let self = this;
     let options = {
       id: this.video,
-      loop: false,
+      loop: true,
       background: false,
       controls: false,
       autoplay: false,

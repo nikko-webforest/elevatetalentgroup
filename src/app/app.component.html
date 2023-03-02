@@ -1,7 +1,9 @@
 <div #header>
     <app-header [showHeaderBackground]="showHeaderBackground"></app-header>
 </div>
-<app-banner></app-banner>
+<div #banner>
+    <app-banner></app-banner>
+</div>
 <div #collab>
     <app-collab [animateCollab]="animateCollab"></app-collab>
 </div>
@@ -31,4 +33,4 @@
 </div>
 <app-footer></app-footer>
 <app-contact-us></app-contact-us>
-<app-section-navigator></app-section-navigator>
+<app-section-navigator [node]="node" (activeNode)="scrollTo($event)"></app-section-navigator>
