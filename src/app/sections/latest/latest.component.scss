@@ -1,11 +1,12 @@
 #player {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    width: 150%;
     height: 100%;
     z-index: 1;
     overflow: hidden;
+    transform: translate(-50%,-50%);
 
     iframe {
         width: 100%;
@@ -20,7 +21,7 @@
 
 .latest {
     position: relative;
-
+    overflow: hidden;
     .details {
         position: relative;
         width: 100%;
@@ -172,9 +173,8 @@
             .video-description {
                 position: absolute;
                 bottom: 14vh;
-                right: 22vw;
-                max-width: 535px;
-                width: 100%;
+                right: 17vw;
+                max-width: 430px;
 
                 @media only screen and (max-width: 1440px) {
                     bottom: 25vh;

@@ -210,12 +210,14 @@
         }
 
         &.fade-left {
-          opacity: 1;
-          transform:
-            translateX(0px);
-          transition:
-            opacity 1000ms ease-in-out,
-            transform 1000ms ease-in-out;
+          &.animate {
+            opacity: 1;
+            transform:
+              translateX(0px);
+            transition:
+              opacity 1000ms ease-in-out,
+              transform 1000ms ease-in-out;
+          }
         }
       }
 

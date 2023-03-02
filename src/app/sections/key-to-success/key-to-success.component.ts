@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-key-to-success',
@@ -8,6 +8,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class KeyToSuccessComponent implements OnInit {
 
+  @Input() animateSuccess: any;
   keyToSuccessList: any = [
     {
       'title': 'Start with common communities',
@@ -34,6 +35,13 @@ export class KeyToSuccessComponent implements OnInit {
       'bgImage': '../../../assets/KeyToSuccess_04_bg-241x179.png',
     },
   ];
+  @HostListener('document:scroll', ['$event'])
+  public onViewportScroll() {
+    if(this.animateSuccess){
+      this.fadeUpEach();
+      this.animateEach();
+    }
+  }
 
   constructor() { }
 
@@ -42,8 +50,7 @@ export class KeyToSuccessComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.fadeUpEach();
-    this.animateEach();
+    
   }
   
   fadeUpEach() {
@@ -53,7 +60,7 @@ export class KeyToSuccessComponent implements OnInit {
           li.classList.add('fade-up');
         }, (200 * i));
       });
-    }, 1500);
+    }, 100);
   }
 
   animateEach() {
@@ -62,9 +69,9 @@ export class KeyToSuccessComponent implements OnInit {
         setTimeout(() => {
           li.classList.remove('default-color');
           li.classList.add('zoom-in-out');
-        }, (1500 * i));
+        }, (1000 * i));
       });
-    }, 3000);
+    }, 300);
   }
 
 }
