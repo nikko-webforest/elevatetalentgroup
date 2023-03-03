@@ -51,6 +51,10 @@ export class SectionNavigatorComponent implements OnInit {
     {
       'title': "Our Brand Partners",
       'id': 'partners'
+    },
+    {
+      'title': "Contact Us",
+      'id': 'contactus'
     }
   ];
   totalSectionCount: number = 0;

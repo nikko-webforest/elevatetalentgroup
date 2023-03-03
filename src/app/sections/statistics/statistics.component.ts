@@ -1,9 +1,10 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, HostListener, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.scss']
+  styleUrls: ['./statistics.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class StatisticsComponent implements AfterViewInit {
 
@@ -35,23 +36,39 @@ export class StatisticsComponent implements AfterViewInit {
       'svg': '35',
     }
   ];
+
+  prevInStat: number = 0;
+  prevStat: number = 0;
   activeStat: any = 0;
+  nextStat: number = 0;
+  nextInStat: number = 0;
+  totalStat: number = 0;
   statListHeight: number = 0;
   navPosition: number = 0;
   toExitNode: any = 0;
   borderAnimActive: any = true;
+  screenWidth: any = 0;
+
   @HostListener('document:scroll', ['$event'])
   
   public onViewportScroll() {
     this.activeStat = this.animateStats ? this.activeStat : 0;
+    this.updatePrevNextStat();
   }
 
-  constructor() { }
+  constructor() {
+    this.onResize();
+   }
+
+  ngOnInit(): void {
+    this.totalStat = this.stats.length;
+  }
 
   ngAfterViewInit(): void {
     this.statListHeight = this.stat.nativeElement.offsetHeight;
     console.log('Height: ', this.statListHeight );
-   
+
+    console.log('screenWidth = '+this.screenWidth);
   }
 
   setActive(node: any, event: any) {
@@ -63,8 +80,47 @@ export class StatisticsComponent implements AfterViewInit {
     }, 1000);
 
     this.activeStat = node;
-    this.navPosition = (node == 0) ? 0 : event.srcElement.offsetTop - 15;
-    
+    this.updatePrevNextStat();
+    this.navPosition = (node == 0) ? 0 : event.srcElement.offsetTop - 20;
+  }
+
+  updatePrevNextStat() {
+    if( this.activeStat == 0 ){
+      this.prevStat = (this.totalStat - 1);
+      this.prevInStat = this.prevStat - 1;
+      this.nextStat = this.activeStat + 1;
+      this.nextInStat = this.nextStat + 1;
+    }
+    else if( this.activeStat == 1 ){
+      this.prevStat = this.activeStat - 1;
+      this.prevInStat = (this.totalStat - 1);
+      this.nextStat = this.activeStat + 1;
+      this.nextInStat = this.nextStat + 1;
+    }
+    else if( this.activeStat == (this.totalStat - 1) ){
+      this.prevStat = this.activeStat - 1;
+      this.prevInStat = this.prevStat - 1;
+      this.nextStat = 0;
+      this.nextInStat = this.nextStat + 1;
+    }
+    else if( this.activeStat == (this.totalStat - 2) ){
+      this.prevStat = this.activeStat - 1;
+      this.prevInStat = this.prevStat - 1;
+      this.nextStat = this.activeStat + 1;
+      this.nextInStat = 0;
+    }
+    else {
+      this.prevStat = this.activeStat - 1;
+      this.prevInStat = this.prevStat - 1;
+      this.nextStat = this.activeStat + 1;
+      this.nextInStat = this.nextStat + 1;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?: undefined) {
+    this.screenWidth = window.innerWidth;
+    console.log('screenWidth = '+this.screenWidth);
   }
 
 }

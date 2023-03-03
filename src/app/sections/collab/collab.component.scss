@@ -1,12 +1,8 @@
 .etg-collab {
   position: relative;
   height: 100vh;
-  padding: 165px 30px 50px;
-
-  @media only screen and (max-width: 1080px) {
-    height: unset;
-    padding: 80px 30px 50px;
-  }
+  overflow: hidden;
+  padding: 30px;
 
   @keyframes fade-up {
     from {
@@ -25,173 +21,172 @@
     z-index: 1;
     inset: 0;
     display: block;
-    background-image: url('../../../assets/Collab_background.jpg');
+    background-image: url('../../../assets/Collab_bg_3830x2030.jpg');
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 100%;
+
+    @media only screen and (max-width: 768px) {
+      background-image: url('../../../assets/Collab_bg_768x932.jpg');
+    }
   }
 
   .etg-container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 1280px;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
 
-    .etg-row {
-      display: flex;
-      justify-content: flex-end;
+    .etg-content {
+      position: relative;
 
-      .etg-col {
-        max-width: 815px;
-        width: 100%;
+      .etg-row {
+        display: flex;
+        justify-content: flex-end;
 
-        @media only screen and (max-width: 1080px) {
-          max-width: 615px;
-        }
+        .etg-col {
+          max-width: 815px;
+          width: 100%;
 
-        @media only screen and (max-width: 768px) {
-          font-size: 75px;
-          max-width: 100%;
-          width: 80%;
-        }
-
-        @media only screen and (max-width: 480px) {
-          font-size: 66px;
-        }
-
-        h2 {
-          color: #FFFFFF;
-          font-family: var(--primaryFont);
-          font-style: normal;
-          font-weight: 900;
-          font-size: 200px;
-          line-height: 1em;
-          letter-spacing: 0.02em;
-          margin: 0 0 45px;
-          opacity: 0;
-          
-          &.animate {
-            animation: fade-up 1s normal forwards ease-in-out;
-            animation-delay: 100ms;
-          }
-
-          @media only screen and (max-width: 1080px) {
-            font-size: 100px;
-            margin: 0 0 20px;
-          }
-
-          @media only screen and (max-width: 768px) {
-            font-size: 75px;
-          }
-
-          @media only screen and (max-width: 480px) {
-            font-size: 66px;
-          }
-        }
-
-        h4 {
-          color: #FFFFFF;
-          font-family: var(--tertiaryFont);
-          font-style: normal;
-          font-weight: 700;
-          font-size: 46px;
-          text-transform: uppercase;
-          line-height: 1.1em;
-          letter-spacing: 0.02em;
-          max-width: 580px;
-          margin: 0 0 40px 125px;
-          opacity: 0;
-
-          &.animate {
-            animation: fade-up 1s normal forwards ease-in-out;
-            animation-delay: 200ms;
-          }
-
-          @media only screen and (max-width: 1080px) {
-            font-size: 30px;
-            margin: 0 0 30px 80px;
-          }
-
-          @media only screen and (max-width: 768px) {
-            font-size: 20px;
-            margin: 0 0 20px 50px;
-          }
-
-          @media only screen and (max-width: 480px) {
-            font-size: 16px;
-            margin: 0 0 15px 30px;
-          }
-        }
-
-        p {
-          color: rgba(255, 255, 255, 0.7);
-          font-family: var(--secondaryFont);
-          font-style: normal;
-          font-weight: 400;
-          font-size: 24px;
-          line-height: 1.2em;
-          letter-spacing: 0.02em;
-          max-width: 580px;
-          margin: 0 0 70px 125px;
-          opacity: 0;
-
-          &.animate {
-            animation: fade-up 1s normal forwards ease-in-out;
-            animation-delay: 300ms;
-          }
-
-          @media only screen and (max-width: 1080px) {
-            font-size: 20px;
-            margin: 0 0 30px 80px;
-          }
-
-          @media only screen and (max-width: 768px) {
-            font-size: 16px;
-            margin: 0 0 20px 50px;
-          }
-        }
-
-        .etg-btn-primary {
-          font-size: 20px;
-          max-width: unset;
-          min-width: unset;
-          width: max-content;
-          gap: 0 24px;
-          margin: 0 150px 0 auto;
-          padding: 20px 48px;
-
-          &.animate {
+          h2 {
+            color: #FFFFFF;
+            font-family: var(--primaryFont);
+            font-style: normal;
+            font-weight: 900;
+            font-size: 200px;
+            line-height: 1em;
+            letter-spacing: 0.02em;
+            margin: 0 0 45px;
             opacity: 0;
-            animation: fade-up 1s normal forwards ease-in-out;
-            animation-delay: 400ms;
+            
+            &.animate {
+              animation: fade-up 1s normal forwards ease-in-out;
+              animation-delay: 100ms;
+            }
+
+            @media only screen and (max-width: 1080px) {
+              font-size: 100px;
+              margin: 0 0 20px;
+            }
+
+            @media only screen and (max-width: 768px) {
+              font-size: 75px;
+            }
+
+            @media only screen and (max-width: 480px) {
+              font-size: 66px;
+            }
           }
 
-          @media only screen and (max-width: 1080px) {
-            font-size: 18px;
-            gap: 0 15px;
-            margin: 0 100px 0 auto;
-            padding: 15px 30px;
+          h4 {
+            color: #FFFFFF;
+            font-family: var(--tertiaryFont);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 46px;
+            text-transform: uppercase;
+            line-height: 1.1em;
+            letter-spacing: 0.02em;
+            max-width: 580px;
+            margin: 0 0 40px 125px;
+            opacity: 0;
+
+            &.animate {
+              animation: fade-up 1s normal forwards ease-in-out;
+              animation-delay: 200ms;
+            }
+
+            @media only screen and (max-width: 1080px) {
+              font-size: 30px;
+              margin: 0 0 30px 80px;
+            }
+
+            @media only screen and (max-width: 768px) {
+              font-size: 20px;
+              margin: 0 0 20px 50px;
+            }
+
+            @media only screen and (max-width: 480px) {
+              font-size: 16px;
+              margin: 0 0 15px 30px;
+            }
           }
-  
-          @media only screen and (max-width: 768px) {
-            font-size: 16px;
-            margin: 0 0 0 50px;
+
+          p {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: var(--secondaryFont);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1.2em;
+            letter-spacing: 0.02em;
+            max-width: 580px;
+            margin: 0 0 70px 125px;
+            opacity: 0;
+
+            &.animate {
+              animation: fade-up 1s normal forwards ease-in-out;
+              animation-delay: 300ms;
+            }
+
+            @media only screen and (max-width: 1080px) {
+              font-size: 20px;
+              margin: 0 0 30px 80px;
+            }
+
+            @media only screen and (max-width: 768px) {
+              font-size: 16px;
+              margin: 0 0 20px 50px;
+            }
           }
-  
-          @media only screen and (max-width: 480px) {
-            font-size: 14px;
+
+          .etg-btn-animate {
+            .etg-btn-primary {
+              font-size: 20px;
+              max-width: unset;
+              min-width: unset;
+              width: max-content;
+              gap: 0 24px;
+              margin: 0 150px 0 auto;
+              padding: 20px 48px;
+
+              @media only screen and (max-width: 1080px) {
+                font-size: 18px;
+                gap: 0 15px;
+                margin: 0 100px 0 auto;
+                padding: 15px 30px;
+              }
+      
+              @media only screen and (max-width: 768px) {
+                font-size: 16px;
+                margin: 0 0 0 50px;
+              }
+      
+              @media only screen and (max-width: 480px) {
+                font-size: 14px;
+              }
+            }
+
+            &.animate {
+              opacity: 0;
+              animation: fade-up 1s normal forwards ease-in-out;
+              animation-delay: 400ms;
+            }
           }
         }
       }
-    }
 
-    &:nth-child(1) {
-      z-index: 2;
-    }
+      &:nth-child(1) {
+        z-index: 2;
+      }
 
-    &:nth-child(2) {
-      z-index: 4;
+      &:nth-child(2) {
+        z-index: 4;
+      }
     }
   }
 
@@ -201,10 +196,14 @@
     z-index: 3;
     inset: 0;
     display: block;
-    background-image: url('../../../assets/Collab_foreground.png');
+    background-image: url('../../../assets/Collab_fg_3830x2030.png');
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 100%;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
 }

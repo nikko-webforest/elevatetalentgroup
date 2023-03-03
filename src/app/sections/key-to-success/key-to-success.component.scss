@@ -120,6 +120,12 @@
           padding: 55px 25px 25px;
         }
 
+        @media only screen and (max-width: 480px) {
+          width: 360px;
+          height: 360px;
+          padding: 55px 25px 25px;
+        }
+
         .bg-color {
           position: absolute;
           z-index: 1;
@@ -153,6 +159,16 @@
           border-radius: 10px;
           scale: 1;
           transition: background-color 500ms linear;
+
+          @media only screen and (max-width: 1080px) {
+            width: 90px;
+            height: 90px;
+          }
+
+          @media only screen and (max-width: 768px) {
+            width: 85px;
+            height: 85px;
+          }
 
           .etg-svg {
             @media only screen and (max-width: 1080px) {
@@ -214,6 +230,11 @@
                 top: 145px;
                 left: 125px;
               }
+
+              @media only screen and (max-width: 480px) {
+                top: 210px;
+                left: 180px;
+              }
             }
           }
         }
@@ -227,6 +248,11 @@
               @media only screen and (max-width: 1080px) {
                 top: 130px;
                 left: 115px;
+              }
+
+              @media only screen and (max-width: 480px) {
+                top: 195px;
+                left: 180px;
               }
             }
           }
@@ -242,6 +268,11 @@
                 top: -14px;
                 left: 142px;
               }
+
+              @media only screen and (max-width: 480px) {
+                top: -15px;
+                left: 100px;
+              }
             }
           }
         }
@@ -255,6 +286,11 @@
               @media only screen and (max-width: 1080px) {
                 top: 145px;
                 left: 125px;
+              }
+
+              @media only screen and (max-width: 480px) {
+                top: 210px;
+                left: 180px;
               }
             }
           }

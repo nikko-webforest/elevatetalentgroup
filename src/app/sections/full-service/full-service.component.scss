@@ -1,217 +1,282 @@
 #player2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: hidden;
-    transform: translate(-50%,-50%);
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: block;
+	width: 905vw;
+	height: 205vh;
+	overflow: hidden;
 
-    iframe {
-        width: 130%;
-        height: 130%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        z-index: 1;
-    }
+	iframe {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
 }
 
-.full-service {
-    position: relative;
+.etg-full-service {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
 
-    .details {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        z-index: 100;
-        overflow: hidden;
-        transition: ease-in-out 1s;
+	.etg-content {
+		position: relative;
+		z-index: 100;
+		display: block;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+		transition: ease-in-out 1s;
 
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            display: block;
-            background: black;
-            clip-path: polygon(0 0, 32% 0%, 90% 100%, 0% 100%);
-            width: 100%;
-            height: 200vh;
-            transition: ease-in-out 0.5s;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 75%;
+			// left: -29%;
+			// top: -58%;
+			// transform: rotate(35deg);
+			// transform-origin: center;
+			display: block;
+			background-color: black;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 35vw 100%);
+			width: 350vw;
+			height: 200vh;
+			transition: ease-in-out 0.5s;
 
-            @media only screen and (max-width: 1080px) {
-                left: -10%;
-            }
+			@media only screen and (max-width: 1440px) {
+				left: 85%;
+			}
 
-            @media only screen and (max-width: 768px) {
-                left: 0;
-                clip-path: polygon(0 0, -15% 0, 75% 100%, 0% 100%);
-            }
-        }
+			@media only screen and (max-width: 768px) {
+				top: 0;
+				right: 0;
+				bottom: unset;
+				left: unset;
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 50%);
+				width: 50vw;
+				height: 50vw;
+			}
+		}
 
-        &::after {
-            content: "";
-            position: absolute;
-            right: 0%;
-            display: block;
-            background: black;
-            clip-path: polygon(71% 0, 100% 0%, 100% 100%, 140% 100%);
-            width: 100%;
-            height: 200vh;
-            transition: ease-in-out 0.5s;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 35%;
+			// right: -19%;
+			// bottom: -58%;
+			// transform: rotate(35deg);
+			// transform-origin: center;
+			display: block;
+			background: black;
+			clip-path: polygon(0 0, calc(350vw - 35vw) 0, 100% 100%, 0 100%);
+			width: 350vw;
+			height: 200vh;
+			transition: ease-in-out 0.5s;
 
-            @media only screen and (max-width: 1080px) {
-                right: -10%;
-            }
+			@media only screen and (max-width: 1440px) {
+				right: 40%;
+			}
 
-            @media only screen and (max-width: 768px) {
-                right: 0;
-                clip-path: polygon(70% 0, 100% 0%, 100% 100%, 155% 100%);
-            }
-        }
+			@media only screen and (max-width: 1080px) {
+				right: 65%;
+			}
 
-        &.hide-elements {
-            z-index: 1;
+			@media only screen and (max-width: 768px) {
+				top: unset;
+				right: unset;
+				bottom: 0;
+				left: 0;
+				clip-path: polygon(0 0, 50% 50%, 100% 100%, 0 100%);
+				width: 50vw;
+				height: 50vw;
+			}
+		}
 
-            &::before {
-                left: -100%;
-            }
+		&.hide-elements {
+			z-index: 1;
 
-            &::after {
-                right: -100%;
-            }
+			&::before {
+				left: 100%;
 
-            .textwrap {
-               opacity: 0;
-            }
-        }
+				@media only screen and (max-width: 768px) {
+					top: -50vw;
+					right: -50vw;
+					bottom: unset;
+					left: unset;
+				}
+			}
 
-        .textwrap {
-            position: absolute;
-            z-index: 101;
-            left: 0;
-            top: 0;
-            max-width: 1280px;
-		    width: 100%;
-            opacity: 1;
-            transition: ease-in-out 0.5s;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
+			&::after {
+				right: 100%;
 
-            .play {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                right: 12%;
-                transform: translate(-50%,-50%);
+				@media only screen and (max-width: 768px) {
+					top: unset;
+					right: unset;
+					bottom: -50vw;
+					left: -50vw;
+				}
+			}
 
-                @media only screen and (max-width: 1080px) {
-                    left: 50%;
-                }
+			.play {
+				opacity: 0;
+			}
 
-                .border {
-                    transform: scale(0.2);
-                    transform-origin: center;
-                    transition: ease-in-out 0.5s;
-                }
+			.textwrap {
+				opacity: 0;
+			}
+		}
 
-                &:hover {
-                    .border {
-                        transform: scale(1);
-                    }
-                }
-            }
+		.play {
+			position: absolute;
+			z-index: 102;
+			top: 50%;
+			left: 60vw;
+			transform: translate(-50%, -50%);
+			opacity: 1;
+			transition: 500ms ease-in-out;
+			cursor: pointer;
 
-            h2 {
-                color: #FFFFFF;
-                font-family: var(--primaryFont);
-                font-style: normal;
-                font-weight: 900;
-                font-size: 170px;
-                line-height: 1em;
-                letter-spacing: 0.02em;
-                margin: 0 0 150px;
+			@media only screen and (max-width: 1080px) {
+				left: 50%;
+			}
 
-                @media only screen and (max-width: 1440px) {
-                    font-size: 130px;
-                    left: 10vw;
-                }
+			.border {
+				transform: scale(0.2);
+				transform-origin: center;
+				transition: ease-in-out 0.5s;
+			}
 
-                @media only screen and (max-width: 1080px) {
-                    font-size: 90px;
-                    text-align: center;
-                    top: 15vh;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
+			&:hover {
+				.border {
+					transform: scale(1);
+				}
+			}
+		}
 
-                @media only screen and (max-width: 768px) {
-                    font-size: 50px;
-                }
+		.textwrap {
+			position: absolute;
+			z-index: 101;
+			top: 0;
+			left: calc(50vw - (1280px/2));
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 100px 0;
+			width: calc(100% - 100px);
+			height: 100%;
+			padding: 50px 0;
+			opacity: 1;
+			transition: ease-in-out 0.5s;
 
-                @media only screen and (max-width: 480px) {
-                    text-align: center;
-                    top: 10vh;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
+			@media only screen and (max-width: 1440px) {
+				left: 50px;
+			}
 
-            span {
-                color: #FFFFFF;
-                font-family: var(--primaryFont);
-                font-style: normal;
-                font-weight: 700;
-                font-size: 20px;
-                text-transform: uppercase;
-                line-height: 1.5em;
-                letter-spacing: 0.06em;
-                display: block;
-            }
+			@media only screen and (max-width: 768px) {
+				left: 30px;
+				justify-content: flex-start;
+				gap: 50px 0;
+				width: calc(100% - 60px);
+				padding: 100px 0 0;
+			}
 
-            p {
-                font-family: 'Gentium Basic';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 18px;
-                line-height: 26px;
+			@media only screen and (max-width: 480px) {
+				gap: 30px 0;
+			}
 
-                /* or 144% */
-                letter-spacing: 0.04em;
+			h2 {
+				color: #FFFFFF;
+				font-family: var(--primaryFont);
+				font-style: normal;
+				font-weight: 900;
+				font-size: 150px;
+				line-height: 1em;
+				letter-spacing: 0.02em;
+				max-width: 650px;
+				width: 100%;
 
-                color: rgba(255, 255, 255, 0.7);
-            }
+				@media only screen and (max-width: 1440px) {
+					font-size: 100px;
+				}
 
-            .video-description {
-    
-                max-width: 360px;
-                width: 100%;
+				@media only screen and (max-width: 1080px) {
+					font-size: 75px;
+				}
 
-                @media only screen and (max-width: 1440px) {
-                    left: 10vw;
-                    bottom: 15vh;
-                }
+				@media only screen and (max-width: 768px) {
+					font-size: 70px;
+				}
 
-                @media only screen and (max-width: 1080px) {
-                    left: 50%;
-                    bottom: 10vh;
-                    transform: translateX(-50%);
-                }
+				@media only screen and (max-width: 480px) {
+					font-size: 70px;
+				}
+			}
 
-                @media only screen and (max-width: 480px) {
-                    text-align: center;
-                    bottom: 10vh;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
-        }
-    }
+			.video-description {
+				max-width: 580px;
+				width: 100%;
+
+				@media only screen and (max-width: 1440px) {
+					
+				}
+
+				@media only screen and (max-width: 1080px) {
+					max-width: 390px;
+				}
+
+				@media only screen and (max-width: 768px) {
+					
+				}
+			
+				h5 {
+					color: #FFFFFF;
+					font-family: var(--primaryFont);
+					font-style: normal;
+					font-weight: 700;
+					font-size: 30px;
+					text-transform: uppercase;
+					line-height: 1.5em;
+					letter-spacing: 0.06em;
+					display: block;
+					margin-bottom: 10px;
+
+					@media only screen and (max-width: 1080px) {
+						font-size: 25px;
+					}
+	
+					@media only screen and (max-width: 768px) {
+						font-size: 20px;
+					}
+	
+					@media only screen and (max-width: 480px) {
+						font-size: 18px;
+					}
+				}
+
+				p {
+					color: rgba(255, 255, 255, 0.7);
+					font-family: var(--secondaryFont);
+					font-style: normal;
+					font-weight: 400;
+					font-size: 18px;
+					line-height: 1.45em;
+					letter-spacing: 0.04em;
+	
+					@media only screen and (max-width: 768px) {
+						font-size: 16px;
+						line-height: 1.1em;
+					}
+				}
+			}			
+		}
+	}
 }
-
-
-
-  

@@ -135,6 +135,10 @@ img {
     display: block;
 }
 
+.hide {
+    display: none;
+}
+
 .section-content {
     width: 1280px;
     margin: 0 auto;
@@ -185,6 +189,31 @@ img {
 				}
 			}
 		}
+	}
+}
+
+.etg-scroll-bar {
+	// width & height
+	&::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
+
+	// Track
+	&::-webkit-scrollbar-track {
+		background-color: #F3F3F3;
+        border-radius: 4px
+	}
+
+	// Handle
+	&::-webkit-scrollbar-thumb {
+		background-color: #888888;
+		border-radius: 4px;
+	}
+
+	// Handle on hover
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: #696969;
 	}
 }
 

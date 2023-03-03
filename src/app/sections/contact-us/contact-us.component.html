@@ -1,5 +1,11 @@
 <section class="etg-contact-us"
+  [class.etg-scroll-bar]="true"
   [class.toggle-show]="showContact">
+  <button class="etg-close-btn"
+    (click)="closeContact()">
+    <span></span>
+    <span></span>
+  </button>
   <div class="etg-container">
     <div class="etg-content">
       <h2>
@@ -8,11 +14,6 @@
       <h5>
         WE'RE GLAD YOUR HERE. LET'S GET GOING
       </h5>
-      <button class="etg-close-btn"
-        (click)="closeContact()">
-        <span></span>
-        <span></span>
-      </button>
       <div class="etg-row">
         <div class="etg-col">
           <h3>

@@ -19,6 +19,7 @@ export class AppComponent {
   @ViewChild('servicesandcapabilities') divServicesAndCapabilities!: ElementRef;
   @ViewChild('success') divSuccess!: ElementRef;
   @ViewChild('partners') divPartners!: ElementRef;
+  @ViewChild('footer') divFooter!: ElementRef;
 
   showHeaderBackground: boolean = false;
   animateCreatorsEl: any = null;
@@ -44,7 +45,7 @@ export class AppComponent {
     this.animateCollab = ((window.innerHeight/2) >  collab.top ) ? true : false;
 
     const statistics = this.divStats.nativeElement.getBoundingClientRect();
-    this.animateStats = ((window.innerHeight/2) >  statistics.top ) ? true : false;
+    this.animateStats = ((window.innerHeight/2) >  statistics.top ) ? true : true;
 
     const latest = this.divLatest.nativeElement.getBoundingClientRect();
     this.animateLatest = ((window.innerHeight/2) >  latest.top && latest.top > 0) ? true : false;
@@ -63,7 +64,7 @@ export class AppComponent {
     
   }
 
-  scrollTo(node: any){
+  scrollTo(node: any) {
     const sections = [
       this.divBanner.nativeElement,
       this.divCollab.nativeElement,
@@ -74,13 +75,14 @@ export class AppComponent {
       this.divFullservice.nativeElement,
       this.divServicesAndCapabilities.nativeElement,
       this.divSuccess.nativeElement,
-      this.divPartners.nativeElement
+      this.divPartners.nativeElement,
+      this.divFooter.nativeElement
     ];
 
-    sections[(node - 1)].scrollIntoView({behavior: 'smooth'});  
+    sections[(node - 1)].scrollIntoView({behavior: 'smooth'});
   }
 
-  getVisibleSection(){
+  getVisibleSection() {
 
     const windowHeight = window.innerHeight;
 
@@ -105,6 +107,8 @@ export class AppComponent {
         return 9;
       case this.isInViewport(this.divPartners.nativeElement) :
         return 10;
+      case this.isInViewport(this.divFooter.nativeElement) :
+        return 11;
       default: 
        return 0;
     }
@@ -112,9 +116,6 @@ export class AppComponent {
 
   isInViewport(element: any) {
     const rect = element.getBoundingClientRect();
-    return (
-      ((rect.top - 200) - rect.height) < 0 &&
-      (rect.bottom - 200) > 0);
-}
-
+    return ( ((rect.top - 200) - rect.height) < 0 && (rect.bottom - 200) > 0);
+  }
 }

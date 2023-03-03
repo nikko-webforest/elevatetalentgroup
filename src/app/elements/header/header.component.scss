@@ -1,11 +1,13 @@
 .etg-header {
-  padding: 25px;
   position: fixed;
   z-index: 1000;
-  width: 100vw;
+  width: 100%;
+	overflow: hidden;
 	padding: 25px 30px;
   
 	.etg-container {
+		position: relative;
+		z-index: 2;
 		max-width: 1280px;
 		width: 100%;
 		margin: 0 auto;
@@ -32,18 +34,20 @@
 					transform-origin: left;
 					display: block;
 					background-color: #FFFFFF;
-					clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
-					width: 100%;
+					clip-path: polygon(0% 0%, calc(100% - 5px) 0%, 100% 100%, 5px 100%);
+					width: 90%;
 					height: 5px;
 					transition: all 1s ease-in-out;
 
 					&:nth-child(1) {
 						top: calc(50% - 5px);
+						left: 0;
 						transform-origin: left;
 					}
 
 					&:nth-child(2) {
 						top: calc(50% + 5px);
+						left: 10%;
 						transform-origin: right;
 					}
 				}
@@ -52,15 +56,25 @@
 					span {
 						&:nth-child(1) {
 							top: 50%;
+							left: 0;
 							rotate: -45deg;
 							transform: translate(-6px, 17px);
+							width: 100%;
 						}
 
 						&:nth-child(2) {
 							top: 50%;
+							left: 0;
 							rotate: 45deg;
 							transform: translate(7.5px, 15px);
+							width: 100%;
 						}
+					}
+				}
+
+				&:hover {
+					span {
+						background-color: #D49715;
 					}
 				}
 			}

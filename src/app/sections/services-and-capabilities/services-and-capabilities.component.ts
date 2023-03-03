@@ -17,7 +17,7 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
     'Production - Features to Virtual',
     'Live Events - Physical and virtual',
     'Technology - AR/VR MaaS',
-    'Creators and campaign development'
+    'Creators and Campaign Development'
   ];
 
   capabilitiesList: any = [

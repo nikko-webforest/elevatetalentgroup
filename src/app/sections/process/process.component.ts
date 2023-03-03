@@ -12,8 +12,8 @@ export class ProcessComponent implements OnInit {
     {
       'count': '01',
       'name': 'Experience Matters',
-      'details': 'We’ve been there since the beginning. Building and scaling MCN’s, developing creators, connecting brands, crafting global ad campaigns for Fortune 500, and producing films/shows/digital content for decades.',
-      'image': '../../../assets/ProcessSection_ProcessImage_01.jpg'
+      'image': '../../../assets/ProcessSection_ProcessImage_01.jpg',
+      'details': 'We’ve been there since the beginning. Building and scaling MCN’s, developing creators, connecting brands, crafting global ad campaigns for Fortune 500, and producing films/shows/digital content for decades.'
     },
     {
       'count': '02',

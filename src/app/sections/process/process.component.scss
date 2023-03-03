@@ -7,8 +7,11 @@
   align-items: center;
 
   @media only screen and (max-width: 1080px) {
-    height: unset;
     padding: 80px 30px 50px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: unset;
   }
 
   .etg-container {
@@ -94,8 +97,7 @@
         }
 
         @media only screen and (max-width: 768px) {
-          overflow-y: hidden;
-          overflow-x: scroll;
+          overflow-x: auto;
         }
 
         &:nth-child(1) {
@@ -119,6 +121,11 @@
             .etg-inner-col {
               &:nth-child(1) {
                 min-width: 340px;
+
+                @media only screen and (max-width: 480px) {
+                  max-width: 100%;
+                  width: 100%;
+                }
 
                 .steps-wrap {
                   position: relative;
@@ -311,138 +318,267 @@
             --icon-height-active: 45px;
             --icon-gap: 25px;
             --icon-gap-active: 16px;
-            position: relative;
+            width: 100%;
 
-            &.ds-view {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: stretch;
-              gap: 150px 25px;
-              min-width: 380px;
-              width: 100%;
-              height: 503px;
-
-              @media only screen and (max-width: 1080px) {
-                display: none;
-              }
+            .process-status-list {
+              position: relative;
 
               @media only screen and (max-width: 480px) {
-                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
               }
 
-              > .etg-svg {
-                position: absolute;
-                z-index: 1;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: block;
-                max-width: 2px;
-                min-width: 2px;
-                width: 100%;
-                height: 100%;
-              }
-
-              .process-status-item {
-                position: relative;
-                z-index: 2;
+              &.ds-view {
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
-                align-items: center;
-                gap: 0 var(--icon-gap);
+                align-items: stretch;
+                gap: 150px 25px;
+                min-width: 380px;
                 width: 100%;
-                cursor: pointer;
+                height: 503px;
 
-                .process-status-label {
-                  color: rgba(255, 255, 255, 0.4);
-                  font-family: var(--primaryFont);
-                  font-style: normal;
-                  font-weight: 400;
-                  font-size: 16px;
-                  line-height: 1em;
-                  width: 50%;
-                  transition: all 1s ease-in-out;
-
-                  @media only screen and (max-width: 768px) {
-                    font-size: 14px;
-                  }
+                @media only screen and (max-width: 1080px) {
+                  display: none;
                 }
 
-                .process-status-icon {
-                  position: absolute;
-                  z-index: 2;
-                  display: block;
-                  background: #7D7D7D;
-                  width: var(--icon-width);
-                  height: var(--icon-height);
-                  border-radius: 50px;
-                  transition: all 1s ease-in-out;
+                @media only screen and (max-width: 480px) {
+                  display: flex;
+                }
 
-                  &::before {
-                    content: '';
+                > .etg-svg {
+                  position: absolute;
+                  z-index: 1;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  display: block;
+                  max-width: 2px;
+                  min-width: 2px;
+                  width: 100%;
+                  height: 100%;
+                }
+
+                .process-status-item {
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 0 var(--icon-gap);
+                  width: 100%;
+                  cursor: pointer;
+
+                  .process-status-label {
+                    color: rgba(255, 255, 255, 0.4);
+                    font-family: var(--primaryFont);
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 1em;
+                    width: 50%;
+                    transition: all 1s ease-in-out;
+
+                    @media only screen and (max-width: 768px) {
+                      font-size: 14px;
+                    }
+                  }
+
+                  .process-status-icon {
                     position: absolute;
-                    z-index: 3;
+                    z-index: 2;
                     display: block;
                     background: #7D7D7D;
                     width: var(--icon-width);
                     height: var(--icon-height);
                     border-radius: 50px;
-                    opacity: 1;
-                    transition: opacity 1s ease-in-out 500ms;
+                    transition: all 1s ease-in-out;
+
+                    &::before {
+                      content: '';
+                      position: absolute;
+                      z-index: 3;
+                      display: block;
+                      background: #7D7D7D;
+                      width: var(--icon-width);
+                      height: var(--icon-height);
+                      border-radius: 50px;
+                      opacity: 1;
+                      transition: opacity 1s ease-in-out 500ms;
+                    }
+                  }
+
+                  .etg-svg {
+                    position: absolute;
+                    z-index: 1;
+                    top: -98px;
+                    min-width: 2px;
+                    width: 100%;
+                    opacity: 0;
+                    transition: opacity 1s ease-in-out;
+                  }
+
+                  &:nth-child(odd) {
+                    flex-direction: row-reverse;
+
+                    .process-status-label {
+                      text-align: left;
+                      margin-left: calc( ( var(--icon-width) + var(--icon-gap) * 2 ) );
+                      position: relative;
+                      left: 50%;
+                      transform: translateX(-50%);
+                    }
+
+                    .process-status-icon {
+                      
+                    }
+                  }
+
+                  &:nth-child(even) {
+                    flex-direction: row;
+
+                    .process-status-label {
+                      text-align: right;
+                      margin-right: calc( ( var(--icon-width) + var(--icon-gap) * 2 ) );
+                      position: relative;
+                      right: 50%;
+                      transform: translateX(50%);
+                    }
+
+                    .process-status-icon {
+                      
+                    }
+                  }
+
+                  &.active {
+                    gap: 0 var(--icon-gap-active);
+
+                    &:nth-child(odd) {
+                      .process-status-label {
+                        margin-left: calc( ( var(--icon-width-active) + var(--icon-gap-active) * 2 ) );
+                      }
+      
+                      .process-status-icon {
+                        
+                      }
+                    }
+
+                    &:nth-child(even) {
+                      .process-status-label {
+                        margin-right: calc( ( var(--icon-width-active) + var(--icon-gap-active) * 2 ) );
+                      }
+      
+                      .process-status-icon {
+                        
+                      }
+                    }
+
+                    .process-status-label {
+                      color: #FFFFFF;
+                      font-weight: 700;
+                    }
+
+                    .process-status-icon {
+                      width: var(--icon-width-active);
+                      height: var(--icon-height-active);
+                      border: 1px solid #D49715;
+
+                      &::before {
+                        opacity: 0;
+                        transition: opacity 1s ease-in-out;
+                      }
+                    }
+
+                    .etg-svg {
+                      opacity: 1;
+                    }
                   }
                 }
+              }
 
-                .etg-svg {
+              &.lt-view {
+                display: none;
+
+                @media only screen and (max-width: 1080px) {
+                  display: flex;
+                  width: 100%;
+                  height: 150px;
+                }
+
+                @media only screen and (max-width: 480px) {
+                  display: none;
+                }
+
+                > .etg-svg {
                   position: absolute;
                   z-index: 1;
-                  top: -98px;
-                  min-width: 2px;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  display: block;
                   width: 100%;
-                  opacity: 0;
-                  transition: opacity 1s ease-in-out;
+                  height: 2px;
                 }
 
-                &:nth-child(odd) {
-                  flex-direction: row-reverse;
+                .process-status-item {
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 0 var(--icon-gap);
+                  width: 100%;
+                  cursor: pointer;
 
                   .process-status-label {
-                    text-align: left;
-                    margin-left: calc( ( var(--icon-width) + var(--icon-gap) * 2 ) );
-                    position: relative;
-                    left: 50%;
-                    transform: translateX(-50%);
+                    color: rgba(255, 255, 255, 0.4);
+                    font-family: var(--primaryFont);
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-align: center;
+                    line-height: 1em;
+                    transition: all 1s ease-in-out;
                   }
 
                   .process-status-icon {
-                    
+                    position: absolute;
+                    z-index: 2;
+                    display: block;
+                    background: #7D7D7D;
+                    width: var(--icon-width);
+                    height: var(--icon-height);
+                    border-radius: 50px;
+                    transition: all 1s ease-in-out;
+
+                    &::before {
+                      content: '';
+                      position: absolute;
+                      z-index: 3;
+                      display: block;
+                      background: #7D7D7D;
+                      width: var(--icon-width);
+                      height: var(--icon-height);
+                      border-radius: 50px;
+                      opacity: 1;
+                      transition: opacity 1s ease-in-out 500ms;
+                    }
                   }
-                }
 
-                &:nth-child(even) {
-                  flex-direction: row;
-
-                  .process-status-label {
-                    text-align: right;
-                    margin-right: calc( ( var(--icon-width) + var(--icon-gap) * 2 ) );
-                    position: relative;
-                    right: 50%;
-                    transform: translateX(50%);
+                  .etg-svg {
+                    position: absolute;
+                    z-index: 1;
+                    min-width: 2px;
+                    width: 100%;
+                    opacity: 0;
+                    transition: opacity 1s ease-in-out;
                   }
-
-                  .process-status-icon {
-                    
-                  }
-                }
-
-                &.active {
-                  gap: 0 var(--icon-gap-active);
 
                   &:nth-child(odd) {
                     .process-status-label {
-                      margin-left: calc( ( var(--icon-width-active) + var(--icon-gap-active) * 2 ) );
+                      transform: translateY(30px);
                     }
-    
+
                     .process-status-icon {
                       
                     }
@@ -450,175 +586,56 @@
 
                   &:nth-child(even) {
                     .process-status-label {
-                      margin-right: calc( ( var(--icon-width-active) + var(--icon-gap-active) * 2 ) );
+                      transform: translateY(-30px);
                     }
-    
+
                     .process-status-icon {
                       
                     }
                   }
 
-                  .process-status-label {
-                    color: #FFFFFF;
-                    font-weight: 700;
-                  }
+                  &.active {
+                    gap: 0 var(--icon-gap-active);
 
-                  .process-status-icon {
-                    width: var(--icon-width-active);
-                    height: var(--icon-height-active);
-                    border: 1px solid #D49715;
-
-                    &::before {
-                      opacity: 0;
-                      transition: opacity 1s ease-in-out;
+                    &:nth-child(odd) {
+                      .process-status-label {
+                        transform: translateY(50px);
+                      }
+      
+                      .process-status-icon {
+                        
+                      }
                     }
-                  }
 
-                  .etg-svg {
-                    opacity: 1;
-                  }
-                }
-              }
-            }
+                    &:nth-child(even) {
+                      .process-status-label {
+                        transform: translateY(-50px);
+                      }
+      
+                      .process-status-icon {
+                        
+                      }
+                    }
 
-            &.lt-view {
-              display: none;
-
-              @media only screen and (max-width: 1080px) {
-                display: flex;
-                width: 100%;
-                height: 100px;
-              }
-
-              @media only screen and (max-width: 480px) {
-                display: none;
-              }
-
-              > .etg-svg {
-                position: absolute;
-                z-index: 1;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: block;
-                width: 100%;
-                height: 2px;
-              }
-
-              .process-status-item {
-                position: relative;
-                z-index: 2;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 0 var(--icon-gap);
-                width: 100%;
-                cursor: pointer;
-
-                .process-status-label {
-                  color: rgba(255, 255, 255, 0.4);
-                  font-family: var(--primaryFont);
-                  font-style: normal;
-                  font-weight: 400;
-                  font-size: 16px;
-                  line-height: 1em;
-                  transition: all 1s ease-in-out;
-                }
-
-                .process-status-icon {
-                  position: absolute;
-                  z-index: 2;
-                  display: block;
-                  background: #7D7D7D;
-                  width: var(--icon-width);
-                  height: var(--icon-height);
-                  border-radius: 50px;
-                  transition: all 1s ease-in-out;
-
-                  &::before {
-                    content: '';
-                    position: absolute;
-                    z-index: 3;
-                    display: block;
-                    background: #7D7D7D;
-                    width: var(--icon-width);
-                    height: var(--icon-height);
-                    border-radius: 50px;
-                    opacity: 1;
-                    transition: opacity 1s ease-in-out 500ms;
-                  }
-                }
-
-                .etg-svg {
-                  position: absolute;
-                  z-index: 1;
-                  min-width: 2px;
-                  width: 100%;
-                  opacity: 0;
-                  transition: opacity 1s ease-in-out;
-                }
-
-                &:nth-child(odd) {
-                  .process-status-label {
-                    transform: translateY(30px);
-                  }
-
-                  .process-status-icon {
-                    
-                  }
-                }
-
-                &:nth-child(even) {
-                  .process-status-label {
-                    transform: translateY(-30px);
-                  }
-
-                  .process-status-icon {
-                    
-                  }
-                }
-
-                &.active {
-                  gap: 0 var(--icon-gap-active);
-
-                  &:nth-child(odd) {
                     .process-status-label {
-                      transform: translateY(50px);
+                      color: #FFFFFF;
+                      font-weight: 700;
                     }
-    
+
                     .process-status-icon {
-                      
+                      width: var(--icon-width-active);
+                      height: var(--icon-height-active);
+                      border: 1px solid #D49715;
+
+                      &::before {
+                        opacity: 0;
+                        transition: opacity 1s ease-in-out;
+                      }
                     }
-                  }
 
-                  &:nth-child(even) {
-                    .process-status-label {
-                      transform: translateY(-50px);
+                    .etg-svg {
+                      opacity: 1;
                     }
-    
-                    .process-status-icon {
-                      
-                    }
-                  }
-
-                  .process-status-label {
-                    color: #FFFFFF;
-                    font-weight: 700;
-                  }
-
-                  .process-status-icon {
-                    width: var(--icon-width-active);
-                    height: var(--icon-height-active);
-                    border: 1px solid #D49715;
-
-                    &::before {
-                      opacity: 0;
-                      transition: opacity 1s ease-in-out;
-                    }
-                  }
-
-                  .etg-svg {
-                    opacity: 1;
                   }
                 }
               }

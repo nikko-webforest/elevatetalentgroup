@@ -12,6 +12,7 @@ export class ContactUsComponent implements OnInit {
   clickEventSubscription:Subscription;
 
   public showContact: boolean = false;
+
   socialMediaList: any = [
     {
       'platform': 'Instagram',
