@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Injectable } from '@angular/core';
 import { SharedService } from '../../shared.service';
 import { Subscription } from 'rxjs';
 
@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./contact-us.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class ContactUsComponent implements OnInit {
   clickEventSubscription:Subscription;
 

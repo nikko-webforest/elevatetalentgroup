@@ -1,4 +1,8 @@
 .etg-process {
+  background-image: url('../../../assets/Process_bg_9000x2030.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   overflow: hidden;
   padding: 130px 30px 50px;
@@ -7,11 +11,13 @@
   align-items: center;
 
   @media only screen and (max-width: 1080px) {
-    padding: 80px 30px 50px;
+    height: calc(100vh - 100px);
+    padding: 50px 30px;
   }
 
   @media only screen and (max-width: 768px) {
-    height: unset;
+    background-image: url('../../../assets/Process_bg_1536x1864.jpg');
+    height: 1350px;
   }
 
   .etg-container {
@@ -96,11 +102,11 @@
           width: 100%;
         }
 
-        @media only screen and (max-width: 768px) {
-          overflow-x: auto;
-        }
-
         &:nth-child(1) {
+          @media only screen and (max-width: 768px) {
+            overflow: hidden;
+          }
+
           .etg-inner-row {
             display: flex;
             flex-direction: column;
@@ -115,12 +121,13 @@
             }
 
             @media only screen and (max-width: 480px) {
+              justify-content: flex-start;
               gap: 20px 37px;
             }
 
             .etg-inner-col {
               &:nth-child(1) {
-                min-width: 340px;
+                min-width: 435px;
 
                 @media only screen and (max-width: 480px) {
                   max-width: 100%;
@@ -182,6 +189,8 @@
                       text-transform: uppercase;
                       letter-spacing: 0.06em;
                       line-height: 1.5em;
+                      min-width: max-content;
+                      width: 100%;
 
                       @media only screen and (max-width: 1080px) {
                         font-size: 19px;
@@ -295,6 +304,11 @@
         }
 
         &:nth-child(2) {
+          @media only screen and (max-width: 768px) {
+            overflow-x: auto;
+            overflow-y: hidden;
+          }
+          
           .main-title {
             display: block;
 
@@ -322,11 +336,6 @@
 
             .process-status-list {
               position: relative;
-
-              @media only screen and (max-width: 480px) {
-                overflow-x: auto;
-                overflow-y: hidden;
-              }
 
               &.ds-view {
                 display: flex;

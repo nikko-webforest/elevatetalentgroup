@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class SharedService {
 
   private toggleContact = new Subject<any>();

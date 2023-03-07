@@ -41,7 +41,7 @@ export class LatestComponent implements OnInit {
       width: document.body.clientWidth + 'px'
     };
 
-    this.player = new Player('player', options);
+    this.player = new Player('player-latest', options);
     // 
     // var iframe = document.querySelector('iframe');
     // this.player = new Player(iframe);

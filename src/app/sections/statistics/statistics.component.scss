@@ -326,6 +326,7 @@
 
 		@media only screen and (max-width: 1440px) {
 			height: auto;
+			padding: 30px 30px 50px;
 		}
 
 		&::before {
@@ -728,6 +729,7 @@
 											text-align: center;
 											line-height: 1.3em;
 											position: absolute;
+											z-index: 1;
 											left: 50%;
 											transform: translateX(-50%);
 											display: flex;
@@ -740,6 +742,14 @@
 											opacity: 0;
 											transition: all 1s ease-in-out;
 											cursor: pointer;
+
+											&.prev-in,
+											&.prev,
+											&.active,
+											&.next,
+											&.next-in {
+												z-index: 2;
+											}
 
 											&.prev-in {
 												left: calc(50% - ((150px + 35px) * 2));
@@ -755,6 +765,7 @@
 												color: #FFFFFF;
 												font-weight: 700;
 												font-size: 14px;
+												align-items: flex-start;
 												left: 50%;
 												opacity: 1;
 											}

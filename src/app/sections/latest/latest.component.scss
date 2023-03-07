@@ -1,140 +1,91 @@
-#player {
-	position: absolute;
-	z-index: 1;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	display: block;
-	width: 700vw;
-	height: 100%;
+.etg-latest {
+	position: relative;
+	height: 100vh;
 	overflow: hidden;
 
-	iframe {
+	@media only screen and (max-width: 1080px) {
+		height: calc(100vh - 100px);
+	}
+
+	#player-latest {
 		position: absolute;
 		z-index: 1;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%,-50%);
 		display: block;
-		width: 100%;
+		width: 700vw;
 		height: 100%;
-	}
-}
-
-.etg-latest {
-	position: relative;
-	overflow: hidden;
-
-	.etg-content {
-		position: relative;
-		z-index: 100;
-		display: block;
-		width: 100%;
-		height: 100vh;
 		overflow: hidden;
-		transition: ease-in-out 1s;
-
-		&::before {
-			content: "";
+	
+		iframe {
 			position: absolute;
-			top: 0;
-			left: 40%;
-			// left: -29%;
-			// top: -58%;
-			// transform: rotate(35deg);
-			// transform-origin: center;
-			display: block;
-			background-color: black;
-			clip-path: polygon(35vw 0, 100% 0, 100% 100%, 0 100%);
-			width: 350vw;
-			height: 200vh;
-			transition: ease-in-out 0.5s;
-
-			@media only screen and (max-width: 1080px) {
-				left: 50%;
-			}
-
-			@media only screen and (max-width: 768px) {
-				top: unset;
-				right: 0;
-				bottom: 0;
-				left: unset;
-				clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
-				width: 50vw;
-				height: 50vw;
-			}
-		}
-
-		&::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 60%;
-			// right: -19%;
-			// bottom: -58%;
-			// transform: rotate(35deg);
-			// transform-origin: center;
-			display: block;
-			background: black;
-			clip-path: polygon(0 0, 100% 0, calc(350vw - 35vw) 100%, 0 100%);
-			width: 350vw;
-			height: 200vh;
-			transition: ease-in-out 0.5s;
-
-			@media only screen and (max-width: 1080px) {
-				right: 80%;
-			}
-
-			@media only screen and (max-width: 768px) {
-				top: 0;
-				right: unset;
-				bottom: unset;
-				left: 0;
-				clip-path: polygon(0 0, 100% 0, 0% 100%, 0 100%);
-				width: 50vw;
-				height: 50vw;
-			}
-		}
-
-		&.hide-elements {
 			z-index: 1;
-
-			&::before {
-				left: 100%;
-
-				@media only screen and (max-width: 768px) {
-					top: unset;
-					right: -50vw;
-					bottom: -50vw;
-					left: unset;
-				}
-			}
-
-			&::after {
-				right: 100%;
-
-				@media only screen and (max-width: 768px) {
-					top: -50vw;
-					right: unset;
-					bottom: unset;
-					left: -50vw;
-				}
-			}
-
-			.textwrap {
-				opacity: 0;
-			}
-		}
-
-		.textwrap {
-			position: absolute;
-			z-index: 101;
-			left: 0;
-			top: 0;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			display: block;
 			width: 100%;
 			height: 100%;
-			opacity: 1;
-			transition: ease-in-out 0.5s;
+		}
+	}
+
+	.etg-svg.svg-foreground {
+		position: absolute;
+		z-index: 2;
+		left: 50%;
+		transform: translateX(-50%);
+		max-width: 9000px;
+		min-width: 9000px;
+		width: 100%;
+		height: 100%;
+
+		&.ds-view {
+			display: block;
+
+			@media only screen and (max-width: 768px) {
+				display: none;
+			}
+		}
+
+		&.lt-view {
+			display: none;
+
+			@media only screen and (max-width: 768px) {
+				display: block;
+			}
+		}
+
+		.left-pane {
+			transform: translateX(0);
+			transition: transform 1s ease-in-out;
+		}
+
+		.right-pane {
+			transform: translateX(0);
+			transition: transform 1s ease-in-out;
+		}
+	}
+
+	.etg-container {
+		position: relative;
+		z-index: 3;
+		max-width: 1340px;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		padding: 50px 30px;
+
+		.etg-row {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+			gap: 120px 0;
+
+			@media only screen and (max-width: 768px) {
+				gap: 150px 0;
+			}
 
 			h2 {
 				color: #FFFFFF;
@@ -144,72 +95,59 @@
 				font-size: 150px;
 				line-height: 1em;
 				letter-spacing: 0.02em;
-				position: absolute;
-				top: 10vh;
-				left: calc(50vw - (1280px/2));
-
-				@media only screen and (max-width: 1440px) {
-					font-size: 100px;
-					top: 5vh;
-					left: 50px;
-				}
+				align-self: flex-start;
+				opacity: 1;
+				width: max-content;
+				transition: opacity 300ms ease-in-out;
 
 				@media only screen and (max-width: 1080px) {
-					font-size: 70px;
-					top: 75px;
-					left: 30px;
+					font-size: 100px;
 				}
 
 				@media only screen and (max-width: 768px) {
-					font-size: 60px;
-					top: 30px;
+					font-size: 75px;
 				}
 
 				@media only screen and (max-width: 480px) {
-					font-size: 50px;
+					font-size: 60px;
 				}
 			}
 
-			.play {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+			.play-btn {
+				align-self: center;
+				opacity: 1;
+				width: 90px;
+				height: 90px;
+				margin: 0 0 0 -250px;
+				transition: opacity 300ms ease-in-out;
 				cursor: pointer;
 
+				@media only screen and (max-width: 768px) {
+					margin: 0;
+				}
+
 				.border {
-					transform: scale(0.2);
+					scale: 0.5;
 					transform-origin: center;
-					transition: ease-in-out 0.5s;
+					transition: scale 300ms ease-in-out;
 				}
 
 				&:hover {
 					.border {
-						transform: scale(1);
+						scale: 1;
 					}
 				}
 			}
 
 			.video-description {
-				position: absolute;
-				right: calc(50vw - (1280px/2));
-				bottom: 10vh;
-				max-width: 360px;
+				align-self: flex-end;
+				opacity: 1;
+				max-width: 350px;
 				width: 100%;
-
-				@media only screen and (max-width: 1440px) {
-					right: 50px;
-					bottom: 5vh;
-				}
-
-				@media only screen and (max-width: 1080px) {
-					max-width: 320px;
-					right: 50px;
-					bottom: 75px;
-				}
+				transition: opacity 300ms ease-in-out;
 
 				@media only screen and (max-width: 768px) {
-					bottom: 30px;
+					max-width: 300px;
 				}
 
 				.etg-img {
@@ -226,35 +164,33 @@
 					letter-spacing: 0.04em;
 					margin-top: 50px;
 
-					@media only screen and (max-width: 1080px) {
-						font-size: 18px;
-						margin-top: 40px;
-					}
-	
 					@media only screen and (max-width: 768px) {
 						font-size: 16px;
-						line-height: 1.1em;
-						margin-top: 30px;
-					}
-	
-					@media only screen and (max-width: 480px) {
-						font-size: 14px;
-						margin-top: 25px;
 					}
 				}
-			}			
+			}
+		}
+	}
+
+	&.is-playing {
+		.etg-svg.svg-foreground {
+			.left-pane {
+				transform: translateX(-5000px);
+			}
+
+			.right-pane {
+				transform: translateX(5000px);
+			}
 		}
 
-		.vector-1 {
-			position: absolute;
-			left: 0;
-			right: 0;
-		}
-
-		.vector-2 {
-			position: absolute;
-			right: 0;
-			bottom: 0;
+		.etg-container {
+			.etg-row {
+				h2,
+				.play-btn,
+				.video-description {
+					opacity: 0;
+				}
+			}
 		}
 	}
 }

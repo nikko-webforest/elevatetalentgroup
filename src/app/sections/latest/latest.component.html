@@ -1,15 +1,44 @@
-<section class="etg-latest">
-	<div class="etg-content"
-		[class.hide-elements]="isPlaying">
-		<div class="textwrap">
+<section class="etg-latest"
+	[class.is-playing]="isPlaying">
+	<div id="player-latest"></div>
+	<svg class="etg-svg svg-foreground ds-view" width="9000" height="2030" viewBox="0 0 9000 2030" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<g clip-path="url(#clip0_958_639)">
+			<path class="left-pane" d="M2588 2030L3928 0H0V2030H2588Z" fill="#000000"></path>
+			<path class="right-pane" d="M4308 2030L5648 0H8828V2030H4308Z" fill="#000000"></path>
+		</g>
+		<defs>
+			<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+				<use xlink:href="#image0_958_639" transform="matrix(0.000390625 0 0 0.000735453 0 -0.0295259)"/>
+			</pattern>
+			<clipPath id="clip0_958_639">
+				<rect width="9000" height="2030" fill="white"/>
+			</clipPath>
+		</defs>
+	</svg>
+	<svg class="etg-svg svg-foreground lt-view" width="1536" height="1864" viewBox="0 0 1536 1864" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<g clip-path="url(#clip0_958_1058)">
+			<path class="left-pane" d="M705 0L-1 1193.18V0H705Z" fill="#010102"></path>
+			<path class="right-pane" d="M1536 721.044L862 1864H1536V721.044Z" fill="#010102"></path>
+		</g>
+		<defs>
+			<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+				<use xlink:href="#image0_958_1058" transform="matrix(0.000799561 0 0 0.000735453 -0.53913 -0.0295259)"/>
+			</pattern>
+			<clipPath id="clip0_958_1058">
+				<rect width="1536" height="1864" fill="white"/>
+			</clipPath>
+		</defs>
+	</svg>		
+	<div class="etg-container">
+		<div class="etg-row">
 			<h2>
 				LIMELIGHT
 			</h2>
-			<svg class="play"
+			<svg class="play-btn"
 				(click)="play()"
 				width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<circle class="border" cx="45" cy="45" r="45" fill="white" fill-opacity="0.4"></circle>
-				<circle  cx="45.5697" cy="45.5695" r="33.57" fill="white"></circle>
+				<circle class="border" cx="45" cy="45" r="45" fill="#FFFFFF" fill-opacity="0.4"></circle>
+				<circle  cx="45.5697" cy="45.5695" r="33.57" fill="#FFFFFF"></circle>
 				<path d="M40.2068 54.8506C40.0277 54.8506 39.8559 54.7803 39.7292 54.6553C39.6026 54.5303 39.5314 54.3607 39.5314 54.1839V39.5171C39.5315 39.4013 39.5621 39.2875 39.6202 39.1868C39.6784 39.0862 39.7621 39.0023 39.8631 38.9433C39.9642 38.8844 40.079 38.8525 40.1963 38.8507C40.3137 38.8489 40.4295 38.8773 40.5323 38.9331L54.039 46.2665C54.1448 46.3241 54.2331 46.4086 54.2946 46.5113C54.3561 46.6141 54.3886 46.7312 54.3886 46.8505C54.3886 46.9699 54.3561 47.087 54.2946 47.1897C54.2331 47.2924 54.1448 47.377 54.039 47.4345L40.5323 54.7679C40.4326 54.8221 40.3206 54.8506 40.2068 54.8506Z" fill="#FFAE00"></path>
 			</svg>
 			<div class="video-description">
@@ -23,5 +52,4 @@
 			</div>
 		</div>
 	</div>
-	<div id="player"></div>
 </section>

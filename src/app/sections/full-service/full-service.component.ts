@@ -40,7 +40,7 @@ export class FullServiceComponent implements OnInit {
       autoplay: false,
       width: document.body.clientWidth + 'px'
     };
-    this.player = new Player('player2', options);
+    this.player = new Player('player-full-service', options);
     // 
       // var iframe = document.querySelector('iframe');
       // this.player = new Player(iframe);

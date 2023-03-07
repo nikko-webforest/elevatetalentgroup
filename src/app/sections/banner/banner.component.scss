@@ -1,6 +1,6 @@
 .etg-banner {
 	position: relative;
-	background-image: url('../../../assets/Banner_bg_3830x2023.jpg');
+	background-image: url('../../../assets/HeroBanner_bg_9000x2030.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -9,8 +9,12 @@
 	overflow: hidden;
 	padding: 150px 30px 50px;
 
+	@media only screen and (max-width: 1080px) {
+		height: calc(100vh - 100px);
+	}
+
 	@media only screen and (max-width: 768px) {
-		background-image: url('../../../assets/Banner_bg_768x932.jpg');
+		background-image: url('../../../assets/HeroBanner_bg_1536x1864.jpg');
 	}
 
 	&::before {
@@ -20,7 +24,7 @@
 		top: 0;
 		left: 0;
 		display: block;
-		background-image: url('../../../assets/Banner_fg_3830x2028.png');
+		background-image: url('../../../assets/HeroBanner_fg_9000x2030.png');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -28,7 +32,7 @@
 		height: 100%;
 
 		@media only screen and (max-width: 768px) {
-			background-image: url('../../../assets/Banner_fg_768x932.png');
+			background-image: url('../../../assets/HeroBanner_bg_1536x1864.png');
 		}
 	}
 	
@@ -74,7 +78,6 @@
 					position: relative;
 					z-index: 3;
 					display: block;
-					animation: move-bg 20s infinite linear;
 
 					&.under {
 						color: #FFFFFF;
@@ -98,6 +101,7 @@
 							0 0 / var(--bg-size) 100%;
 						-webkit-background-clip: text;
 						background-clip: text;
+						animation: move-bg 20s infinite linear;
 					}
 				}
 			}

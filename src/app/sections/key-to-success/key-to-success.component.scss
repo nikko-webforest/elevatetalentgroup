@@ -1,11 +1,19 @@
 .etg-key-to-success {
+  background-image: url('../../../assets/KeyToSuccess_bg_9000x2030.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   overflow: hidden;
   padding: 170px 30px 50px;
 
   @media only screen and (max-width: 1080px) {
-    height: unset;
-    padding: 80px 30px 50px;
+    height: calc(100vh - 100px);
+    padding: 50px 30px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: 1864px;
   }
 
   @keyframes fade-up {
@@ -32,290 +40,296 @@
   }
 
   .etg-container {
+    display: flex;
+    align-items: center;
     max-width: 1920px;
     width: 100%;
     height: 100%;
     margin: 0 auto;
 
-    h2 {
-      color: #FFFFFF;
-      font-family: var(--primaryFont);
-      font-style: normal;
-      font-weight: 900;
-      font-size: 96px;
-      text-align: center;
-      line-height: 1em;
-      letter-spacing: 0.02em;
-      width: max-content;
-      margin: 0 auto 24px;
-      animation: fade-up 1000ms ease-in-out 0ms;
-
-      @media only screen and (max-width: 1080px) {
-        font-size: 48px;
-      }
-
-      @media only screen and (max-width: 480px) {
-        font-size: 48px;
-        max-width: 250px;
-        margin: 0 auto 12px;
-      }
-    }
-
-    p {
-      color: rgba(255, 255, 255, 0.7);
-      font-family: var(--secondaryFont);
-      font-style: normal;
-      font-weight: 400;
-      font-size: 24px;
-      text-align: center;
-      line-height: 1em;
-      letter-spacing: 0.02em;
-      max-width: 725px;
-      margin: 0 auto 105px;
-      animation: fade-up 1000ms ease-in-out 200ms;
-
-      @media only screen and (max-width: 1080px) {
-        font-size: 18px;
-        margin: 0 auto 100px;
-      }
-
-      @media only screen and (max-width: 768px) {
-        font-size: 16px;
-        margin: 0 auto 90px;
-      }
-
-      @media only screen and (max-width: 480px) {
-        font-size: 14px;
-        margin: 0 auto 80px;
-      }
-    }
-
-    .etg-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 35px;
-      margin: 0 auto;
-
-      @media only screen and (max-width: 1080px) {
-        max-width: 630px;
-        gap: 45px 25px;
-      }
-
-      .etg-col {
-        position: relative;
-        width: 375px;
-        height: 375px;
-        padding: 95px 35px 35px;
-        opacity: 0;
-        transform: translateY(300px);
-        transition:
-          opacity 0ms ease-in-out,
-          transform 0ms ease-in-out;
+    .etg-content {
+      width: 100%;
+      
+      h2 {
+        color: #FFFFFF;
+        font-family: var(--primaryFont);
+        font-style: normal;
+        font-weight: 900;
+        font-size: 96px;
+        text-align: center;
+        line-height: 1em;
+        letter-spacing: 0.02em;
+        width: max-content;
+        margin: 0 auto 24px;
+        animation: fade-up 1000ms ease-in-out 0ms;
 
         @media only screen and (max-width: 1080px) {
-          width: 300px;
-          height: 300px;
-          padding: 55px 25px 25px;
+          font-size: 48px;
         }
 
         @media only screen and (max-width: 480px) {
-          width: 360px;
-          height: 360px;
-          padding: 55px 25px 25px;
+          font-size: 48px;
+          max-width: 250px;
+          margin: 0 auto 12px;
+        }
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: var(--secondaryFont);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        text-align: center;
+        line-height: 1em;
+        letter-spacing: 0.02em;
+        max-width: 725px;
+        margin: 0 auto 105px;
+        animation: fade-up 1000ms ease-in-out 200ms;
+
+        @media only screen and (max-width: 1080px) {
+          font-size: 18px;
+          margin: 0 auto 100px;
         }
 
-        .bg-color {
-          position: absolute;
-          z-index: 1;
-          inset: 0;
-          display: block;
-          // background-color: #1E1E1E !important;
-          opacity: 0.7;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          transition: background-color 500ms linear;
+        @media only screen and (max-width: 768px) {
+          font-size: 16px;
+          margin: 0 auto 90px;
+        }
 
-          .bg-image {
+        @media only screen and (max-width: 480px) {
+          font-size: 14px;
+          margin: 0 auto 80px;
+        }
+      }
+
+      .etg-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        margin: 0 auto;
+
+        @media only screen and (max-width: 1080px) {
+          max-width: 630px;
+          gap: 45px 25px;
+        }
+
+        .etg-col {
+          position: relative;
+          width: 375px;
+          height: 375px;
+          padding: 95px 35px 35px;
+          opacity: 0;
+          transform: translateY(300px);
+          transition:
+            opacity 0ms ease-in-out,
+            transform 0ms ease-in-out;
+
+          @media only screen and (max-width: 1080px) {
+            width: 300px;
+            height: 300px;
+            padding: 55px 25px 25px;
+          }
+
+          @media only screen and (max-width: 480px) {
+            width: 360px;
+            height: 360px;
+            padding: 55px 25px 25px;
+          }
+
+          .bg-color {
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            display: block;
+            // background-color: #1E1E1E !important;
+            opacity: 0.7;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transition: background-color 500ms linear;
+
+            .bg-image {
+              position: absolute;
+              z-index: 2;
+            }
+          }
+
+          .icon-wrap {
             position: absolute;
             z-index: 2;
-          }
-        }
+            top: -30px;
+            right: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // background-color: #1E1E1E !important;
+            width: 95px;
+            height: 95px;
+            padding: 10px;
+            border-radius: 10px;
+            scale: 1;
+            transition: background-color 500ms linear;
 
-        .icon-wrap {
-          position: absolute;
-          z-index: 2;
-          top: -30px;
-          right: 30px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          // background-color: #1E1E1E !important;
-          width: 95px;
-          height: 95px;
-          padding: 10px;
-          border-radius: 10px;
-          scale: 1;
-          transition: background-color 500ms linear;
-
-          @media only screen and (max-width: 1080px) {
-            width: 90px;
-            height: 90px;
-          }
-
-          @media only screen and (max-width: 768px) {
-            width: 85px;
-            height: 85px;
-          }
-
-          .etg-svg {
             @media only screen and (max-width: 1080px) {
-              width: 40px;
-              height: 40px;
+              width: 90px;
+              height: 90px;
             }
-          }
-        }
 
-        .title {
-          color: #FFFFFF;
-          font-family: var(--primaryFont);
-          font-style: normal;
-          font-weight: 900;
-          font-size: 29px;
-          line-height: 1em;
-          letter-spacing: 0.02em;
-          position: relative;
-          z-index: 3;
-          height: 2em;
-          overflow: hidden;
-          margin: 0 0 40px;
+            @media only screen and (max-width: 768px) {
+              width: 85px;
+              height: 85px;
+            }
 
-          @media only screen and (max-width: 1080px) {
-            font-size: 20px;
-            margin: 0 0 20px;
-          }
-        }
-
-        .description {
-          color: rgba(255, 255, 255, 0.7);
-          font-family: var(--secondaryFont);
-          font-style: normal;
-          font-weight: 400;
-          font-size: 18px;
-          text-align: left;
-          line-height: 1.5em;
-          letter-spacing: 0.04em;
-          position: relative;
-          z-index: 3;
-          height: calc(1.5em * 5);
-          overflow: hidden;
-          margin: 0;
-
-          @media only screen and (max-width: 1080px) {
-            font-size: 16px;
-            line-height: 1.25em;
-            height: calc(1.25em * 5);
-          }
-        }
-
-        &:nth-child(1) {
-          .bg-color {
-            .bg-image {
-              top: 216px;
-              left: 211px;
-
+            .etg-svg {
               @media only screen and (max-width: 1080px) {
-                top: 145px;
-                left: 125px;
-              }
-
-              @media only screen and (max-width: 480px) {
-                top: 210px;
-                left: 180px;
+                width: 40px;
+                height: 40px;
               }
             }
           }
-        }
 
-        &:nth-child(2) {
-          .bg-color {
-            .bg-image {
-              top: 208px;
-              left: 193px;
+          .title {
+            color: #FFFFFF;
+            font-family: var(--primaryFont);
+            font-style: normal;
+            font-weight: 900;
+            font-size: 29px;
+            line-height: 1em;
+            letter-spacing: 0.02em;
+            position: relative;
+            z-index: 3;
+            height: 2em;
+            overflow: hidden;
+            margin: 0 0 40px;
 
-              @media only screen and (max-width: 1080px) {
-                top: 130px;
-                left: 115px;
-              }
+            @media only screen and (max-width: 1080px) {
+              font-size: 20px;
+              margin: 0 0 20px;
+            }
+          }
 
-              @media only screen and (max-width: 480px) {
-                top: 195px;
-                left: 180px;
+          .description {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: var(--secondaryFont);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            text-align: left;
+            line-height: 1.5em;
+            letter-spacing: 0.04em;
+            position: relative;
+            z-index: 3;
+            height: calc(1.5em * 5);
+            overflow: hidden;
+            margin: 0;
+
+            @media only screen and (max-width: 1080px) {
+              font-size: 16px;
+              line-height: 1.25em;
+              height: calc(1.25em * 5);
+            }
+          }
+
+          &:nth-child(1) {
+            .bg-color {
+              .bg-image {
+                top: 216px;
+                left: 211px;
+
+                @media only screen and (max-width: 1080px) {
+                  top: 145px;
+                  left: 125px;
+                }
+
+                @media only screen and (max-width: 480px) {
+                  top: 210px;
+                  left: 180px;
+                }
               }
             }
           }
-        }
 
-        &:nth-child(3) {
-          .bg-color {
-            .bg-image {
-              top: -14px;
-              left: 142px;
+          &:nth-child(2) {
+            .bg-color {
+              .bg-image {
+                top: 208px;
+                left: 193px;
 
-              @media only screen and (max-width: 1080px) {
+                @media only screen and (max-width: 1080px) {
+                  top: 130px;
+                  left: 115px;
+                }
+
+                @media only screen and (max-width: 480px) {
+                  top: 195px;
+                  left: 180px;
+                }
+              }
+            }
+          }
+
+          &:nth-child(3) {
+            .bg-color {
+              .bg-image {
                 top: -14px;
                 left: 142px;
-              }
 
-              @media only screen and (max-width: 480px) {
-                top: -15px;
-                left: 100px;
-              }
-            }
-          }
-        }
+                @media only screen and (max-width: 1080px) {
+                  top: -14px;
+                  left: 142px;
+                }
 
-        &:nth-child(4) {
-          .bg-color {
-            .bg-image {
-              top: 197px;
-              left: 194px;
-
-              @media only screen and (max-width: 1080px) {
-                top: 145px;
-                left: 125px;
-              }
-
-              @media only screen and (max-width: 480px) {
-                top: 210px;
-                left: 180px;
+                @media only screen and (max-width: 480px) {
+                  top: -15px;
+                  left: 100px;
+                }
               }
             }
           }
-        }
 
-        &.fade-up {
-          opacity: 1;
-          transform: translateY(0px);
-          transition:
-            opacity 1000ms ease-in-out,
-            transform 1000ms ease-in-out;
-        }
+          &:nth-child(4) {
+            .bg-color {
+              .bg-image {
+                top: 197px;
+                left: 194px;
 
-        &.default-color {
-          .bg-color {
-            background-color: #1E1E1E !important;
+                @media only screen and (max-width: 1080px) {
+                  top: 145px;
+                  left: 125px;
+                }
+
+                @media only screen and (max-width: 480px) {
+                  top: 210px;
+                  left: 180px;
+                }
+              }
+            }
           }
-  
-          .icon-wrap {
-            background-color: #1E1E1E !important;
+
+          &.fade-up {
+            opacity: 1;
+            transform: translateY(0px);
+            transition:
+              opacity 1000ms ease-in-out,
+              transform 1000ms ease-in-out;
           }
-        }
-        
-        &.zoom-in-out {
-          animation: zoom-in-out 2s linear;
+
+          &.default-color {
+            .bg-color {
+              background-color: #1E1E1E !important;
+            }
+    
+            .icon-wrap {
+              background-color: #1E1E1E !important;
+            }
+          }
+          
+          &.zoom-in-out {
+            animation: zoom-in-out 2s linear;
+          }
         }
       }
     }

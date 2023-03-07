@@ -1,13 +1,21 @@
 @import "../../../../node_modules/flickity/css/flickity.css";
 
 .etg-our-creators {
+  background-image: url('../../../assets/Creators_bg_9000x2030.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
-  padding: 130px 30px 50px;
   overflow: hidden;
+  padding: 130px 30px 50px;
 
   @media only screen and (max-width: 1080px) {
-    padding: 80px 30px 50px;
-  }
+		height: calc(100vh - 100px);
+	}
+
+  @media only screen and (max-width: 768px) {
+		background-image: url('../../../assets/Creators_bg_1536x1864.jpg');
+	}
 
   .etg-container {
     display: flex;
@@ -350,6 +358,7 @@
     bottom: -200px;
     opacity: 0;
   }
+
   100% {
     bottom: 0px;
     opacity: 1;
@@ -361,6 +370,7 @@
     right: -100vw;
     opacity: 0;
   }
+  
   100% {
     right: 0px;
     opacity: 1;
