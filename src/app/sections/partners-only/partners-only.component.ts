@@ -58,14 +58,15 @@ export class PartnersOnlyComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
+    this.animateEach();
+  }
+
+  animateEach() {
     setTimeout(() => {
-      document.querySelector('.etg-partners-only.animation')?.classList.add('animate');
-      document.querySelectorAll('.etg-partners-only.animation .partners-list .partners-item').forEach((li: any, i: any) => {
-        setTimeout(() => {
-          li.classList.add('fade-right');
-        }, (150 * i));
+      document.querySelectorAll('.etg-partners-only .animate-init').forEach((item: any, index:any) => {
+        item.classList.add('animate-now');
       });
-    }, 500);
+    }, 1000);
   }
 
 }

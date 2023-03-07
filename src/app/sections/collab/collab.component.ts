@@ -14,5 +14,17 @@ export class CollabComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  ngAfterViewInit(): void {
+    this.animateEach();
+  }
+
+  animateEach() {
+    setTimeout(() => {
+      document.querySelectorAll('.etg-collab .animate-init').forEach((item:any, index:any) => {
+        item.classList.add('animate-now');
+      });
+    }, 100);
+  }
 
 }

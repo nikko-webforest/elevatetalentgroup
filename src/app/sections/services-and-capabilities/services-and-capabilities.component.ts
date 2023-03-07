@@ -41,6 +41,10 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
     this.selectList('services');
   }
 
+  ngAfterViewInit(): void {
+    this.animateEach();
+  }
+
   selectList(selected: any) {
     if( selected == 'services' ){
       this.servicesActive = true;
@@ -52,7 +56,7 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
       this.capabilitiesActive = true;
       this.selectCapabilitiesList();
     }
-    this.fadeList();
+    this.fadeList(500);
   }
 
   selectServicesList() {
@@ -69,14 +73,21 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
     });
   }
 
-  fadeList() {
+  animateEach() {
+    setTimeout(() => {
+      document.querySelectorAll('.etg-services-and-capabilities .animate-init').forEach((item: any, index:any) => {
+        item.classList.add('animate-now');
+      });
+      this.fadeList(1000);
+    }, 1000);
+  }
+
+  fadeList(duration: number) {
     setTimeout(() => {
       document.querySelectorAll('.list .item').forEach((li: any, i:any) => {
-        setTimeout(() => {
-          li.classList.add('fade-left');
-        }, (50 * i));
+        li.classList.add('animate-now');
       });
-    }, 100);
+    }, duration);
   }
 
 }
