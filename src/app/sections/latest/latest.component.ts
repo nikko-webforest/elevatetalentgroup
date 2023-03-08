@@ -26,7 +26,7 @@ export class LatestComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.video = 701338751;
+    this.video = 805977903;
     this.initializedVideo();
   }
 

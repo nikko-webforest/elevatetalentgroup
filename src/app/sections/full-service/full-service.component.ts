@@ -26,7 +26,7 @@ export class FullServiceComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.video = 803813705;
+    this.video = 659464294;
     this.initializedVideo();
   }
 
