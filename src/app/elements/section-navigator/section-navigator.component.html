@@ -1,6 +1,6 @@
 <div class="etg-section-navigator">
   <div class="etg-wrap">
-    <div class="title animate"
+    <div class="title animate-init"
       *ngFor="let title of sectionList; let count = index;"
       [id]="(count+1)"
       [innerText]="title.title"
@@ -16,7 +16,7 @@
       </svg>
     </button>
     <div class="counter-wrap">
-      <div class="counter-item animate"
+      <div class="counter-item animate-init"
         *ngFor="let i of sectionList; let count = index;"
         [id]="(count+1)"
         [class.prev]="prevSectionCount == (count+1)"

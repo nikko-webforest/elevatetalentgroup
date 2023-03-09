@@ -60,6 +60,10 @@ html {
     @media only screen and (max-width: 1080px) {
         scroll-padding-top: 100px;
     }
+
+    @media only screen and (max-width: 1080px) and (max-height: 480px) {
+        scroll-padding-top: 0;
+    }
 }
 
 body {
@@ -67,6 +71,7 @@ body {
     background-color: #000000;
     min-width: 380px;
     width: 100%;
+    min-height: 380px;
 }
 
 html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
@@ -221,6 +226,49 @@ img {
 	}
 }
 
+@keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-right {
+    0% {
+      opacity: 0;
+      transform: translateX(300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+@keyframes fade-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
 @media only screen and (max-width: 1440px) {}
 
 @media only screen and (max-width: 1080px) {}

@@ -1,7 +1,8 @@
 <section class="etg-latest"
 	[class.is-playing]="isPlaying">
 	<div id="player-latest"></div>
-	<svg class="etg-svg svg-foreground ds-view" width="9000" height="2030" viewBox="0 0 9000 2030" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<svg class="etg-svg svg-foreground ds-view"
+		width="9000" height="2030" viewBox="0 0 9000 2030" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<g clip-path="url(#clip0_958_639)">
 			<path class="left-pane" d="M2588 2030L3928 0H0V2030H2588Z" fill="#000000"></path>
 			<path class="right-pane" d="M4308 2030L5648 0H8828V2030H4308Z" fill="#000000"></path>
@@ -15,27 +16,31 @@
 			</clipPath>
 		</defs>
 	</svg>
-	<svg class="etg-svg svg-foreground lt-view" width="1536" height="1864" viewBox="0 0 1536 1864" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<svg class="etg-svg svg-foreground lt-view"
+		width="3408" height="1864" viewBox="0 0 3408 1864" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<g clip-path="url(#clip0_958_1058)">
-			<path class="left-pane" d="M705 0L-1 1193.18V0H705Z" fill="#010102"></path>
-			<path class="right-pane" d="M1536 721.044L862 1864H1536V721.044Z" fill="#010102"></path>
+			<path class="left-pane" d="M1624 0L918 1194.79L528.5 1864H0V0H918H1624Z" fill="#010102"></path>
+			<path class="right-pane" d="M2458 720.738L1784 1864H2458H3408V0H2873L2458 720.738Z" fill="#010102"></path>
 		</g>
 		<defs>
 			<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 				<use xlink:href="#image0_958_1058" transform="matrix(0.000799561 0 0 0.000735453 -0.53913 -0.0295259)"/>
 			</pattern>
 			<clipPath id="clip0_958_1058">
-				<rect width="1536" height="1864" fill="white"/>
+				<rect width="3408" height="1864" fill="white"/>
 			</clipPath>
 		</defs>
-	</svg>		
+	</svg>	
+	<div class="player-control"
+		(click)="togglePlayPause()">
+	</div>
 	<div class="etg-container">
 		<div class="etg-row">
 			<h2>
 				LIMELIGHT
 			</h2>
 			<svg class="play-btn"
-				(click)="play()"
+				(click)="togglePlayPause()"
 				width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle class="border" cx="45" cy="45" r="45" fill="#FFFFFF" fill-opacity="0.4"></circle>
 				<circle  cx="45.5697" cy="45.5695" r="33.57" fill="#FFFFFF"></circle>

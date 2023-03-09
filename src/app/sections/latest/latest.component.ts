@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ViewEncapsulation } from '@angular/core';
 // @ts-ignore
 import Player from '@vimeo/player';
 
 @Component({
   selector: 'app-latest',
   templateUrl: './latest.component.html',
-  styleUrls: ['./latest.component.scss']
+  styleUrls: ['./latest.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LatestComponent implements OnInit {
 
@@ -19,7 +20,7 @@ export class LatestComponent implements OnInit {
   
   public onViewportScroll() {
     if( this.isPlaying && !this.animateLatest ){
-      this.play();
+      this.togglePlayPause();
     }
   }
 
@@ -55,7 +56,7 @@ export class LatestComponent implements OnInit {
     });
   }
 
-  play() {
+  togglePlayPause() {
     if( this.isPlaying ){
       this.isPlaying = false;
       this.player.pause().then(function() {
