@@ -35,9 +35,10 @@ export class KeyToSuccessComponent implements OnInit {
       'bgImage': '../../../assets/KeyToSuccess_04_bg-241x179.png',
     },
   ];
+  
   @HostListener('document:scroll', ['$event'])
   public onViewportScroll() {
-    if(this.animateSuccess){
+    if( this.animateSuccess ){
       this.fadeUpEach();
       this.animateEach();
     }
@@ -55,23 +56,25 @@ export class KeyToSuccessComponent implements OnInit {
   
   fadeUpEach() {
     setTimeout(() => {
-      document.querySelectorAll('.etg-row .etg-col').forEach((li: any, i:any) => {
+      document.querySelectorAll('.etg-key-to-success .etg-row .etg-col').forEach((li: any, i:any) => {
         setTimeout(() => {
+          console.log('fade-up-each['+i+']');  
           li.classList.add('fade-up');
         }, (200 * i));
       });
-    }, 100);
+    }, 400);
   }
 
   animateEach() {
     setTimeout(() => {
-      document.querySelectorAll('.etg-row .etg-col').forEach((li: any, i: any) => {
+      document.querySelectorAll('.etg-key-to-success .etg-row .etg-col').forEach((li: any, i: any) => {
         setTimeout(() => {
+          console.log('zoom-in-out['+i+']');
           li.classList.remove('default-color');
           li.classList.add('zoom-in-out');
-        }, (1000 * i));
+        }, 1000 * i);
       });
-    }, 300);
+    }, 1500);
   }
 
 }

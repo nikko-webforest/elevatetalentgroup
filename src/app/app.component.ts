@@ -29,11 +29,13 @@ export class AppComponent {
   animateFullService: any = null;
   animateServicesAndCapabilities: any = null;
   animateSuccess: any = null;
+  animatePartners: any = null;
   node: any = 1;
 
   @HostListener('document:scroll', ['$event'])
   
   public onViewportScroll() {
+
     const windowHeight = window.innerHeight;
     const header = this.divHeader.nativeElement.getBoundingClientRect();
     this.showHeaderBackground = (header.top < 0) ? true : false;
@@ -57,11 +59,14 @@ export class AppComponent {
     this.animateServicesAndCapabilities  = ((window.innerHeight/2) >  servicesAndCapabilities.top ) ? true : false;
 
     const success = this.divSuccess.nativeElement.getBoundingClientRect();
-    this.animateSuccess  = ((window.innerHeight/2) >  success.top ) ? true : false;
+    this.animateSuccess = ((window.innerHeight/2) > success.top ) ? true : false;
+
+    const partners = this.divPartners.nativeElement.getBoundingClientRect();
+    this.animatePartners = ((window.innerHeight/2) > partners.top ) ? true : false;
 
     this.node = this.getVisibleSection();
     console.log(this.getVisibleSection());
-    
+
   }
 
   scrollTo(node: any) {
@@ -86,7 +91,7 @@ export class AppComponent {
 
     const windowHeight = window.innerHeight;
 
-    switch(true){
+    switch(true) {
       case this.isInViewport(this.divBanner.nativeElement) :
         return 1;
       case this.isInViewport(this.divCollab.nativeElement) :
@@ -112,6 +117,7 @@ export class AppComponent {
       default: 
        return 0;
     }
+    
   }
 
   isInViewport(element: any) {

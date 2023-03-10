@@ -1,17 +1,20 @@
 <section class="etg-key-to-success">
   <div class="etg-container">
     <div class="etg-content">
-      <h2>
+      <h2 class="animate-init"
+        [class.animate-now]="animateSuccess">
         KEY TO SUCCESS
       </h2>
-      <p>
+      <p class="animate-init"
+        [class.animate-now]="animateSuccess">
         We've been doing this since the dawn of the creator economy.
+        <br/>
         Here are four ingredients to ensure success into any creator program:
       </p>
       <div class="etg-row">
         <div class="etg-col default-color"
           *ngFor="let item of keyToSuccessList; let i = index;"
-          [attr.id]="i">
+          [id]="i">
           <div class="bg-color"
             [ngStyle]="{ 'background-color' : item.bgColor }">
             <img class="bg-image"

@@ -3,7 +3,8 @@
     <div class="etg-content">
       <div class="etg-row">
         <div class="etg-col">
-          <h2 [class.animate]="animateCollab">
+          <h2 class="animate-init"
+            [class.animate-now]="animateCollab">
             COLLAB
           </h2>
         </div>
@@ -12,14 +13,16 @@
     <div class="etg-content">
       <div class="etg-row">
         <div class="etg-col">
-          <h4 [class.animate]="animateCollab">
+          <h4 class="animate-init"
+            [class.animate-now]="animateCollab">
             Out of siloes and into collaboration
           </h4>
-          <p [class.animate]="animateCollab">
+          <p class="animate-init"
+            [class.animate-now]="animateCollab">
             We are a full service ad agency with 1 to 1 relationships with our creators. That means we understand your broader communications strategy and have talent ready to go that is perfectly integrated into your message and audience targets.
           </p>
-          <div class="etg-btn-animate"
-            [class.animate]="animateCollab">
+          <div class="etg-btn-animate animate-init"
+            [class.animate-now]="animateCollab">
             <app-primary-btn
               text="LET'S TALK"
               url="toggle-contact">

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-services-and-capabilities',
@@ -35,17 +35,22 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
 
   itemList: any = [];
 
+  @HostListener('document:scroll', ['$event'])
+  public onViewportScroll() {
+    
+  }
+
   constructor() { }
 
   ngOnInit(): void {
-    this.selectList('services');
+    
   }
 
   ngAfterViewInit(): void {
-    this.animateEach();
+    this.selectList('services', true);
   }
 
-  selectList(selected: any) {
+  selectList(selected: any, firstLoad: boolean) {
     if( selected == 'services' ){
       this.servicesActive = true;
       this.capabilitiesActive = false;
@@ -56,7 +61,7 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
       this.capabilitiesActive = true;
       this.selectCapabilitiesList();
     }
-    this.fadeList(500);
+    this.fadeList(firstLoad);
   }
 
   selectServicesList() {
@@ -73,21 +78,14 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
     });
   }
 
-  animateEach() {
+  fadeList(firstLoad: boolean) {
     setTimeout(() => {
-      document.querySelectorAll('.etg-services-and-capabilities .animate-init').forEach((item: any, index:any) => {
-        item.classList.add('animate-now');
+      document.querySelectorAll('.etg-services-and-capabilities .list .item').forEach((li: any, i:any) => {
+        setTimeout(() => {
+          li.classList.add('animate-now');
+        }, (50 * i));
       });
-      this.fadeList(1000);
-    }, 1000);
-  }
-
-  fadeList(duration: number) {
-    setTimeout(() => {
-      document.querySelectorAll('.list .item').forEach((li: any, i:any) => {
-        li.classList.add('animate-now');
-      });
-    }, duration);
+    }, 100);
   }
 
 }

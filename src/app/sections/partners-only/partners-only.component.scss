@@ -1,5 +1,6 @@
 .etg-partners-only {
   position: relative;
+  min-height: 480px;
   height: 100vh;
   overflow: hidden;
   padding: 115px 30px 50px;
@@ -7,6 +8,28 @@
   @media only screen and (max-width: 1080px) {
     height: unset;
     padding: 50px 30px;
+  }
+
+  @keyframes fade-right {
+    0% {
+      opacity: 0;
+      transform: translateX(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes fade-left {
+    0% {
+      opacity: 0;
+      transform: translateX(300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
 
   .etg-container {
@@ -48,6 +71,15 @@
           max-width: 275px;
           margin: 0 0 55px;
         }
+
+        &.animate-init {
+          opacity: 0;
+          transform: translateX(300px);
+        }
+
+        &.animate-now {
+          animation: fade-right 1s forwards ease-in-out;
+        }
       }
 
       .partners-list {
@@ -72,58 +104,33 @@
           border: 1px solid #696969;
           border-top: 5px solid #EEB53B;
 
+          @media only screen and (max-width: 768px) {
+            width: calc(25% - 15px);
+            height: 105px;
+          }
+
           @media only screen and (max-width: 480px) {
             width: calc(50% - 15px);
             height: 105px;
           }
 
           .partners-logo {
+            @media only screen and (max-width: 768px) {
+              scale: 0.4;
+            }
+
             @media only screen and (max-width: 480px) {
               scale: 0.5;
             }
           }
-        }
-      }
-    }
-  }
 
-  &.animation {
-    .etg-container {
-      h2 {
-        opacity: 0;
-        transform: translateX(-300px);
-        transition-property: opacity, transform;
-        transition-delay: 0;
-        transition-duration: 1s;
-        transition-timing-function: ease-in;
-      }
+          &.animate-init {
+            opacity: 0;
+            transform: translateX(-300px);
+          }
 
-      .partners-list {
-        .partners-item {
-          counter-increment: div;
-          opacity: 0;
-          transform: translateX(300px);
-          transition-property: opacity, transform;
-          transition-delay: 1s;
-          transition-duration: 1s;
-          transition-timing-function: ease-in;
-        }
-      }
-    }
-
-    &.animate {
-      .etg-container {
-        h2 {
-          opacity: 1;
-          transform: translateX(0);
-        }
-
-        .partners-list {
-          .partners-item {
-            &.fade-right {
-              opacity: 1;
-              transform: translateX(0);
-            }
+          &.animate-now {
+            animation: fade-left 1s forwards ease-in-out;
           }
         }
       }

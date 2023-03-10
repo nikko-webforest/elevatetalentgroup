@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-partners-only',
@@ -8,6 +8,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class PartnersOnlyComponent implements OnInit {
 
+  @Input() animatePartners: any;
   partnersList: any = [
     {
       'title': 'Warner Bros.',
@@ -51,6 +52,12 @@ export class PartnersOnlyComponent implements OnInit {
     },
   ];
 
+  @HostListener('document:scroll', ['$event'])
+  public onViewportScroll() {
+    if( this.animatePartners ){
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
@@ -58,15 +65,6 @@ export class PartnersOnlyComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.animateEach();
+    
   }
-
-  animateEach() {
-    setTimeout(() => {
-      document.querySelectorAll('.etg-partners-only .animate-init').forEach((item: any, index:any) => {
-        item.classList.add('animate-now');
-      });
-    }, 1000);
-  }
-
 }

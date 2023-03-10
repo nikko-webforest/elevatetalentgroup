@@ -20,7 +20,16 @@
 			.etg-site-link {
 				.etg-site-logo {
 					width: auto;
-					height: 50px;
+					height: 80px;
+					transition: 500ms ease-in-out;
+
+					@media only screen and (max-width: 1080px) {
+						height: 70px;
+					}
+
+					@media only screen and (max-width: 768px) {
+						height: 60px;
+					}
 				}
 			}
 
@@ -95,7 +104,17 @@
 		transition: ease-in-out 0.5s;
   }
 
-  &.show-background {
+  &.nav-scroll {
+		.etg-container {
+			.etg-row {
+				.etg-site-link {
+					.etg-site-logo {
+						height: 50px;
+					}
+				}
+			}
+		}
+
 		&::after {
 			opacity: 1;
 		}

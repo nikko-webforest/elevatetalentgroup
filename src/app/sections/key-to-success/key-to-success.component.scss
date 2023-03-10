@@ -3,6 +3,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 480px;
   height: 100vh;
   overflow: hidden;
   padding: 170px 30px 50px;
@@ -13,18 +14,11 @@
   }
 
   @media only screen and (max-width: 768px) {
-    height: 1864px;
+    min-height: 1880px;
   }
 
-  @keyframes fade-up {
-    0% {
-      opacity: 0;
-      transform: translateY(200px)
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
+  @media only screen and (max-width: 1080px) and (max-height: 480px) {
+    height: auto;
   }
 
   @keyframes zoom-in-out {
@@ -61,7 +55,6 @@
         letter-spacing: 0.02em;
         width: max-content;
         margin: 0 auto 24px;
-        animation: fade-up 1000ms ease-in-out 0ms;
 
         @media only screen and (max-width: 1080px) {
           font-size: 48px;
@@ -71,6 +64,15 @@
           font-size: 48px;
           max-width: 250px;
           margin: 0 auto 12px;
+        }
+
+        &.animate-init {
+          opacity: 0;
+          transform: translateY(-300px);
+        }
+
+        &.animate-now {
+          animation: fade-up 1s forwards ease-in-out 0ms;
         }
       }
 
@@ -85,7 +87,6 @@
         letter-spacing: 0.02em;
         max-width: 725px;
         margin: 0 auto 105px;
-        animation: fade-up 1000ms ease-in-out 200ms;
 
         @media only screen and (max-width: 1080px) {
           font-size: 18px;
@@ -101,6 +102,15 @@
           font-size: 14px;
           margin: 0 auto 80px;
         }
+
+        &.animate-init {
+          opacity: 0;
+          transform: translateY(-300px);
+        }
+
+        &.animate-now {
+          animation: fade-up 1s forwards ease-in-out 200ms;
+        }
       }
 
       .etg-row {
@@ -114,6 +124,10 @@
         @media only screen and (max-width: 1080px) {
           max-width: 630px;
           gap: 45px 25px;
+        }
+
+        @media only screen and (max-width: 768px) {
+          flex-direction: column;
         }
 
         .etg-col {
@@ -133,10 +147,14 @@
             padding: 55px 25px 25px;
           }
 
-          @media only screen and (max-width: 480px) {
+          @media only screen and (max-width: 768px) {
             width: 360px;
             height: 360px;
-            padding: 55px 25px 25px;
+          }
+
+          @media only screen and (max-width: 480px) {
+            width: 300px;
+            height: 300px;
           }
 
           .bg-color {

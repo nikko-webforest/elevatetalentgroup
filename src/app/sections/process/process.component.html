@@ -1,4 +1,5 @@
 <section class="etg-process">
+  <div class="etg-background"></div>
   <div class="etg-container">
     <h2 class="main-title">
       PROCESS
@@ -28,8 +29,10 @@
             </div>
             <div class="steps-description">
               <p *ngFor="let item of processStepsList; let i = index;"
-              [class.active]="i == activeProcessIndex"
-              [id]="i" [innerText]="item.details"></p>
+                [class.active]="i == activeProcessIndex"
+                [id]="i"
+                [innerText]="item.details">
+              </p>
             </div>
           </div>
           <div class="etg-inner-col">
