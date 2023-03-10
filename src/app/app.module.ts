@@ -11,36 +11,38 @@ import { FooterComponent } from './elements/footer/footer.component';
 
 import { BannerComponent } from './sections/banner/banner.component';
 import { CollabComponent } from './sections/collab/collab.component';
-import { StatisticsComponent } from './sections/statistics/statistics.component';
 import { OurCreatorsComponent } from './sections/our-creators/our-creators.component';
+import { StatisticsComponent } from './sections/statistics/statistics.component';
+import { LatestComponent } from './sections/latest/latest.component';
+import { ProcessComponent } from './sections/process/process.component';
+import { FullServiceComponent } from './sections/full-service/full-service.component';
 import { ServicesAndCapabilitiesComponent } from './sections/services-and-capabilities/services-and-capabilities.component';
 import { KeyToSuccessComponent } from './sections/key-to-success/key-to-success.component';
 import { PartnersOnlyComponent } from './sections/partners-only/partners-only.component';
-import { ProcessComponent } from './sections/process/process.component';
 import { ContactUsComponent } from './sections/contact-us/contact-us.component';
 
 import { FormsModule } from '@angular/forms';
-import { LatestComponent } from './sections/latest/latest.component';
-import { FullServiceComponent } from './sections/full-service/full-service.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
     HeaderComponent,
     PrimaryBtnComponent,
     SectionNavigatorComponent,
     FooterComponent,
+
     BannerComponent,
     CollabComponent,
     OurCreatorsComponent,
     StatisticsComponent,
+    LatestComponent,
     ProcessComponent,
+    FullServiceComponent,
     ServicesAndCapabilitiesComponent,
     KeyToSuccessComponent,
     PartnersOnlyComponent,
     ContactUsComponent,
-    LatestComponent,
-    FullServiceComponent,
   ],
   imports: [
     BrowserModule,

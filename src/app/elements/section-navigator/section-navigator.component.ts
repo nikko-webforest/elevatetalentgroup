@@ -65,7 +65,7 @@ export class SectionNavigatorComponent implements OnInit {
   @HostListener('document:scroll', ['$event'])
   
   public onViewportScroll() {
-    if(this.currSectionCount != this.node){
+    if( this.currSectionCount != this.node ){
       this.currSectionCount = this.node;
       this.updateSectionCount();
     }
@@ -78,16 +78,11 @@ export class SectionNavigatorComponent implements OnInit {
     this.updateSectionCount();
   }
 
-  ngAfterViewInit(): void {
-    
-  }
-
   counter(i: number) {
     return new Array(i);
   }
 
   updateSectionCount() {
-    
     if( this.currSectionCount == 1 ){
       this.prevSectionCount = this.totalSectionCount;
       this.nextSectionCount = this.currSectionCount + 1;

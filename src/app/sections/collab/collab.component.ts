@@ -6,6 +6,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
   styleUrls: ['./collab.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class CollabComponent implements OnInit {
 
   @Input() animateCollab: any;
@@ -13,18 +14,7 @@ export class CollabComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-  
-  ngAfterViewInit(): void {
-    this.animateEach();
-  }
-
-  animateEach() {
-    setTimeout(() => {
-      document.querySelectorAll('.etg-collab .animate-init').forEach((item:any, index:any) => {
-        item.classList.add('animate-now');
-      });
-    }, 100);
+    
   }
 
 }

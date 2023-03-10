@@ -6,6 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./process.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class ProcessComponent implements OnInit {
 
   processStepsList: any = [

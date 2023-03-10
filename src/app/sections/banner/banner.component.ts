@@ -6,6 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./banner.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class BannerComponent implements OnInit {
 
   constructor() { }

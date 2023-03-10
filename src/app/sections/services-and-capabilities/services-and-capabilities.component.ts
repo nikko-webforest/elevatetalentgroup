@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input, HostListener } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, HostListener, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-services-and-capabilities',
@@ -6,7 +6,8 @@ import { Component, OnInit, ViewEncapsulation, Input, HostListener } from '@angu
   styleUrls: ['./services-and-capabilities.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ServicesAndCapabilitiesComponent implements OnInit {
+
+export class ServicesAndCapabilitiesComponent implements OnInit, AfterViewInit {
 
   @Input() animateServicesAndCapabilities: any;
 
@@ -47,10 +48,10 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.selectList('services', true);
+    this.selectList('services');
   }
 
-  selectList(selected: any, firstLoad: boolean) {
+  selectList(selected: any) {
     if( selected == 'services' ){
       this.servicesActive = true;
       this.capabilitiesActive = false;
@@ -61,7 +62,7 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
       this.capabilitiesActive = true;
       this.selectCapabilitiesList();
     }
-    this.fadeList(firstLoad);
+    this.fadeList();
   }
 
   selectServicesList() {
@@ -78,7 +79,7 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
     });
   }
 
-  fadeList(firstLoad: boolean) {
+  fadeList() {
     setTimeout(() => {
       document.querySelectorAll('.etg-services-and-capabilities .list .item').forEach((li: any, i:any) => {
         setTimeout(() => {

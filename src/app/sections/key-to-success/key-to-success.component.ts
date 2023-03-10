@@ -6,6 +6,7 @@ import { Component, OnInit, ViewEncapsulation, Input, HostListener } from '@angu
   styleUrls: ['./key-to-success.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class KeyToSuccessComponent implements OnInit {
 
   @Input() animateSuccess: any;
@@ -49,16 +50,11 @@ export class KeyToSuccessComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
-  ngAfterViewInit(): void {
-    
-  }
   
   fadeUpEach() {
     setTimeout(() => {
       document.querySelectorAll('.etg-key-to-success .etg-row .etg-col').forEach((li: any, i:any) => {
         setTimeout(() => {
-          console.log('fade-up-each['+i+']');  
           li.classList.add('fade-up');
         }, (200 * i));
       });
@@ -69,7 +65,6 @@ export class KeyToSuccessComponent implements OnInit {
     setTimeout(() => {
       document.querySelectorAll('.etg-key-to-success .etg-row .etg-col').forEach((li: any, i: any) => {
         setTimeout(() => {
-          console.log('zoom-in-out['+i+']');
           li.classList.remove('default-color');
           li.classList.add('zoom-in-out');
         }, 1000 * i);

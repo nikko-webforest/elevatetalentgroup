@@ -10,12 +10,12 @@ import { Subscription } from 'rxjs';
 })
 
 export class HeaderComponent implements OnInit {
+  
   clickEventSubscription: Subscription;
 
   @Input() showHeaderBackground: boolean = false;
 
   public toggleNavMenuBtn: boolean = false;
-  // public toggleNavMenuBtn: boolean = true;
   
   constructor(private sharedService: SharedService) {
     this.clickEventSubscription = this.sharedService.getContactCompClickEvent().subscribe(() => {

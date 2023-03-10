@@ -6,7 +6,7 @@ import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, HostLis
   styleUrls: ['./statistics.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class StatisticsComponent implements AfterViewInit {
+export class StatisticsComponent implements AfterViewInit, OnInit {
 
   @Input() animateStats: any;
   @ViewChild('statList') stat: ElementRef | any;
@@ -58,7 +58,7 @@ export class StatisticsComponent implements AfterViewInit {
 
   constructor() {
     this.onResize();
-   }
+  }
 
   ngOnInit(): void {
     this.totalStat = this.stats.length;
@@ -120,7 +120,7 @@ export class StatisticsComponent implements AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize(event?: undefined) {
     this.screenWidth = window.innerWidth;
-    console.log('screenWidth = '+this.screenWidth);
+    // console.log('screenWidth = '+this.screenWidth);
   }
 
 }

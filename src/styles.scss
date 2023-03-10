@@ -15,30 +15,30 @@
     font-display: swap;
     src: url(./assets/fonts/Product-Sans/ProductSans-Regular.ttf);
   }
-  /* Normal - Bold/900 */
-  @font-face {
+/* Normal - Bold/900 */
+@font-face {
     font-family: 'Product Sans';
     font-style: normal;
     font-weight: 900;
     font-display: swap;
     src: url(./assets/fonts/Product-Sans/ProductSans-Bold.ttf);
-  }
-  /* Italic - Regular/500 */
-  @font-face {
+}
+/* Italic - Regular/500 */
+@font-face {
     font-family: 'Product Sans';
     font-style: italic;
     font-weight: 500;
     font-display: swap;
     src: url(./assets/fonts/Product-Sans/ProductSans-Regular.ttf);
-  }
-  /* Italic - Bold/900 */
-  @font-face {
+}
+/* Italic - Bold/900 */
+@font-face {
     font-family: 'Product Sans';
     font-style: italic;
     font-weight: 900;
     font-display: swap;
     src: url(./assets/fonts/Product-Sans/ProductSans-Bold.ttf);
-  }
+}
 
 :root {
     --primaryFont: 'Prompt', sans-serif;
@@ -179,6 +179,8 @@ img {
         path {
             &:nth-child(1) {
                 fill: #EEB53B;
+                transition:
+                    fill 300ms ease-in-out;
             }
         }
     }

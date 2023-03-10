@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation, Injectable } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { SharedService } from '../../shared.service';
 import { Subscription } from 'rxjs';
 
@@ -10,6 +11,7 @@ import { Subscription } from 'rxjs';
 })
 
 export class ContactUsComponent implements OnInit {
+
   clickEventSubscription:Subscription;
 
   public showContact: boolean = false;
@@ -24,6 +26,11 @@ export class ContactUsComponent implements OnInit {
       'link': 'https://www.linkedin.com/',
     },
   ];
+
+  contactRole: any = '';
+  contactFname: any = '';
+  contactLname: any = '';
+  contactEmail: any = '';
 
   constructor(private sharedService:SharedService) {
     this.clickEventSubscription = this.sharedService.getContactCompClickEvent().subscribe(() => {

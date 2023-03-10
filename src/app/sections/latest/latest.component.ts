@@ -8,6 +8,7 @@ import Player from '@vimeo/player';
   styleUrls: ['./latest.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class LatestComponent implements OnInit {
 
   @Input() animateLatest: any = false;
@@ -17,7 +18,6 @@ export class LatestComponent implements OnInit {
   isPlaying: boolean = false;
 
   @HostListener('document:scroll', ['$event'])
-  
   public onViewportScroll() {
     if( this.isPlaying && !this.animateLatest ){
       this.togglePlayPause();
@@ -48,7 +48,7 @@ export class LatestComponent implements OnInit {
     // this.player = new Player(iframe);
       
     this.player.ready().then(function() {
-      console.log('ready');
+      // console.log('ready');
       var iframe = document.querySelector('iframe');
       // @ts-ignore
       iframe.setAttribute("style", "width: 100%;height: 100%;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 1;");
@@ -60,14 +60,15 @@ export class LatestComponent implements OnInit {
     if( this.isPlaying ){
       this.isPlaying = false;
       this.player.pause().then(function() {
-        console.log('Clicked Paused');
+        // console.log('Clicked Paused');
       });
     }
     else {
       this.isPlaying = true;
       this.player.play().then(function() {
-        console.log('Clicked Play');
+        // console.log('Clicked Play');
       });
     }
   }
+
 }

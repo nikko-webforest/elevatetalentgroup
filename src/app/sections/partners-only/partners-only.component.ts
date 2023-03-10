@@ -6,6 +6,7 @@ import { Component, OnInit, ViewEncapsulation, Input, HostListener } from '@angu
   styleUrls: ['./partners-only.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class PartnersOnlyComponent implements OnInit {
 
   @Input() animatePartners: any;
@@ -62,9 +63,5 @@ export class PartnersOnlyComponent implements OnInit {
 
   ngOnInit(): void {
 
-  }
-
-  ngAfterViewInit(): void {
-    
   }
 }
