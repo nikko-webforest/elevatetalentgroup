@@ -322,6 +322,10 @@
                       opacity 1s linear;
 
                     .step-img {
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
                       object-fit: cover;
                       object-position: center;
                       max-width: 600px;
@@ -333,7 +337,7 @@
                     &.prev {
                       z-index: 2;
                       width: 100%;
-                      opacity: 1;
+                      opacity: 0;
                     }
 
                     &.active {
@@ -343,6 +347,9 @@
                     }
 
                     &.next {
+                      z-index: 4;
+                      width: 0%;
+                      opacity: 0;
                     }
                   }
                 }

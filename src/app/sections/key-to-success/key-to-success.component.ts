@@ -12,7 +12,7 @@ export class KeyToSuccessComponent implements OnInit {
   keyToSuccessList: any = [
     {
       'title': 'Start with common communities',
-      'description': 'We&apos;ve been doing this since the dawn of the creator economy. Here are four ingredients to ensure success into any creator program:',
+      'description': 'Which creators have communities that integrate with your brand and your community?',
       'bgColor': '#942094',
       'bgImage': '../../../assets/KeyToSuccess_01_bg-224x166.png',
     },

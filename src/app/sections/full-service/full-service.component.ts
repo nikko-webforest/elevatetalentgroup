@@ -7,6 +7,7 @@ import Player from '@vimeo/player';
   styleUrls: ['./full-service.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class FullServiceComponent implements OnInit {
 
   @Input() animateFullService: any = false;
@@ -30,7 +31,7 @@ export class FullServiceComponent implements OnInit {
     this.initializedVideo();
   }
 
-  initializedVideo(){
+  initializedVideo() {
     let self = this;
     let options = {
       id: this.video,
@@ -54,7 +55,7 @@ export class FullServiceComponent implements OnInit {
     });
   }
 
-  togglePlayPause(){
+  togglePlayPause() {
     if( this.isPlaying ){
       this.isPlaying = false;
       this.player.pause().then(function() {
@@ -67,7 +68,6 @@ export class FullServiceComponent implements OnInit {
         console.log('Clicked Play');
       });
     }
-    
   }
 
 }
