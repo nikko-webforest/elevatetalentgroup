@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -8,19 +8,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  contactEmail: any = 'INFO@ELEVATE-M.COM';
-  contactAddress: any = '733 F Lakeview Plaza Blvd Columbus, OH 43085';
+  @Input() contactEmail: any;
+  @Input() contactNumber: any;
+  @Input() contactAddress: any;
+  @Input() socialMediaList: any;
+
   copyrightYear: any;
-  socialMediaList: any = [
-    {
-      'platform': 'Instagram',
-      'link': 'https://www.instagram.com/',
-    },
-    {
-      'platform': 'LinkedIn',
-      'link': 'https://www.linkedin.com/',
-    },
-  ];
 
   constructor() { }
 
