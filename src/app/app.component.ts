@@ -32,16 +32,6 @@ export class AppComponent {
   animatePartners: any = null;
   node: any = 1;
 
-  contactEmail: string = 'Info@elevate-m.com';
-  contactNumber: any = '';
-  contactAddress: any = '733 F Lakeview Plaza Blvd Columbus, OH 43085';
-  socialMediaList: any = [
-    {
-      'platform': 'LinkedIn',
-      'link': 'https://www.linkedin.com/company/5363596',
-    },
-  ];
-
   @HostListener('document:scroll', ['$event'])
   
   public onViewportScroll() {

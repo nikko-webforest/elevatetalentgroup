@@ -104,14 +104,9 @@
           border: 1px solid #696969;
           border-top: 5px solid #EEB53B;
 
-          @media only screen and (max-width: 1080px) {
-            width: calc(25% - 15px);
-            height: 155px;
-          }
-
           @media only screen and (max-width: 768px) {
-            width: calc(30% - 15px);
-            height: 125px;
+            width: calc(25% - 15px);
+            height: 105px;
           }
 
           @media only screen and (max-width: 480px) {
@@ -120,14 +115,8 @@
           }
 
           .partners-logo {
-            scale: 1;
-
-            @media only screen and (max-width: 1080px) {
-              scale: 0.7;
-            }
-
             @media only screen and (max-width: 768px) {
-              scale: 0.6;
+              scale: 0.4;
             }
 
             @media only screen and (max-width: 480px) {

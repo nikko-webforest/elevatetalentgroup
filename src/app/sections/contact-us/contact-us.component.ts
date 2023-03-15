@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { SharedService } from '../../shared.service';
 import { Subscription } from 'rxjs';
 
@@ -16,23 +16,25 @@ export class ContactUsComponent implements OnInit {
 
   public showContact: boolean = false;
 
-  @Input() contactEmail: any;
-  @Input() contactNumber: any;
-  @Input() contactAddress: any;
-  @Input() socialMediaList: any;
+  socialMediaList: any = [
+    {
+      'platform': 'Instagram',
+      'link': 'https://www.instagram.com/',
+    },
+    {
+      'platform': 'LinkedIn',
+      'link': 'https://www.linkedin.com/',
+    },
+  ];
 
-  contactForm: FormGroup;
+  contactRole: any = '';
+  contactFname: any = '';
+  contactLname: any = '';
+  contactEmail: any = '';
 
-  constructor( private sharedService: SharedService, formBuilder: FormBuilder ) {
+  constructor(private sharedService:SharedService) {
     this.clickEventSubscription = this.sharedService.getContactCompClickEvent().subscribe(() => {
       this.toggleContact();
-    });
-
-    this.contactForm = formBuilder.group({
-      role: ['', [Validators.required]],
-      fname: ['', [Validators.required]],
-      lname: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]]
     });
   }
 
@@ -49,14 +51,6 @@ export class ContactUsComponent implements OnInit {
 
   toggleContact() {
     this.showContact = !this.showContact;
-  }
-
-  submitContact() {
-    
-  }
-
-  get form_controls() {
-    return this.contactForm.controls;
   }
 
 }

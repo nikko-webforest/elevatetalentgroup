@@ -21,7 +21,7 @@ import { KeyToSuccessComponent } from './sections/key-to-success/key-to-success.
 import { PartnersOnlyComponent } from './sections/partners-only/partners-only.component';
 import { ContactUsComponent } from './sections/contact-us/contact-us.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

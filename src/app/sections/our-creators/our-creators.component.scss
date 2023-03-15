@@ -130,10 +130,8 @@
       }
 
       .flickity-main {
-        position: relative;
         outline: none;
-        max-width: 1920px;
-        margin: 0 auto;
+        position: relative;
 
         &.animate-init {
           opacity: 0;
@@ -147,7 +145,7 @@
         .flickity-viewport {
           .flickity-slider {
             --slider-gap: 45px;
-            width: calc(100% + (1920px / 2));
+            width: calc(100% + (1380px / 2));
             margin: 0 0 0 calc(50% - (1280px / 2));
 
             @media only screen and (max-width: 1440px) {
@@ -379,10 +377,6 @@
                     font-size: 27px;
                   }
                 }
-              }
-
-              &:last-child {
-                margin: 0;
               }
             }
           }
