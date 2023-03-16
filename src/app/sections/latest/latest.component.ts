@@ -57,16 +57,23 @@ export class LatestComponent implements OnInit {
   }
 
   togglePlayPause() {
+    let self = this;
     if( this.isPlaying ){
       this.isPlaying = false;
       this.player.pause().then(function() {
-        console.log('Clicked Paused');
+        if( window.innerWidth <= 480 ){
+          self.player.exitFullscreen();
+        }
+        // console.log('Clicked Paused');
       });
     }
     else {
       this.isPlaying = true;
       this.player.play().then(function() {
-        console.log('Clicked Play');
+        if( window.innerWidth <= 480 ){
+          self.player.requestFullscreen();
+        }
+        // console.log('Clicked Play');
       });
     }
   }
