@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { SharedService } from '../../shared.service';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-contact-us',
@@ -12,45 +11,62 @@ import { Subscription } from 'rxjs';
 
 export class ContactUsComponent implements OnInit {
 
-  clickEventSubscription:Subscription;
+  @Input() contactEmail: any;
+  @Input() contactNumber: any;
+  @Input() contactAddress: any;
+  @Input() socialMediaList: any;
 
-  public showContact: boolean = false;
+  @Input() showContactSection: boolean = false;
 
-  socialMediaList: any = [
-    {
-      'platform': 'Instagram',
-      'link': 'https://www.instagram.com/',
-    },
-    {
-      'platform': 'LinkedIn',
-      'link': 'https://www.linkedin.com/',
-    },
-  ];
+  contactUsForm: FormGroup;
+  contactUsFormSubmitted: boolean = false;
+  contactUsFormSubmittedEmpty: boolean | undefined;
+  contactUsFormSubmittedEmptyAnimate: boolean | undefined;
+  contactUsThankYouMessage: string = 'Thank you for getting in touch!';
 
-  contactRole: any = '';
-  contactFname: any = '';
-  contactLname: any = '';
-  contactEmail: any = '';
+  constructor(
+    public appComp: AppComponent,
+    formBuilder: FormBuilder
+    ) {
 
-  constructor(private sharedService:SharedService) {
-    this.clickEventSubscription = this.sharedService.getContactCompClickEvent().subscribe(() => {
-      this.toggleContact();
+    this.contactUsForm = formBuilder.group({
+      role: ['', [Validators.required]],
+      fname: ['', [Validators.required]],
+      lname: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]]
     });
   }
 
   ngOnInit(): void {
-  }
-
-  openContact() {
-    this.showContact = true;
-  }
-
-  closeContact() {
-    this.sharedService.toggleContactComponent();
+    console.log('this.contactUsForm.controls["role"].touched = '+this.contactUsForm.controls['role'].touched);
+    console.log('this.contactUsForm.invalid = '+this.contactUsForm.invalid);
+    console.log('this.contactUsForm.valid = '+this.contactUsForm.valid);
   }
 
   toggleContact() {
-    this.showContact = !this.showContact;
+    this.appComp.toggleShowHideContactSection();
+    this.contactUsForm.reset();
+    this.contactUsFormSubmittedEmpty = false;
+  }
+
+  submitContact() {
+    if( this.contactUsForm.valid ){
+      this.contactUsFormSubmitted = true;
+      this.contactUsFormSubmittedEmpty = false;
+      console.warn(this.contactUsForm.value);
+      console.log('Contact Is Submitted!');
+      this.contactUsForm.reset();
+    }
+    else {
+      this.contactUsFormSubmitted = false;
+      this.contactUsFormSubmittedEmpty = true;
+      this.contactUsFormSubmittedEmptyAnimate = true;
+      setTimeout(() => {
+        this.contactUsFormSubmittedEmptyAnimate = false;
+      }, 300);
+      console.warn(this.contactUsForm.value);
+      console.log('Contact Form is Invalid');
+    }
   }
 
 }

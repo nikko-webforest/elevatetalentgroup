@@ -8,6 +8,18 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 export class AppComponent {
   title = 'Elevate Talent Group';
 
+  contactEmail: string = 'Info@elevate-m.com';
+  contactNumber: any = '';
+  contactAddress: any = '733 F Lakeview Plaza Blvd Columbus, OH 43085';
+  socialMediaList: any = [
+    {
+      'platform': 'LinkedIn',
+      'link': 'https://www.linkedin.com/company/5363596',
+    },
+  ];
+
+  public showContactSection: boolean = false;
+
   @ViewChild('header') divHeader!: ElementRef;
   @ViewChild('banner') divBanner!: ElementRef;
   @ViewChild('creators') divCreators!: ElementRef;
@@ -123,5 +135,9 @@ export class AppComponent {
   isInViewport(element: any) {
     const rect = element.getBoundingClientRect();
     return ( ((rect.top - 200) - rect.height) < 0 && (rect.bottom - 200) > 0);
+  }
+
+  toggleShowHideContactSection() {
+    this.showContactSection = !this.showContactSection;
   }
 }

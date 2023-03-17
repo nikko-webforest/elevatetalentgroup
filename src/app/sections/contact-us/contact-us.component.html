@@ -1,17 +1,17 @@
 <section class="etg-contact-us"
   [class.etg-scroll-bar]="true"
-  [class.toggle-show]="showContact">
+  [class.toggle-show]="showContactSection">
   <div class="etg-container">
     <h2 class="animate-init"
-      [class.animate-now]="showContact">
+      [class.animate-now]="showContactSection">
       HI THERE,
     </h2>
     <h5 class="animate-init"
-      [class.animate-now]="showContact">
+      [class.animate-now]="showContactSection">
       WE'RE GLAD YOUR HERE. LET'S GET GOING
     </h5>
     <button class="etg-close-btn animate-init"
-      (click)="closeContact()">
+      (click)="toggleContact()">
       <svg class="etg-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2.4 24L0 21.6L9.6 12L0 2.4L2.4 0L12 9.6L21.6 0L24 2.4L14.4 12L24 21.6L21.6 24L12 14.4L2.4 24Z" fill="#FFFFFF"/>
       </svg>        
@@ -20,10 +20,16 @@
       <div class="etg-col">
         <form class="contact-form"
           method="POST"
-          action="">
-          <div class="contact-form-group role"
+          action=""
+          [formGroup]="contactUsForm"
+          (ngSubmit)="submitContact();">
+          <div class="contact-form-group --form-role"
             [class.animate-init]="true"
-            [class.animate-now]="showContact">
+            [class.animate-now]="showContactSection"
+            [class.error-invalid]="contactUsForm.controls['role'].touched && contactUsForm.controls['role'].invalid"
+            [class.error-required]="contactUsForm.controls['role'].touched && contactUsForm.controls['role'].pristine"
+            [class.error-submitted]="contactUsFormSubmittedEmpty && contactUsForm.controls['role'].pristine"
+            [class.error-shake]="contactUsFormSubmittedEmptyAnimate">
             <p>
               Are you a creator or brand?
             </p>
@@ -31,8 +37,8 @@
               <input type="radio"
                 class="contact-form-input"
                 id="creator"
-                name="radio"
-                [(ngModel)]="contactRole"
+                name="role"
+                formControlName="role"
                 value="creator"
                 required/>
                 Creator
@@ -41,58 +47,70 @@
               <input type="radio"
                 class="contact-form-input"
                 id="advertiser"
-                name="radio"
-                [(ngModel)]="contactRole"
+                name="role"
+                formControlName="role"
                 value="advertiser"
                 required/>
                 Advertiser
             </label>
           </div>
-          <div class="contact-form-group fname"
+          <div class="contact-form-group --form-fname"
             [class.animate-init]="true"
-            [class.animate-now]="showContact">
+            [class.animate-now]="showContactSection"
+            [class.error-invalid]="contactUsForm.controls['fname'].touched && contactUsForm.controls['fname'].invalid"
+            [class.error-required]="contactUsForm.controls['fname'].touched && contactUsForm.controls['fname'].pristine"
+            [class.error-submitted]="contactUsFormSubmittedEmpty && contactUsForm.controls['fname'].pristine"
+            [class.error-shake]="contactUsFormSubmittedEmptyAnimate">
             <div class="count">01</div>
             <div class="">
               <label>Your first name:</label>
               <input type="text"
                 class="contact-form-input"
-                name="firstName"
-                [(ngModel)]="contactFname"
+                name="fname"
+                formControlName="fname"
                 placeholder="Type your full name"
                 required/>
             </div>
           </div>
-          <div class="contact-form-group lname"
+          <div class="contact-form-group --form-lname"
             [class.animate-init]="true"
-            [class.animate-now]="showContact">
+            [class.animate-now]="showContactSection"
+            [class.error-invalid]="contactUsForm.controls['lname'].touched && contactUsForm.controls['lname'].invalid"
+            [class.error-required]="contactUsForm.controls['lname'].touched && contactUsForm.controls['lname'].pristine"
+            [class.error-submitted]="contactUsFormSubmittedEmpty && contactUsForm.controls['lname'].pristine"
+            [class.error-shake]="contactUsFormSubmittedEmptyAnimate">
             <div class="count">02</div>
             <div class="">
               <label>Your last name:</label>
               <input type="text"
                 class="contact-form-input"
                 name="lastName"
-                [(ngModel)]="contactLname"
+                formControlName="lname"
                 placeholder="Type your last name"
                 required/>
             </div>
           </div>
-          <div class="contact-form-group email"
+          <div class="contact-form-group --form-email"
             [class.animate-init]="true"
-            [class.animate-now]="showContact">
+            [class.animate-now]="showContactSection"
+            [class.error-invalid]="contactUsForm.controls['email'].touched && contactUsForm.controls['email'].invalid"
+            [class.error-required]="contactUsForm.controls['email'].touched && contactUsForm.controls['email'].pristine"
+            [class.error-submitted]="contactUsFormSubmittedEmpty && contactUsForm.controls['email'].pristine"
+            [class.error-shake]="contactUsFormSubmittedEmptyAnimate">
             <div class="count">03</div>
             <div class="">
               <label>Your email:</label>
               <input type="email"
                 class="contact-form-input"
                 name="email"
-                [(ngModel)]="contactEmail"
+                formControlName="email"
                 placeholder="example@email.com"
                 required/>
             </div>
           </div>
-          <div class="contact-form-group submit"
+          <div class="contact-form-group --form-submit"
             [class.animate-init]="true"
-            [class.animate-now]="showContact">
+            [class.animate-now]="showContactSection">
             <button type="submit"
               class="contact-form-submit-btn etg-btn-primary">
               <svg class="etg-btn-icon etg-svg" width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -104,46 +122,53 @@
             </button>
           </div>
         </form>
+        <div class="contact-form-is-submitted"
+          *ngIf="contactUsFormSubmitted"
+          [innerText]="contactUsThankYouMessage">
+        </div>
       </div>
-      <div class="etg-col animate-init">
+      <div class="etg-col">
         <h3 [class.animate-init]="true"
-          [class.animate-now]="showContact">
+          [class.animate-now]="showContactSection">
           Contact Details
         </h3>
         <ul class="contact-list">
           <li class="contact-item"
             [class.animate-init]="true"
-            [class.animate-now]="showContact">
+            [class.animate-now]="showContactSection"
+            *ngIf="contactEmail != ''">
             E.
             <a class="contact-link"
-              href="mailto:info@elevate-m.com"
-              title="Contact Email">
-              info@elevate-m.com
+              [href]="'mailto:'+contactEmail"
+              title="Contact Email"
+              [innerText]="contactEmail">
             </a>
           </li>
           <li class="contact-item"
             [class.animate-init]="true"
-            [class.animate-now]="showContact">
+            [class.animate-now]="showContactSection"
+            *ngIf="contactNumber != ''">
             P.
             <a class="contact-link"
-              href="tel:+12345678910"
-              title="Contact Number">
-              +1.234.567.8910
+              [href]="'tel:+'+contactNumber"
+              title="Contact Number"
+              [innerText]="contactNumber">
             </a>
           </li>
         </ul>
         <h3 [class.animate-init]="true"
-          [class.animate-now]="showContact">
+          [class.animate-now]="showContactSection">
           Find Us
         </h3>
         <p class="contact-address"
           [class.animate-init]="true"
-          [class.animate-now]="showContact">
-          733 F Lakeview Plaza Blvd Columbus, OH 43085
+          [class.animate-now]="showContactSection"
+          *ngIf="contactAddress != ''"
+          [innerText]="contactAddress">
         </p>
         <ul class="social-media-list"
           [class.animate-init]="true"
-          [class.animate-now]="showContact">
+          [class.animate-now]="showContactSection">
           <li class="social-media-item"
             *ngFor="let item of socialMediaList">
             <a class="social-media-link"

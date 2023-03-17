@@ -1,5 +1,8 @@
 <div #header>
-    <app-header [showHeaderBackground]="showHeaderBackground"></app-header>
+    <app-header
+        [showHeaderBackground]="showHeaderBackground"
+        [showContactSection]="showContactSection">
+    </app-header>
 </div>
 <div #banner>
     <app-banner></app-banner>
@@ -32,7 +35,18 @@
     <app-partners-only [animatePartners]="animatePartners"></app-partners-only>
 </div>
 <div #footer>
-    <app-footer></app-footer>
+    <app-footer
+        [contactEmail]="contactEmail"
+        [contactNumber]="contactNumber"
+        [contactAddress]="contactAddress"
+        [socialMediaList]="socialMediaList">
+    </app-footer>
 </div>
-<app-contact-us></app-contact-us>
+<app-contact-us
+    [contactEmail]="contactEmail"
+    [contactNumber]="contactNumber"
+    [contactAddress]="contactAddress"
+    [socialMediaList]="socialMediaList"
+    [showContactSection]="showContactSection">
+</app-contact-us>
 <app-section-navigator [node]="node" (activeNode)="scrollTo($event)"></app-section-navigator>

@@ -1,3 +1,4 @@
+
 .etg-contact-us {
   position: fixed;
   z-index: 99999;
@@ -157,6 +158,8 @@
 
       .etg-col {
         &:nth-child(1) {
+          display: block;
+          // display: none;
           max-width: 600px;
           width: 100%;
 
@@ -176,11 +179,14 @@
                 margin: 0 0 20px;
               }
 
-              &.role {
+              &.--form-role {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 gap: 20px 40px;
+                width: max-content;
+                padding: 10px;
+                border: 1px solid transparent;
 
                 @media only screen and (max-width: 768px) {
                   flex-wrap: wrap;
@@ -215,11 +221,21 @@
                     }
                   }
                 }
+
+                &.error-invalid,
+                &.error-required,
+                &.error-submitted {
+                  border-color: red;
+
+                  &.error-shake {
+                    animation: shakeX 300ms forwards ease-in-out;
+                  }
+                }
               }
 
-              &.fname,
-              &.lname,
-              &.email {
+              &.--form-fname,
+              &.--form-lname,
+              &.--form-email {
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-start;
@@ -265,9 +281,23 @@
                     outline: none;
                   }
                 }
+
+                &.error-invalid,
+                &.error-required,
+                &.error-submitted {
+                  div {
+                    .contact-form-input {
+                      border-bottom: 1px solid red;
+                    }
+                  }
+
+                  &.error-shake {
+                    animation: shakeX 300ms forwards ease-in-out;
+                  }
+                }
               }
 
-              &.email {
+              &.--form-email {
                 margin: 0 0 70px;
 
                 @media only screen and (max-width: 768px) {
@@ -279,11 +309,11 @@
                 }
               }
 
-              &.submit {
+              &.--form-submit {
                 margin: 0;
               }
 
-              &.role {
+              &.--form-role {
                 &.animate-now {
                   opacity: 1;
                   transform: translateX(0px);
@@ -292,7 +322,7 @@
                 }
               }
 
-              &.fname {
+              &.--form-fname {
                 &.animate-now {
                   opacity: 1;
                   transform: translateX(0px);
@@ -301,7 +331,7 @@
                 }
               }
 
-              &.lname {
+              &.--form-lname {
                 &.animate-now {
                   opacity: 1;
                   transform: translateX(0px);
@@ -310,7 +340,7 @@
                 }
               }
 
-              &.email {
+              &.--form-email {
                 &.animate-now {
                   opacity: 1;
                   transform: translateX(0px);
@@ -319,7 +349,7 @@
                 }
               }
 
-              &.submit {
+              &.--form-submit {
                 &.animate-now {
                   opacity: 1;
                   transform: translateX(0px);
@@ -327,11 +357,6 @@
                   // animation: fade-right 1s forwards ease-in-out 600ms;
                 }
               }
-              
-              // &.animate-init {
-              //   opacity: 0;
-              //   transform: translateX(-300px);
-              // }
 
               &.animate-init {
                 opacity: 0;
@@ -358,12 +383,21 @@
               }
             }
           }
+
+          .contact-form-is-submitted {
+            font-family: var(--primaryFont);
+            font-size: 20px;
+            text-align: center;
+            line-height: 1em;
+            margin: 50px 0 0;
+            padding: 50px 25px;
+            border: 1px solid #FFFFFF;
+          }
         }
 
         &:nth-child(2) {
           max-width: 200px;
           width: 100%;
-          margin: -70px 0 0;
 
           @media only screen and (max-width: 768px) {
             max-width: 100%;

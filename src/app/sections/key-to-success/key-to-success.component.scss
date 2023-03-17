@@ -3,22 +3,17 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 480px;
+  min-height: 920px;
   height: 100vh;
   overflow: hidden;
   padding: 170px 30px 50px;
 
-  @media only screen and (max-width: 1080px) {
-    height: calc(100vh - 100px);
-    padding: 50px 30px;
-  }
-
-  @media only screen and (max-width: 768px) {
-    min-height: 1880px;
-  }
-
-  @media only screen and (max-width: 1080px) and (max-height: 480px) {
+  @media only screen and (max-width: 1680px) {
     height: auto;
+  }
+
+  @media only screen and (max-width: 1080px) {
+    padding: 100px 30px 30px;
   }
 
   @keyframes zoom-in-out {
@@ -262,6 +257,11 @@
                   left: 125px;
                 }
 
+                @media only screen and (max-width: 768px) {
+                  top: 200px;
+                  left: 185px;
+                }
+
                 @media only screen and (max-width: 480px) {
                   top: 210px;
                   left: 180px;
@@ -281,6 +281,11 @@
                   left: 115px;
                 }
 
+                @media only screen and (max-width: 768px) {
+                  top: 195px;
+                  left: 190px;
+                }
+
                 @media only screen and (max-width: 480px) {
                   top: 195px;
                   left: 180px;
@@ -296,6 +301,11 @@
                 left: 142px;
 
                 @media only screen and (max-width: 1080px) {
+                  top: -90px;
+                  left: 80px;
+                }
+
+                @media only screen and (max-width: 768px) {
                   top: -14px;
                   left: 142px;
                 }
@@ -317,6 +327,11 @@
                 @media only screen and (max-width: 1080px) {
                   top: 145px;
                   left: 125px;
+                }
+
+                @media only screen and (max-width: 768px) {
+                  top: 200px;
+                  left: 185px;
                 }
 
                 @media only screen and (max-width: 480px) {

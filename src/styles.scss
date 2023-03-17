@@ -168,7 +168,7 @@ img {
 	max-width: 270px;
 	min-width: 270px;
 	width: 100%;
-	padding: 20px;
+	padding: 1em 1.5em;
 	border: 1px solid #D9D9D9;
 	border-radius: 100px;
 	transition:
@@ -228,6 +228,15 @@ img {
 	}
 }
 
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes fade-up {
     0% {
       opacity: 0;
@@ -271,6 +280,25 @@ img {
       transform: translateX(0);
     }
 }
+
+@keyframes shakeX {
+    0% {
+        transform: translateX(10px);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 @media only screen and (max-width: 1440px) {}
 
 @media only screen and (max-width: 1080px) {}

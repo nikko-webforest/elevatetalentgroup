@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
-import { SharedService } from '../../shared.service';
-import { Subscription } from 'rxjs';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-header',
@@ -10,24 +9,21 @@ import { Subscription } from 'rxjs';
 })
 
 export class HeaderComponent implements OnInit {
-  
-  clickEventSubscription: Subscription;
 
   @Input() showHeaderBackground: boolean = false;
-
-  public toggleNavMenuBtn: boolean = false;
+  @Input() showContactSection: boolean = false;
   
-  constructor(private sharedService: SharedService) {
-    this.clickEventSubscription = this.sharedService.getContactCompClickEvent().subscribe(() => {
-      this.toggleNavMenuBtn = !this.toggleNavMenuBtn;
-    });
+  constructor(
+    public appComp: AppComponent
+  ) {
+    
   }
 
   ngOnInit(): void {
   }
 
   showContact() {
-    this.sharedService.toggleContactComponent();
+    this.appComp.toggleShowHideContactSection();
   }
 
 }
