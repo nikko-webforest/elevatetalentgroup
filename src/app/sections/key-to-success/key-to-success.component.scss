@@ -16,18 +16,6 @@
     padding: 100px 30px 30px;
   }
 
-  @keyframes zoom-in-out {
-    0% {
-      transform: scale(1.0);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1.0);
-    }
-  }
-
   .etg-container {
     display: flex;
     align-items: center;
@@ -39,7 +27,7 @@
     .etg-content {
       width: 100%;
       
-      h2 {
+      .main-title {
         color: #FFFFFF;
         font-family: var(--primaryFont);
         font-style: normal;
@@ -342,14 +330,6 @@
             }
           }
 
-          &.fade-up {
-            opacity: 1;
-            transform: translateY(0px);
-            transition:
-              opacity 1000ms ease-in-out,
-              transform 1000ms ease-in-out;
-          }
-
           &.default-color {
             .bg-color {
               background-color: #1E1E1E !important;
@@ -359,9 +339,37 @@
               background-color: #1E1E1E !important;
             }
           }
-          
-          &.zoom-in-out {
-            animation: zoom-in-out 2s linear;
+
+          &.animate-init {
+          }
+
+          &.animate-now {
+            animation:
+              fade-up 1s forwards ease-in-out;
+
+            &:nth-child(1) {
+              animation:
+                fade-up 1s forwards ease-in-out 400ms,
+                zoom-in-out 2s forwards ease-in-out 2000ms;
+            }
+
+            &:nth-child(2) {
+              animation:
+                fade-up 1s forwards ease-in-out 600ms,
+                zoom-in-out 2s forwards ease-in-out 3000ms;
+            }
+
+            &:nth-child(3) {
+              animation:
+                fade-up 1s forwards ease-in-out 800ms,
+                zoom-in-out 2s forwards ease-in-out 4000ms;
+            }
+
+            &:nth-child(4) {
+              animation:
+                fade-up 1s forwards ease-in-out 1000ms,
+                zoom-in-out 2s forwards ease-in-out 5000ms;
+            }
           }
         }
       }

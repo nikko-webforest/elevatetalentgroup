@@ -40,36 +40,23 @@ export class KeyToSuccessComponent implements OnInit {
   @HostListener('document:scroll', ['$event'])
   public onViewportScroll() {
     if( this.animateSuccess ){
-      this.fadeUpEach();
-      this.animateEach();
+      // this.animateEach();
+      this.removeDefaultColor();
     }
   }
 
   constructor() { }
 
-  ngOnInit(): void {
-    
-  }
-  
-  fadeUpEach() {
-    setTimeout(() => {
-      document.querySelectorAll('.etg-key-to-success .etg-row .etg-col').forEach((li: any, i:any) => {
-        setTimeout(() => {
-          li.classList.add('fade-up');
-        }, (200 * i));
-      });
-    }, 400);
-  }
+  ngOnInit(): void {}
 
-  animateEach() {
+  removeDefaultColor() {
     setTimeout(() => {
       document.querySelectorAll('.etg-key-to-success .etg-row .etg-col').forEach((li: any, i: any) => {
         setTimeout(() => {
           li.classList.remove('default-color');
-          li.classList.add('zoom-in-out');
         }, 1000 * i);
       });
-    }, 1500);
+    }, 2000);
   }
 
 }

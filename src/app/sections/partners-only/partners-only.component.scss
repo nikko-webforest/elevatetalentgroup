@@ -10,28 +10,6 @@
     padding: 50px 30px;
   }
 
-  @keyframes fade-right {
-    0% {
-      opacity: 0;
-      transform: translateX(-300px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-    }
-  }
-
-  @keyframes fade-left {
-    0% {
-      opacity: 0;
-      transform: translateX(300px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-    }
-  }
-
   .etg-container {
     display: flex;
     align-items: center;
@@ -141,7 +119,7 @@
           }
 
           &.animate-now {
-            animation: fade-left 1s forwards ease-in-out;
+            animation: fade-left 1s forwards ease-in-out 500ms;
           }
         }
       }

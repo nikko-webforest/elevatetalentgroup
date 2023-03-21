@@ -801,7 +801,7 @@
 										justify-content: center;
 										align-items: center;
 										gap: 35px;
-										height: 3.9em;
+										height: calc(1.3em * 4);
 										list-style: none inside;
 										padding: 0;
 										margin: 0;
@@ -827,7 +827,7 @@
 											max-width: 150px;
 											min-width: 150px;
 											width: 100%;
-											height: calc(1.3em * 3);
+											height: calc(1.3em * 4);
 											overflow: hidden;
 											opacity: 0;
 											transition: all 1s ease-in-out;
@@ -855,7 +855,7 @@
 												color: #FFFFFF;
 												font-weight: 700;
 												font-size: 14px;
-												align-items: flex-start;
+												align-items: center;
 												left: 50%;
 												opacity: 1;
 											}
