@@ -15,30 +15,30 @@
     font-display: swap;
     src: url(./assets/fonts/Product-Sans/ProductSans-Regular.ttf);
   }
-  /* Normal - Bold/900 */
-  @font-face {
+/* Normal - Bold/900 */
+@font-face {
     font-family: 'Product Sans';
     font-style: normal;
     font-weight: 900;
     font-display: swap;
     src: url(./assets/fonts/Product-Sans/ProductSans-Bold.ttf);
-  }
-  /* Italic - Regular/500 */
-  @font-face {
+}
+/* Italic - Regular/500 */
+@font-face {
     font-family: 'Product Sans';
     font-style: italic;
     font-weight: 500;
     font-display: swap;
     src: url(./assets/fonts/Product-Sans/ProductSans-Regular.ttf);
-  }
-  /* Italic - Bold/900 */
-  @font-face {
+}
+/* Italic - Bold/900 */
+@font-face {
     font-family: 'Product Sans';
     font-style: italic;
     font-weight: 900;
     font-display: swap;
     src: url(./assets/fonts/Product-Sans/ProductSans-Bold.ttf);
-  }
+}
 
 :root {
     --primaryFont: 'Prompt', sans-serif;
@@ -60,6 +60,10 @@ html {
     @media only screen and (max-width: 1080px) {
         scroll-padding-top: 100px;
     }
+
+    @media only screen and (max-width: 1080px) and (max-height: 480px) {
+        scroll-padding-top: 0;
+    }
 }
 
 body {
@@ -67,6 +71,7 @@ body {
     background-color: #000000;
     min-width: 380px;
     width: 100%;
+    min-height: 380px;
 }
 
 html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
@@ -163,7 +168,7 @@ img {
 	max-width: 270px;
 	min-width: 270px;
 	width: 100%;
-	padding: 20px;
+	padding: 1em 1.5em;
 	border: 1px solid #D9D9D9;
 	border-radius: 100px;
 	transition:
@@ -174,6 +179,8 @@ img {
         path {
             &:nth-child(1) {
                 fill: #EEB53B;
+                transition:
+                    fill 300ms ease-in-out;
             }
         }
     }
@@ -219,6 +226,125 @@ img {
 	&::-webkit-scrollbar-thumb:hover {
 		background-color: #696969;
 	}
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-right {
+    0% {
+      opacity: 0;
+      transform: translateX(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+@keyframes fade-left {
+    0% {
+      opacity: 0;
+      transform: translateX(300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        scale: 1.0;
+    }
+    100% {
+        scale: 1.1;
+    }
+}
+
+@keyframes zoom-out {
+    0% {
+        scale: 1.1;
+    }
+    100% {
+        scale: 1.0;
+    }
+}
+
+@keyframes zoom-in-out {
+    0% {
+      scale: 1.0;
+    }
+    50% {
+      scale: 1.1;
+    }
+    100% {
+      scale: 1.0;
+    }
+}
+
+@keyframes shakeX {
+    0% {
+        transform: translateX(10px);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes shakeY {
+    0% {
+        transform: translateY(10px);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @media only screen and (max-width: 1440px) {}

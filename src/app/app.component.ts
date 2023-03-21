@@ -8,6 +8,18 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 export class AppComponent {
   title = 'Elevate Talent Group';
 
+  contactEmail: string = 'Info@elevate-m.com';
+  contactNumber: any = '';
+  contactAddress: any = '733 F Lakeview Plaza Blvd Columbus, OH 43085';
+  socialMediaList: any = [
+    {
+      'platform': 'LinkedIn',
+      'link': 'https://www.linkedin.com/company/5363596',
+    },
+  ];
+
+  public showContactSection: boolean = false;
+
   @ViewChild('header') divHeader!: ElementRef;
   @ViewChild('banner') divBanner!: ElementRef;
   @ViewChild('creators') divCreators!: ElementRef;
@@ -29,11 +41,13 @@ export class AppComponent {
   animateFullService: any = null;
   animateServicesAndCapabilities: any = null;
   animateSuccess: any = null;
+  animatePartners: any = null;
   node: any = 1;
 
   @HostListener('document:scroll', ['$event'])
   
   public onViewportScroll() {
+
     const windowHeight = window.innerHeight;
     const header = this.divHeader.nativeElement.getBoundingClientRect();
     this.showHeaderBackground = (header.top < 0) ? true : false;
@@ -57,11 +71,14 @@ export class AppComponent {
     this.animateServicesAndCapabilities  = ((window.innerHeight/2) >  servicesAndCapabilities.top ) ? true : false;
 
     const success = this.divSuccess.nativeElement.getBoundingClientRect();
-    this.animateSuccess  = ((window.innerHeight/2) >  success.top ) ? true : false;
+    this.animateSuccess = ((window.innerHeight/2) > success.top ) ? true : false;
+
+    const partners = this.divPartners.nativeElement.getBoundingClientRect();
+    this.animatePartners = ((window.innerHeight/2) > partners.top ) ? true : false;
 
     this.node = this.getVisibleSection();
     console.log(this.getVisibleSection());
-    
+
   }
 
   scrollTo(node: any) {
@@ -86,7 +103,7 @@ export class AppComponent {
 
     const windowHeight = window.innerHeight;
 
-    switch(true){
+    switch(true) {
       case this.isInViewport(this.divBanner.nativeElement) :
         return 1;
       case this.isInViewport(this.divCollab.nativeElement) :
@@ -112,10 +129,15 @@ export class AppComponent {
       default: 
        return 0;
     }
+    
   }
 
   isInViewport(element: any) {
     const rect = element.getBoundingClientRect();
     return ( ((rect.top - 200) - rect.height) < 0 && (rect.bottom - 200) > 0);
+  }
+
+  toggleShowHideContactSection() {
+    this.showContactSection = !this.showContactSection;
   }
 }

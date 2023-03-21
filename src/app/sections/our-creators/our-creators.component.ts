@@ -7,7 +7,8 @@ import * as Flickity from 'flickity';
   styleUrls: ['./our-creators.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class OurCreatorsComponent implements OnInit {
+
+export class OurCreatorsComponent implements OnInit, AfterViewInit {
 
   @Input() animateCreatorsEl: any;
   carousel: any | undefined;
@@ -71,7 +72,7 @@ export class OurCreatorsComponent implements OnInit {
       prevNextButtons: false,
       pageDots: false
     });
-    console.log(this.carousel);
+    // console.log(this.carousel);
   }
 
 }

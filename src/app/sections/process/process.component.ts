@@ -6,6 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./process.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class ProcessComponent implements OnInit {
 
   processStepsList: any = [
@@ -17,7 +18,7 @@ export class ProcessComponent implements OnInit {
     },
     {
       'count': '02',
-      'name': 'Comments is in Action',
+      'name': 'Commitment is in Action',
       'image': '../../../assets/ProcessSection_ProcessImage_02.jpg',
       'details': 'When we partner, we commit to being all-in and we deliver. Every. Time. Our goal is to ensure frictionless success.'
     },

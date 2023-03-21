@@ -20,20 +20,23 @@
 		</defs>
 	</svg>
 	<svg class="etg-svg svg-foreground lt-view"
-		width="1536" height="1864" viewBox="0 0 1536 1864" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		width="3408" height="1865" viewBox="0 0 3408 1865" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<g clip-path="url(#clip0_958_1138)">
-			<path class="left-pane" d="M617 1864L0 925V1864H617Z" fill="#010102"></path>
-			<path class="right-pane" d="M1536 232L1414 0H1536V232Z" fill="#010102"></path>
+			<path class="left-pane" d="M1536 1864.55L919 925.271L302.5 0H0.5V1864.55H919H1536Z" fill="#010102"></path>
+			<path class="right-pane" d="M2455 232.068L2333 0H3408V1863.05H3336.5L2455 232.068Z" fill="#010102"></path>
 		</g>
 		<defs>
 			<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 				<use xlink:href="#image0_958_1138" transform="matrix(0.00139428 0 0 0.00114922 -1.09695 -0.121115)"/>
 			</pattern>
 			<clipPath id="clip0_958_1138">
-				<rect width="1536" height="1864" fill="white"/>
+				<rect width="3408" height="1864.55" fill="white"/>
 			</clipPath>
 		</defs>
 	</svg>		
+	<div class="player-control"
+		(click)="togglePlayPause()">
+	</div>
 	<div class="etg-container">
 		<div class="etg-row">
 			<div class="etg-content">
@@ -44,11 +47,11 @@
 					ELEVATE TALENT GROUP
 				</h5>
 				<p>
-					We are a full-service transmedia company. That means we tell stories across platforms, over time in ways that compel people to take action. This strategic mulit-platform approach is why working with Elevate and our creators gives you an unfair advantage.
+					We are a full-service transmedia company. That means we tell stories across platforms, over time in ways that compel people to take action. This strategic multi-platform approach is why working with Elevate and our creators gives you an unfair advantage.
 				</p>
 			</div>
 			<svg class="play-btn"
-				(click)="play()"
+				(click)="togglePlayPause()"
 				width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle class="border" cx="45" cy="45" r="45" fill="#FFFFFF" fill-opacity="0.4"/>
 				<circle  cx="45.5697" cy="45.5695" r="33.57" fill="#FFFFFF"/>

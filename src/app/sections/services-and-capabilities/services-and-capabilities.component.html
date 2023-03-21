@@ -1,34 +1,40 @@
 <section class="etg-services-and-capabilities">
-  <div class="etg-background">
+  <div class="etg-background animate-init"
+    [class.animate-now]="animateServicesAndCapabilities">
   </div>
   <div class="etg-container">
     <div class="etg-content">
       <div class="etg-row">
-        <h2 class="first-title"
+        <h2 class="first-title animate-init"
           [ngClass]="{ 'active' : servicesActive }"
-          [class.animate]="animateServicesAndCapabilities"
+          [class.animate-now]="animateServicesAndCapabilities"
           (click)="selectList('services')">
           OUR FULL-SERVICE CORE COMPETENCIES
         </h2>
-        <hr>
-        <h2 class="second-title"
+        <hr class="animate-init"
+          [class.animate-now]="animateServicesAndCapabilities">
+        <h2 class="second-title animate-init"
           [ngClass]="{ 'active' : capabilitiesActive }"
-          [class.animate]="animateServicesAndCapabilities"
+          [class.animate-now]="animateServicesAndCapabilities"
           (click)="selectList('capabilities')">
           OUR VERTICAL CAPABILITIES
         </h2>
       </div>
       <ul class="list">
-        <li class="item"
-          *ngFor="let item of itemList"
-          [innerText]="item"
-          [class.animate]="animateServicesAndCapabilities">
+        <li class="item animate-init"
+          *ngFor="let item of itemList; let i = index;"
+          [class.animate-now]="animateServicesAndCapabilities"
+          [ngStyle]="{ 'animation-delay' : ((i*100)+400)+'ms' }"
+          [innerText]="item">
         </li>
       </ul>
-      <app-primary-btn
-        text="LET'S TALK"
-        url="toggle-contact">
-      </app-primary-btn>
+      <div class="etg-btn-animate animate-init"
+        [class.animate-now]="animateServicesAndCapabilities">
+        <app-primary-btn
+          text="LET'S TALK"
+          url="toggle-contact">
+        </app-primary-btn>
+      </div>
     </div>
   </div>
 </section>

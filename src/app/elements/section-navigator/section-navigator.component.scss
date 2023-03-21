@@ -19,6 +19,10 @@
     bottom: 30px;
   }
 
+  @media only screen and (max-width: 768px) and (max-height: 480px) {
+    bottom: 10px;
+  }
+
   .etg-wrap {
     display: flex;
     flex-direction: column;
@@ -36,6 +40,10 @@
 
     @media only screen and (max-width: 480px) {
       width: 20px;
+    }
+
+    @media only screen and (max-height: 480px) {
+      gap: 10px 35px;
     }
 
     .title {
@@ -57,13 +65,21 @@
         font-size: 14px;
       }
 
-      &.animate {
+      @media only screen and (max-width: 768px) and (max-height: 480px) {
+        font-size: 14px;
+      }
+
+      &.animate-init {
         position: absolute;
         z-index: 1;
         bottom: 300px;
         rotate: -90deg;
         transform-origin: center;
         opacity: 0;
+
+        @media only screen and (max-height: 480px) {
+          bottom: 225px;
+        }
       }
 
       &.prev {
@@ -187,7 +203,7 @@
           }
         }
 
-        &.animate {
+        &.animate-init {
           opacity: 0;
         }
 

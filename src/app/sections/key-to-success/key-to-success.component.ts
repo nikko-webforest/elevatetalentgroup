@@ -6,13 +6,14 @@ import { Component, OnInit, ViewEncapsulation, Input, HostListener } from '@angu
   styleUrls: ['./key-to-success.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class KeyToSuccessComponent implements OnInit {
 
   @Input() animateSuccess: any;
   keyToSuccessList: any = [
     {
       'title': 'Start with common communities',
-      'description': 'We&apos;ve been doing this since the dawn of the creator economy. Here are four ingredients to ensure success into any creator program:',
+      'description': 'Which creators have communities that integrate with your brand and your community?',
       'bgColor': '#942094',
       'bgImage': '../../../assets/KeyToSuccess_01_bg-224x166.png',
     },
@@ -35,43 +36,27 @@ export class KeyToSuccessComponent implements OnInit {
       'bgImage': '../../../assets/KeyToSuccess_04_bg-241x179.png',
     },
   ];
+  
   @HostListener('document:scroll', ['$event'])
   public onViewportScroll() {
-    if(this.animateSuccess){
-      this.fadeUpEach();
-      this.animateEach();
+    if( this.animateSuccess ){
+      // this.animateEach();
+      this.removeDefaultColor();
     }
   }
 
   constructor() { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
-    
-  }
-  
-  fadeUpEach() {
+  removeDefaultColor() {
     setTimeout(() => {
-      document.querySelectorAll('.etg-row .etg-col').forEach((li: any, i:any) => {
-        setTimeout(() => {
-          li.classList.add('fade-up');
-        }, (200 * i));
-      });
-    }, 100);
-  }
-
-  animateEach() {
-    setTimeout(() => {
-      document.querySelectorAll('.etg-row .etg-col').forEach((li: any, i: any) => {
+      document.querySelectorAll('.etg-key-to-success .etg-row .etg-col').forEach((li: any, i: any) => {
         setTimeout(() => {
           li.classList.remove('default-color');
-          li.classList.add('zoom-in-out');
-        }, (1000 * i));
+        }, 1000 * i);
       });
-    }, 300);
+    }, 2000);
   }
 
 }

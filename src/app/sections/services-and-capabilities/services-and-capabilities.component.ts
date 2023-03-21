@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, HostListener, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-services-and-capabilities',
@@ -6,7 +6,8 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
   styleUrls: ['./services-and-capabilities.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ServicesAndCapabilitiesComponent implements OnInit {
+
+export class ServicesAndCapabilitiesComponent implements OnInit, AfterViewInit {
 
   @Input() animateServicesAndCapabilities: any;
 
@@ -35,9 +36,18 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
 
   itemList: any = [];
 
+  @HostListener('document:scroll', ['$event'])
+  public onViewportScroll() {
+    
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+
+  ngAfterViewInit(): void {
     this.selectList('services');
   }
 
@@ -71,9 +81,9 @@ export class ServicesAndCapabilitiesComponent implements OnInit {
 
   fadeList() {
     setTimeout(() => {
-      document.querySelectorAll('.list .item').forEach((li: any, i:any) => {
+      document.querySelectorAll('.etg-services-and-capabilities .list .item').forEach((li: any, i:any) => {
         setTimeout(() => {
-          li.classList.add('fade-left');
+          li.classList.add('animate-now');
         }, (50 * i));
       });
     }, 100);

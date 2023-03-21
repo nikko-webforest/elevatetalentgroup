@@ -3,40 +3,17 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 920px;
   height: 100vh;
   overflow: hidden;
   padding: 170px 30px 50px;
 
+  @media only screen and (max-width: 1680px) {
+    height: auto;
+  }
+
   @media only screen and (max-width: 1080px) {
-    height: calc(100vh - 100px);
-    padding: 50px 30px;
-  }
-
-  @media only screen and (max-width: 768px) {
-    height: 1864px;
-  }
-
-  @keyframes fade-up {
-    0% {
-      opacity: 0;
-      transform: translateY(200px)
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-
-  @keyframes zoom-in-out {
-    0% {
-      transform: scale(1.0);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1.0);
-    }
+    padding: 100px 30px 30px;
   }
 
   .etg-container {
@@ -50,7 +27,7 @@
     .etg-content {
       width: 100%;
       
-      h2 {
+      .main-title {
         color: #FFFFFF;
         font-family: var(--primaryFont);
         font-style: normal;
@@ -61,7 +38,6 @@
         letter-spacing: 0.02em;
         width: max-content;
         margin: 0 auto 24px;
-        animation: fade-up 1000ms ease-in-out 0ms;
 
         @media only screen and (max-width: 1080px) {
           font-size: 48px;
@@ -71,6 +47,15 @@
           font-size: 48px;
           max-width: 250px;
           margin: 0 auto 12px;
+        }
+
+        &.animate-init {
+          opacity: 0;
+          transform: translateY(-300px);
+        }
+
+        &.animate-now {
+          animation: fade-up 1s forwards ease-in-out 0ms;
         }
       }
 
@@ -85,7 +70,6 @@
         letter-spacing: 0.02em;
         max-width: 725px;
         margin: 0 auto 105px;
-        animation: fade-up 1000ms ease-in-out 200ms;
 
         @media only screen and (max-width: 1080px) {
           font-size: 18px;
@@ -101,6 +85,15 @@
           font-size: 14px;
           margin: 0 auto 80px;
         }
+
+        &.animate-init {
+          opacity: 0;
+          transform: translateY(-300px);
+        }
+
+        &.animate-now {
+          animation: fade-up 1s forwards ease-in-out 200ms;
+        }
       }
 
       .etg-row {
@@ -114,6 +107,10 @@
         @media only screen and (max-width: 1080px) {
           max-width: 630px;
           gap: 45px 25px;
+        }
+
+        @media only screen and (max-width: 768px) {
+          flex-direction: column;
         }
 
         .etg-col {
@@ -133,10 +130,14 @@
             padding: 55px 25px 25px;
           }
 
-          @media only screen and (max-width: 480px) {
+          @media only screen and (max-width: 768px) {
             width: 360px;
             height: 360px;
-            padding: 55px 25px 25px;
+          }
+
+          @media only screen and (max-width: 480px) {
+            width: 300px;
+            height: 300px;
           }
 
           .bg-color {
@@ -244,6 +245,11 @@
                   left: 125px;
                 }
 
+                @media only screen and (max-width: 768px) {
+                  top: 200px;
+                  left: 185px;
+                }
+
                 @media only screen and (max-width: 480px) {
                   top: 210px;
                   left: 180px;
@@ -263,6 +269,11 @@
                   left: 115px;
                 }
 
+                @media only screen and (max-width: 768px) {
+                  top: 195px;
+                  left: 190px;
+                }
+
                 @media only screen and (max-width: 480px) {
                   top: 195px;
                   left: 180px;
@@ -278,6 +289,11 @@
                 left: 142px;
 
                 @media only screen and (max-width: 1080px) {
+                  top: -90px;
+                  left: 80px;
+                }
+
+                @media only screen and (max-width: 768px) {
                   top: -14px;
                   left: 142px;
                 }
@@ -301,20 +317,17 @@
                   left: 125px;
                 }
 
+                @media only screen and (max-width: 768px) {
+                  top: 200px;
+                  left: 185px;
+                }
+
                 @media only screen and (max-width: 480px) {
                   top: 210px;
                   left: 180px;
                 }
               }
             }
-          }
-
-          &.fade-up {
-            opacity: 1;
-            transform: translateY(0px);
-            transition:
-              opacity 1000ms ease-in-out,
-              transform 1000ms ease-in-out;
           }
 
           &.default-color {
@@ -326,9 +339,37 @@
               background-color: #1E1E1E !important;
             }
           }
-          
-          &.zoom-in-out {
-            animation: zoom-in-out 2s linear;
+
+          &.animate-init {
+          }
+
+          &.animate-now {
+            animation:
+              fade-up 1s forwards ease-in-out;
+
+            &:nth-child(1) {
+              animation:
+                fade-up 1s forwards ease-in-out 400ms,
+                zoom-in-out 2s forwards ease-in-out 2000ms;
+            }
+
+            &:nth-child(2) {
+              animation:
+                fade-up 1s forwards ease-in-out 600ms,
+                zoom-in-out 2s forwards ease-in-out 3000ms;
+            }
+
+            &:nth-child(3) {
+              animation:
+                fade-up 1s forwards ease-in-out 800ms,
+                zoom-in-out 2s forwards ease-in-out 4000ms;
+            }
+
+            &:nth-child(4) {
+              animation:
+                fade-up 1s forwards ease-in-out 1000ms,
+                zoom-in-out 2s forwards ease-in-out 5000ms;
+            }
           }
         }
       }

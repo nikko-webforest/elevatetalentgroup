@@ -1,18 +1,20 @@
-<section class="etg-partners-only animation">
+<section class="etg-partners-only">
   <div class="etg-container">
     <div class="etg-content">
-      <h2>
+      <h2 class="animate-init"
+        [class.animate-now]="animatePartners">
         PARTNERING ONLY WITH THE BEST
       </h2>
       <ul class="partners-list">
-        <li class="partners-item"
+        <li class="partners-item animate-init"
           *ngFor="let item of partnersList; let i = index;"
-          [id]="i">
+          [id]="i"
+          [class.animate-now]="animatePartners"
+          [ngStyle]="{ 'animation-delay' : ((i*100) + 200)+'ms' }">
           <img class="partners-logo"
             [title]="item.title"
             [alt]="item.title"
-            [src]="item.logo"
-          />
+            [src]="item.logo"/>
         </li>
       </ul>
     </div>
