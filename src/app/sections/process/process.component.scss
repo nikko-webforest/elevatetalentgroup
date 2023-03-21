@@ -30,6 +30,10 @@
       min-width: 9000px;
       width: 100%;
       height: 100%;
+
+      @media only screen and (max-width: 768px) {
+        display: none;
+      }
     }
   }
 
@@ -356,10 +360,10 @@
         }
 
         &:nth-child(2) {
-          @media only screen and (max-width: 768px) {
-            overflow-x: auto;
-            overflow-y: hidden;
-          }
+          // @media only screen and (max-width: 768px) {
+          //   overflow-x: auto;
+          //   overflow-y: hidden;
+          // }
           
           .main-title {
             display: block;
@@ -404,6 +408,9 @@
                 }
 
                 @media only screen and (max-width: 480px) {
+                  position: relative;
+                  left: 50%;
+                  transform: translateX(-50%);
                   display: flex;
                 }
 
@@ -442,6 +449,10 @@
 
                     @media only screen and (max-width: 768px) {
                       font-size: 14px;
+                    }
+
+                    @media only screen and (max-width: 480px) {
+                      width: 35%;
                     }
                   }
 
@@ -488,6 +499,10 @@
                       position: relative;
                       left: 50%;
                       transform: translateX(-50%);
+
+                      @media only screen and (max-width: 480px) {
+                        left: 35%;
+                      }
                     }
 
                     .process-status-icon {
@@ -504,6 +519,10 @@
                       position: relative;
                       right: 50%;
                       transform: translateX(50%);
+
+                      @media only screen and (max-width: 480px) {
+                        right: 35%;
+                      }
                     }
 
                     .process-status-icon {

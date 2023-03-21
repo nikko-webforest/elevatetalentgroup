@@ -21,10 +21,11 @@
   }
 
   .etg-background {
-    content: '';
     position: absolute;
     z-index: 1;
-    inset: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: block;
     background-image: url('../../../assets/ServicesAndCapabilities_bg_9000x2030.jpg');
     background-position: center;
@@ -34,7 +35,7 @@
     height: 100%;
 
     @media only screen and (max-width: 768px) {
-      background-image: url('../../../assets/ServicesAndCapabilities_bg_3408x1864.jpg');
+      background-image: url('../../../assets/ServicesAndCapabilities_bg_3408x1865.jpg');
     }
 
     @media only screen and (max-width: 1080px) and (max-height: 480px) {
