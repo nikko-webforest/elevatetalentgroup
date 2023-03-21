@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, HostListener, ViewEncapsulation } from '@angular/core';
+// @ts-ignore
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 @Component({
   selector: 'app-statistics',
@@ -9,6 +11,7 @@ import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, HostLis
 export class StatisticsComponent implements AfterViewInit {
 
   @Input() animateStats: any;
+  @Input() node: any;
   @ViewChild('statList') stat: ElementRef | any;
   stats: any = [
     {
@@ -48,12 +51,43 @@ export class StatisticsComponent implements AfterViewInit {
   toExitNode: any = 0;
   borderAnimActive: any = true;
   screenWidth: any = 0;
+  activeNode: any = 0;
+  scroll: any = 0;
+  scrollStatus: boolean = false;
+  
+  @ViewChild("scrollTarget")
+  scrollTarget!: ElementRef;
 
   @HostListener('document:scroll', ['$event'])
   
   public onViewportScroll() {
     this.activeStat = this.animateStats ? this.activeStat : 0;
     this.updatePrevNextStat();
+    console.log('Scrolling');
+  }
+
+  @HostListener('wheel', ['$event']) onMousewheel(event: any) {
+    
+    if(this.node == 4){
+
+      if(!this.scrollStatus){
+        disableBodyScroll(this.scrollTarget.nativeElement);
+      }
+      if(event.wheelDelta>0){
+        this.scroll--;
+        console.log("Entered mouse wheel down", this.scroll);
+      }
+      if(event.wheelDelta<0){
+        this.scroll++;
+        console.log("Entered mouse wheel up",  this.scroll);
+      }
+      this.navigateStats();
+    } else {
+      this.scrollStatus = false;
+      this.scroll = 0;
+    }
+    
+    
   }
 
   constructor() {
@@ -71,17 +105,62 @@ export class StatisticsComponent implements AfterViewInit {
     console.log('screenWidth = '+this.screenWidth);
   }
 
-  setActive(node: any, event: any) {
+  setActive(node: any, event: any = null) {
     this.toExitNode = (node == 0) ? this.stats[0].svg : this.stats[this.activeStat].svg;
     // this.borderAnimActive = false;
+    
     setTimeout(() => {
       this.toExitNode = '';
       // this.borderAnimActive = true;
     }, 1000);
-
     this.activeStat = node;
     this.updatePrevNextStat();
     this.navPosition = (node == 0) ? 0 : event.srcElement.offsetTop - 20;
+  }
+
+  navigateStats(){
+    console.log(this.scroll);
+    switch(this.scroll) {
+      case -200: 
+        this.scrollStatus = false;
+        break;
+      case this.scroll < 0: 
+        this.activeStat = 0;
+        this.navigate();
+        enableBodyScroll(this.scrollTarget.nativeElement);
+        this.scrollStatus = true;
+        break;
+      case 200: 
+        this.activeStat = 1;
+        this.navigate();
+        break;
+      case 400: 
+        this.activeStat = 2;
+        this.navigate();
+        break;
+      case 600:
+        this.activeStat = 3;
+        this.navigate();
+        break;
+      case 800: 
+        this.activeStat = 4;
+        this.navigate();
+        break;
+      case 1000: 
+        this.activeStat = 5;
+        this.navigate();
+        enableBodyScroll(this.scrollTarget.nativeElement);
+        console.log('Enable scrollting');
+        this.scrollStatus = true;
+        break;
+    }
+    console.log('Nabvigating to ', this.activeStat);
+  }
+
+  navigate(){
+    if(this.activeStat < this.stats.length - 1){
+      this.setActive(this.activeStat);
+    }
   }
 
   updatePrevNextStat() {
