@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
@@ -27,35 +27,65 @@ export class ContactUsComponent implements OnInit {
   constructor(
     public appComp: AppComponent,
     formBuilder: FormBuilder
-    ) {
+  ) {
 
     this.contactUsForm = formBuilder.group({
       role: ['', [Validators.required]],
-      fname: ['', [Validators.required]],
-      lname: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]]
+      fullname: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required]]
     });
   }
 
   ngOnInit(): void {
-    console.log('this.contactUsForm.controls["role"].touched = '+this.contactUsForm.controls['role'].touched);
-    console.log('this.contactUsForm.invalid = '+this.contactUsForm.invalid);
-    console.log('this.contactUsForm.valid = '+this.contactUsForm.valid);
+    // console.log('this.contactUsForm.controls["role"].touched = '+this.contactUsForm.controls['role'].touched);
+    // console.log('this.contactUsForm.invalid = '+this.contactUsForm.invalid);
+    // console.log('this.contactUsForm.valid = '+this.contactUsForm.valid);
   }
 
   toggleContact() {
     this.appComp.toggleShowHideContactSection();
     this.contactUsForm.reset();
+    this.contactUsFormSubmitted = false;
     this.contactUsFormSubmittedEmpty = false;
   }
 
   submitContact() {
     if( this.contactUsForm.valid ){
-      this.contactUsFormSubmitted = true;
-      this.contactUsFormSubmittedEmpty = false;
+      // this.contactUsFormSubmitted = true;
+      // this.contactUsFormSubmittedEmpty = false;
       console.warn(this.contactUsForm.value);
-      console.log('Contact Is Submitted!');
-      this.contactUsForm.reset();
+
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify({
+        "contact_fullname": this.contactUsForm.value.fullname,
+        "contact_email": this.contactUsForm.value.email,
+        "contact_role": this.contactUsForm.value.role,
+        "contact_message": this.contactUsForm.value.message
+      });
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+      };
+
+      fetch("https://phpstack-721163-3373875.cloudwaysapps.com/support/emails", requestOptions)
+        .then(response => {
+          response.text()
+        })
+        .then(result => {
+          console.log(result)
+          console.log('Contact Is Submitted!');
+          this.contactUsFormSubmitted = true
+          this.contactUsFormSubmittedEmpty = false
+          this.contactUsForm.reset();
+        })
+        .catch(error => {
+          console.log('error', error)
+        });
     }
     else {
       this.contactUsFormSubmitted = false;
@@ -65,7 +95,7 @@ export class ContactUsComponent implements OnInit {
         this.contactUsFormSubmittedEmptyAnimate = false;
       }, 300);
       console.warn(this.contactUsForm.value);
-      console.log('Contact Form is Invalid');
+      console.error('Contact From is Invalid');
     }
   }
 
