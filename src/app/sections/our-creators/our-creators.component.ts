@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit, Input, OnChanges, ElementRef } from '@angular/core';
 import * as Flickity from 'flickity';
 
 @Component({
@@ -8,9 +8,10 @@ import * as Flickity from 'flickity';
   encapsulation: ViewEncapsulation.None,
 })
 
-export class OurCreatorsComponent implements OnInit, AfterViewInit {
+export class OurCreatorsComponent implements OnInit, OnChanges, AfterViewInit {
 
-  @Input() animateCreatorsEl: any;
+  @Input() animateCreators: any;
+  @ViewChild('carousel', {static: true}) private Carousel: any;
   carousel: any | undefined;
   carouselMain: any | undefined;
   carouselSlides: any = [
@@ -51,13 +52,11 @@ export class OurCreatorsComponent implements OnInit, AfterViewInit {
     },
   ];
 
-  @ViewChild('carousel', {static: true}) private Carousel: any;
-
   constructor() { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
+
+  ngOnChanges(): void {}
 
   ngAfterViewInit(): void {
     this.initFlickity();  

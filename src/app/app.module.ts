@@ -19,8 +19,8 @@ import { FullServiceComponent } from './sections/full-service/full-service.compo
 import { ServicesAndCapabilitiesComponent } from './sections/services-and-capabilities/services-and-capabilities.component';
 import { KeyToSuccessComponent } from './sections/key-to-success/key-to-success.component';
 import { PartnersOnlyComponent } from './sections/partners-only/partners-only.component';
-import { ContactUsComponent } from './sections/contact-us/contact-us.component';
 
+import { ContactUsComponent } from './sections/contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -42,6 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ServicesAndCapabilitiesComponent,
     KeyToSuccessComponent,
     PartnersOnlyComponent,
+
     ContactUsComponent,
   ],
   imports: [

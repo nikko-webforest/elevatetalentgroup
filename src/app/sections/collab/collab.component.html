@@ -4,7 +4,7 @@
       <div class="etg-row">
         <div class="etg-col">
           <h2 class="animate-init"
-            [class.animate-now]="animateCollab">
+            [class.animate-now]="scrollValue >= 1">
             COLLAB
           </h2>
         </div>
@@ -14,15 +14,15 @@
       <div class="etg-row">
         <div class="etg-col">
           <h4 class="animate-init"
-            [class.animate-now]="animateCollab">
+            [class.animate-now]="scrollValue >= 2">
             Out of siloes and into collaboration
           </h4>
           <p class="animate-init"
-            [class.animate-now]="animateCollab">
+            [class.animate-now]="scrollValue >= 3">
             We are a full service ad agency with 1 to 1 relationships with our creators. That means we understand your broader communications strategy and have talent ready to go that is perfectly integrated into your message and audience targets.
           </p>
           <div class="etg-btn-animate animate-init"
-            [class.animate-now]="animateCollab">
+            [class.animate-now]="scrollValue >= 4">
             <app-primary-btn
               text="LET'S TALK"
               url="toggle-contact">

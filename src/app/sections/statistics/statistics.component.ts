@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, HostListener, ViewEncapsulation } from '@angular/core';
 // @ts-ignore
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+// import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 @Component({
   selector: 'app-statistics',
@@ -63,32 +63,32 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
   public onViewportScroll() {
     this.activeStat = this.animateStats ? this.activeStat : 0;
     this.updatePrevNextStat();
-    console.log('Scrolling');
+    // console.log('Scrolling');
   }
 
-  @HostListener('wheel', ['$event']) onMousewheel(event: any) {
+  // @HostListener('wheel', ['$event']) onMousewheel(event: any) {
     
-    if(this.node == 4){
+  //   if(this.node == 4){
 
-      if(!this.scrollStatus){
-        disableBodyScroll(this.scrollTarget.nativeElement);
-      }
-      if(event.wheelDelta>0){
-        this.scroll--;
-        console.log("Entered mouse wheel down", this.scroll);
-      }
-      if(event.wheelDelta<0){
-        this.scroll++;
-        console.log("Entered mouse wheel up",  this.scroll);
-      }
-      this.navigateStats();
-    } else {
-      this.scrollStatus = false;
-      this.scroll = 0;
-    }
+  //     if(!this.scrollStatus){
+  //       disableBodyScroll(this.scrollTarget.nativeElement);
+  //     }
+  //     if(event.wheelDelta>0){
+  //       this.scroll--;
+  //       console.log("Entered mouse wheel down", this.scroll);
+  //     }
+  //     if(event.wheelDelta<0){
+  //       this.scroll++;
+  //       console.log("Entered mouse wheel up",  this.scroll);
+  //     }
+  //     this.navigateStats();
+  //   } else {
+  //     this.scrollStatus = false;
+  //     this.scroll = 0;
+  //   }
     
     
-  }
+  // }
 
   constructor() {
     this.onResize();
@@ -118,44 +118,44 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
     this.navPosition = (node == 0) ? 0 : event.srcElement.offsetTop - 20;
   }
 
-  navigateStats(){
-    console.log(this.scroll);
-    switch(this.scroll) {
-      case -200: 
-        this.scrollStatus = false;
-        break;
-      case this.scroll < 0: 
-        this.activeStat = 0;
-        this.navigate();
-        enableBodyScroll(this.scrollTarget.nativeElement);
-        this.scrollStatus = true;
-        break;
-      case 200: 
-        this.activeStat = 1;
-        this.navigate();
-        break;
-      case 400: 
-        this.activeStat = 2;
-        this.navigate();
-        break;
-      case 600:
-        this.activeStat = 3;
-        this.navigate();
-        break;
-      case 800: 
-        this.activeStat = 4;
-        this.navigate();
-        break;
-      case 1000: 
-        this.activeStat = 5;
-        this.navigate();
-        enableBodyScroll(this.scrollTarget.nativeElement);
-        console.log('Enable scrollting');
-        this.scrollStatus = true;
-        break;
-    }
-    console.log('Nabvigating to ', this.activeStat);
-  }
+  // navigateStats(){
+  //   console.log(this.scroll);
+  //   switch(this.scroll) {
+  //     case -200: 
+  //       this.scrollStatus = false;
+  //       break;
+  //     case this.scroll < 0: 
+  //       this.activeStat = 0;
+  //       this.navigate();
+  //       enableBodyScroll(this.scrollTarget.nativeElement);
+  //       this.scrollStatus = true;
+  //       break;
+  //     case 200: 
+  //       this.activeStat = 1;
+  //       this.navigate();
+  //       break;
+  //     case 400: 
+  //       this.activeStat = 2;
+  //       this.navigate();
+  //       break;
+  //     case 600:
+  //       this.activeStat = 3;
+  //       this.navigate();
+  //       break;
+  //     case 800: 
+  //       this.activeStat = 4;
+  //       this.navigate();
+  //       break;
+  //     case 1000: 
+  //       this.activeStat = 5;
+  //       this.navigate();
+  //       enableBodyScroll(this.scrollTarget.nativeElement);
+  //       console.log('Enable scrollting');
+  //       this.scrollStatus = true;
+  //       break;
+  //   }
+  //   console.log('Nabvigating to ', this.activeStat);
+  // }
 
   navigate(){
     if(this.activeStat < this.stats.length - 1){

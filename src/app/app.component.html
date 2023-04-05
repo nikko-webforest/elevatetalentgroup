@@ -8,10 +8,15 @@
     <app-banner></app-banner>
 </div>
 <div #collab>
-    <app-collab [animateCollab]="animateCollab"></app-collab>
+    <app-collab
+        (enableBodyScroll)="getEnableBodyScroll($event);"
+        [animateCollab]="animateCollab">
+    </app-collab>
 </div>
 <div #creators>
-    <app-our-creators [animateCreatorsEl]="animateCreatorsEl"></app-our-creators>
+    <app-our-creators
+        [animateCreators]="animateCreators">
+    </app-our-creators>
 </div>
 <div #statistics>
     <app-statistics [animateStats]="animateStats" [node]="node"></app-statistics>

@@ -1,4 +1,6 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, Host, HostListener, ViewChild } from '@angular/core';
+// @ts-ignore
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +36,7 @@ export class AppComponent {
   @ViewChild('footer') divFooter!: ElementRef;
 
   showHeaderBackground: boolean = false;
-  animateCreatorsEl: any = null;
+  animateCreators: any = null;
   animateCollab: any = null;
   animateStats: any = null;
   animateLatest: any = null;
@@ -49,14 +51,18 @@ export class AppComponent {
   public onViewportScroll() {
 
     const windowHeight = window.innerHeight;
+
     const header = this.divHeader.nativeElement.getBoundingClientRect();
     this.showHeaderBackground = (header.top < 0) ? true : false;
 
-    const creators = this.divCreators.nativeElement.getBoundingClientRect();
-    this.animateCreatorsEl = ((window.innerHeight) >  creators.top) ? true : false;
-
     const collab = this.divCollab.nativeElement.getBoundingClientRect();
-    this.animateCollab = ((window.innerHeight/2) >  collab.top ) ? true : false;
+    this.animateCollab = collab.top <= -20 && collab.bottom < collab.height && collab.bottom > 0 ? true : false;
+    console.log('collab = '+collab.top);
+    console.log('this.animateCollab = '+this.animateCollab);
+
+    const creators = this.divCreators.nativeElement.getBoundingClientRect();
+    this.animateCreators = creators.top <= 0 && creators.bottom < creators.height && creators.bottom > 0 ? true : false;
+    // console.log('this.animateCreators = '+this.animateCreators);
 
     const statistics = this.divStats.nativeElement.getBoundingClientRect();
     this.animateStats = ((window.innerHeight/2) >  statistics.top ) ? true : true;
@@ -77,8 +83,16 @@ export class AppComponent {
     this.animatePartners = ((window.innerHeight/2) > partners.top ) ? true : false;
 
     this.node = this.getVisibleSection();
-    console.log(this.getVisibleSection());
+    // console.log(this.getVisibleSection());
 
+    if( this.animateCollab ){
+      disableBodyScroll(this.divCreators.nativeElement);
+    }
+
+  }
+
+  ngOnInit(): void {
+    this.scrollToTopWhenRefresh();
   }
 
   scrollTo(node: any) {
@@ -139,5 +153,24 @@ export class AppComponent {
 
   toggleShowHideContactSection() {
     this.showContactSection = !this.showContactSection;
+  }
+
+  scrollToTopWhenRefresh() {
+    if( history.scrollRestoration ){
+      history.scrollRestoration = 'manual';
+    }
+    else {
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      }
+    }
+  }
+
+  getEnableBodyScroll($event: any) {
+    console.log('$event');
+    console.log($event);
+    // if( $event ){
+    //   clearAllBodyScrollLocks(this.divCreators.nativeElement);
+    // }
   }
 }
