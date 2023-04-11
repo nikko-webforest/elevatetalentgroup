@@ -1,6 +1,6 @@
 <div #header>
     <app-header
-        [showHeaderBackground]="showHeaderBackground"
+        [navScroll]="showHeaderBackground"
         [showContactSection]="showContactSection">
     </app-header>
 </div>
@@ -47,6 +47,7 @@
     [contactNumber]="contactNumber"
     [contactAddress]="contactAddress"
     [socialMediaList]="socialMediaList"
-    [showContactSection]="showContactSection">
+    [showContactSection]="showContactSection"
+    [navScroll]="showHeaderBackground">
 </app-contact-us>
 <app-section-navigator [node]="node" (activeNode)="scrollTo($event)"></app-section-navigator>

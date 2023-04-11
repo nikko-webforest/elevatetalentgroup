@@ -111,13 +111,17 @@
 
     .etg-close-btn {
       position: absolute;
-      top: 80px;
-      right: 0;
+      top: 48px;
+      right: 3px;
       rotate: 0deg;
       transition:
+        top 300ms ease-in-out,
         rotate 300ms ease-in-out;
 
       .etg-svg {
+        width: 35px;
+        height: 35px;
+
         path {
           transition:
             fill 300ms ease-in-out;
@@ -630,6 +634,14 @@
 
     @media only screen and (max-width: 768px) {
       height: auto;
+    }
+  }
+
+  &.nav-scroll {
+    .etg-container {
+      .etg-close-btn {
+        top: 33px;
+      }
     }
   }
 }
