@@ -10,7 +10,7 @@ import { AppComponent } from 'src/app/app.component';
 
 export class HeaderComponent implements OnInit {
 
-  @Input() showHeaderBackground: boolean = false;
+  @Input() navScroll: boolean = false;
   @Input() showContactSection: boolean = false;
   
   constructor(

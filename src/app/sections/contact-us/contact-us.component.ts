@@ -15,8 +15,8 @@ export class ContactUsComponent implements OnInit {
   @Input() contactNumber: any;
   @Input() contactAddress: any;
   @Input() socialMediaList: any;
-
   @Input() showContactSection: boolean = false;
+  @Input() navScroll: boolean = false;
 
   contactUsForm: FormGroup;
   contactUsFormSubmitted: boolean = false;
@@ -35,6 +35,7 @@ export class ContactUsComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required]]
     });
+
   }
 
   ngOnInit(): void {
@@ -72,16 +73,16 @@ export class ContactUsComponent implements OnInit {
         body: raw,
       };
 
-      fetch("https://phpstack-721163-3373875.cloudwaysapps.com/support/emails", requestOptions)
+      fetch("https://proxy.elevatetalent.group/support/emails", requestOptions)
         .then(response => {
           response.text()
         })
         .then(result => {
           console.log(result)
-          console.log('Contact Is Submitted!');
+          console.log('Contact Is Submitted!')
           this.contactUsFormSubmitted = true
           this.contactUsFormSubmittedEmpty = false
-          this.contactUsForm.reset();
+          this.contactUsForm.reset()
         })
         .catch(error => {
           console.log('error', error)
